@@ -10,33 +10,56 @@ body {
 }
 
 nav {
-  /* width: 5em;  */
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
   grid-area: nav;
   background-color: green;
-  border: 5px solid red; 
-  height: 100vh; 
-} 
-
-.nav-class-text { 
-  text-align: center;
-  color: white; 
-  font-size: 2rem;
+  border: 5px solid black;
+  height: 100vh;
 }
+
+.navbar-home-content-text, 
+.navbar-your-projects-title-text {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+} 
 
 header {
   grid-area: header;
-  padding: 10px; 
 } 
 
-main { 
-  grid-area: main; 
-  width: auto; 
+main {
+  grid-area: main;
+  width: auto;
   background-color: skyblue;
 }
 
-#header-for-todo {
+.header-container {
   background-color: green;
+  grid-area: header;
+  padding: 10px;
+  border: 5px solid black;
+}
+
+.header-title-text-to-do-list { 
+ font-size: 2.3rem;
+  text-align: center; 
+  text-decoration: underline;
   color: white;
-  font-size: 2.5rem;
-  text-align: center;
+}
+
+#add-project-btn { 
+  font-size: 1.5rem;
+  color: white; 
+  background-color: green;
+  border: none;
+}  
+
+#add-project-btn:hover { 
+  color: white; 
+  background-color: green;
+  border: none;
+  font-size: 2rem;
 }

@@ -1,0 +1,1 @@
+document.getElementById("add-project-btn").addEventListener("click",(function(){let e=document.createElement("input"),t=document.getElementById("input-field-container");t.style.display="flex",t.style.flexDirection="column",t.style.alignItems="center",t.style.justifyContent="center",t.style.gap="0.5em",t.appendChild(e)}));
