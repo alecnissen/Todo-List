@@ -62,4 +62,33 @@ main {
   background-color: green;
   border: none;
   font-size: 2rem;
+} 
+
+.project-input-field-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+} 
+
+.input-field-text { 
+  font-size: 1.5rem;
+  width: 240px; 
+} 
+
+.btn-container { 
+  display: flex;
+  gap: 1em; 
+} 
+
+.add-btn, 
+.cancel-btn { 
+  font-size: 1.2rem; 
+  background-color: red;
+  color: white; 
+} 
+
+.add-btn { 
+  background-color: green;
 }

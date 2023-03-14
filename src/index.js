@@ -1,22 +1,34 @@
 document.getElementById("add-project-btn").addEventListener("click", function(){
-    // added listener to button, when clicked, add an input field above the element 
-    let inputField = document.createElement('input'); 
+    
+    const inputField = document.createElement("input"); 
 
-    // let navbarProjectsContainer = document.getElementsByClassName('navbar-your-projects-container')[0];
+    inputField.classList.add("input-field-text");
 
-    // let navbar = document.querySelector('nav'); 
+    const btnContainer = document.createElement("container"); 
 
-    let inputContainer = document.getElementById('input-field-container');
+    btnContainer.classList.add("btn-container");
 
-    inputContainer.style.display = 'flex'; 
+    const addBtn = document.createElement("button"); 
 
-    inputContainer.style.flexDirection = 'column';
+    addBtn.textContent = "Add Book";
 
-    inputContainer.style.alignItems = 'center';
+    const cancelBtn = document.createElement("button"); 
 
-    inputContainer.style.justifyContent = 'center';
+    cancelBtn.textContent = "Cancel"; 
 
-    inputContainer.style.gap = '0.5em';
+    addBtn.classList.add("add-btn"); 
 
-    inputContainer.appendChild(inputField);
+    cancelBtn.classList.add("cancel-btn");
+
+    const inputContainer = document.getElementById("input-field-container");
+
+    inputContainer.classList.add("project-input-field-container");
+
+    inputContainer.appendChild(inputField); 
+
+    btnContainer.appendChild(addBtn); 
+
+    btnContainer.appendChild(cancelBtn);
+
+    inputContainer.appendChild(btnContainer);
 }) 
