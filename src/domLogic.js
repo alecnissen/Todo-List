@@ -26,6 +26,12 @@ export function addProjectDOMStuff () {
 
   addBtn.classList.add("add-btn");
 
+  // console.log(addBtn);
+
+  // addBtn.setAttribute('id', 'add-btn-dom-id');
+
+  // addBtn.id = "add-btn";
+
   cancelBtn.classList.add("cancel-btn");
 
   const inputContainer = document.getElementById("input-field-container");
@@ -40,4 +46,4 @@ export function addProjectDOMStuff () {
 
   inputContainer.appendChild(btnContainer); 
 
-}
+}       
