@@ -28,14 +28,27 @@ const addProjectButton = document.getElementById("add-project-btn");
 
 // let addProjectToDOMBtn = document.getElementsByClassName("add-btn")[0]; 
 
-const addProjectToDOMBtn = document.querySelectorAll("add-btn");
+
+
+
+const addProjectToDOMBtn = document.querySelectorAll(".add-btn");
 
 const newArr = Array.from(addProjectToDOMBtn);
 
-console.log(newArr);
+newArr.forEach(button => {
+  console.log(button);
+  button.addEventListener("click", function(e){
+    console.log("Hey, inside a clicker!");
+  });
+})
 
-console.log(addProjectToDOMBtn); 
 
+// document.querySelectorAll(".add-btn").forEach( button => {
+//   console.log(button);
+//   button.addEventListener("click", function(e){
+//     console.log("Hey, inside a clicker!")
+//   });
+// })
 
 
 
