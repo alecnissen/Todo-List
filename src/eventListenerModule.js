@@ -1,12 +1,6 @@
-// get the add project button, from the HTML 
 
-// add the event listener to it  
 
-// import "src/domLogic.js"; 
-
-// import { addBtn } from "./domLogic";  
-
-import { addProjectDOMStuff } from "./domLogic";
+import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 
 const addProjectButton = document.getElementById("add-project-btn"); 
 
@@ -14,21 +8,36 @@ const addProjectButton = document.getElementById("add-project-btn");
 
    console.log("this is working, I am referencing my event module");
 
-   console.log("alec");
-
-   addProjectDOMStuff(); 
+  addProjectFormInput(); 
 
    [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {
-    let ele = document.createElement('p'); 
-    ele.textContent = 'yooyyo';
-    console.log(ele);
-    console.log("Hey, I am inside a clicker!", e.target);
-   });
+    console.log("Hey, I am inside a clicker!", e.target); 
 
-  //  .at(-1).addEventListener("click", (e) => {
-  //   console.log("Hey, I am inside a clicker!", e.target);
-  //  });
+    let userValue = document.getElementsByClassName("input-field-text")[0].value; 
+
+    // just need the value, that value should be passed to the DOM, so it can append 
+
+    appendProjectNameToDOM(userValue); 
+  
+    
+  });
 }) 
+
+
+
+// i can access the value, that the user entered, now I need to find a way to append to the DOM. 
+
+// appending value works, grab the target containers and append there. 
+
+
+
+
+// access the input field element, append to DOM 
+
+
+
+
+
 
 // grab add btn element, add a listener to it 
 

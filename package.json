@@ -160,6 +160,7 @@
     "nanoid": "^3.3.4",
     "natural-compare": "^1.4.0",
     "neo-async": "^2.6.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "node-releases": "^2.0.10",
     "object-inspect": "^1.12.3",
     "object-keys": "^1.1.1",

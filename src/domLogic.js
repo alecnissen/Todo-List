@@ -1,11 +1,10 @@
-// import "src/index.js" 
 
- // call a function which handles DOM logic 
-  // export then import within another file
+// call a function which handles DOM logic
+// export then import within another file 
 
+import "./eventListenerModule";
 
-
-export function addProjectDOMStuff () { 
+export function addProjectFormInput() {
   const inputField = document.createElement("input");
 
   inputField.classList.add("input-field-text");
@@ -26,12 +25,6 @@ export function addProjectDOMStuff () {
 
   addBtn.classList.add("add-btn");
 
-  // console.log(addBtn);
-
-  // addBtn.setAttribute('id', 'add-btn-dom-id');
-
-  // addBtn.id = "add-btn";
-
   cancelBtn.classList.add("cancel-btn");
 
   const inputContainer = document.getElementById("input-field-container");
@@ -44,6 +37,44 @@ export function addProjectDOMStuff () {
 
   btnContainer.appendChild(cancelBtn);
 
-  inputContainer.appendChild(btnContainer); 
+  inputContainer.appendChild(btnContainer);
+} 
 
-}       
+
+
+export function appendProjectNameToDOM(value) { 
+
+  let userInputValue = value; 
+
+  let projectContainer = [...document.querySelectorAll(".navbar-your-projects-container")]; 
+
+  console.log(projectContainer);
+
+  // let projectContainerArray = Array.from(projectContainer);
+
+  projectContainer.push(userInputValue); 
+
+  console.log(projectContainer);
+
+  console.log(userInputValue); 
+
+  document.body.append(projectContainer);
+} 
+
+
+// I'm able to get the user value, I am able to log out it's value, I am able to grab the projects container section,
+
+// it still returns and HTML element, I can turn it into an array, but I am unsure of how to append to the DOM. 
+
+
+// what I want, the user will enter project name, I want that name to appear in the project's section and main content section(blue part); 
+
+// Problem: I am confused on how to append this project name to the DOM. 
+
+// What I've tried: Once the add btn is pressed, the value/name of project will be saved, and passed to a function which takes that 
+
+// value and prints to the DOM. 
+
+// I am able to access the project container, and the main section but it's an HTML collection, I can convert it into an array, 
+
+// but how can I append an array to the DOM? 
