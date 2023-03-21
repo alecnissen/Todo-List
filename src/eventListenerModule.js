@@ -1,5 +1,6 @@
 
 
+import { checkForDOMValue } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 
 const addProjectButton = document.getElementById("add-project-btn"); 
@@ -8,20 +9,24 @@ const addProjectButton = document.getElementById("add-project-btn");
 
   //  console.log("this is working, I am referencing my event module");
 
+  // called and created DOM input field 
   addProjectFormInput(); 
-
+    // add btn to DOM 
    [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {
-    // console.log("Hey, I am inside a clicker!", e.target); 
+  //   // console.log("Hey, I am inside a clicker!", e.target); 
 
     let userValue = document.getElementsByClassName("input-field-text")[0].value; 
 
-    let projectNameElement = document.createElement("div"); 
+    // let userValue2 = document.getElementsByClassName("input-field-text")[1].value; 
 
-    projectNameElement.innerText = userValue;
+    // console.log(userValue2);
 
-    appendProjectNameToDOM(projectNameElement);
+    appendProjectNameToDOM(userValue); 
+
+    // checkForDOMValue();
+
+
   
-    
   });
 }) 
 
