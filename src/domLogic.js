@@ -41,25 +41,39 @@ export function addProjectFormInput() {
 } 
 
 
+// it should append things to the DOM here 
+
+// I can't even access the DOM 
+
+// I can only access html elements, 
+
+// do I need to make my entire layout wth the DOM ? 
 
 export function appendProjectNameToDOM(value) { 
-
+  // getting the user value
   let userInputValue = value; 
 
-  let projectContainer = [...document.querySelectorAll(".navbar-your-projects-container")]; 
+  // getting the project container, 
+  // let projectContainer = [...document.querySelectorAll(".navbar-your-projects-container")]; 
+
+  let projectContainer = document.querySelector(".navbar-your-projects-container");
 
   console.log(projectContainer);
 
-  // let projectContainerArray = Array.from(projectContainer);
+  // projectContainer.push(userInputValue); 
 
-  projectContainer.push(userInputValue); 
+  projectContainer.appendChild(userInputValue);
 
   console.log(projectContainer);
 
   console.log(userInputValue); 
 
-  document.body.append(projectContainer);
+
 } 
+
+
+
+
 
 
 // I'm able to get the user value, I am able to log out it's value, I am able to grab the projects container section,

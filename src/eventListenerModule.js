@@ -6,18 +6,20 @@ const addProjectButton = document.getElementById("add-project-btn");
 
   addProjectButton.addEventListener("click", function(){
 
-   console.log("this is working, I am referencing my event module");
+  //  console.log("this is working, I am referencing my event module");
 
   addProjectFormInput(); 
 
    [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {
-    console.log("Hey, I am inside a clicker!", e.target); 
+    // console.log("Hey, I am inside a clicker!", e.target); 
 
     let userValue = document.getElementsByClassName("input-field-text")[0].value; 
 
-    // just need the value, that value should be passed to the DOM, so it can append 
+    let projectNameElement = document.createElement("div"); 
 
-    appendProjectNameToDOM(userValue); 
+    projectNameElement.innerText = userValue;
+
+    appendProjectNameToDOM(projectNameElement);
   
     
   });
