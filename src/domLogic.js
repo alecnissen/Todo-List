@@ -43,74 +43,13 @@ export function addProjectFormInput() {
 } 
 
 
-// currently getting user input from the field, appending to project section 
-// find a way to append that project name to the main content section, 
-// use same process, 
-
-// I want to appned the projects name to the main content section, 
-// then figure out a way to append different types of projects 
-// append a new projects based on user input not just one, 
-
-// only appending in one place, why? I think it is because I am only creating one div element, 
-
-// now it is appending in both places, I created another div element, then added text and appended 
-
-// find a way to append different projects, 
-
-// once the project is added, find way to remove the input field and just have 
-// just the project showing, 
-
-// lets first work on removing the input field after user enters value, 
-// just the project should be showing, 
-
-// In order to make get multiple input values 
-// understand how the input value is getting it's value 
-
-
-// you will need a type of conditional, if the value is entered, user presses add, remove the input field from the DOM, 
-// -1 Have user enter different project names, 
-// -2 once entered remove from the DOM only, remove the input field, 
-// -3 store variables in local storage 
-
-
-// Do I first have to remove it? Why grab different btn
-
-// should be once user clicks add, store value in both places 
-// then remove the input field, and have user click 
-// the add project button again. 
-
-// focus on how you can remove the input field after the user clicks add 
-
-// if the element/value has been appended to the DOM 
-// remove the DOM elements w/ the input field 
-
-// call a function  within your DOM function, 
-
-// conditional, if user pressed add, and element is appended 
-
-// remove the input field, 
-
-// I'm confused on how I can remove the input field after the add btn is pressed, 
-
-// once the btn is pressed, add the value, check if value has been added then 
-// remove the input field, 
-
-
-
-
-
 export function appendProjectNameToDOM(value) { 
-  // getting the user value
-  let userInputValue = value; 
 
-  // getting the project container, 
-  // let projectContainer = [...document.querySelectorAll(".navbar-your-projects-container")]; 
+  let userInputValue = value;  
 
   let projectContainer = document.querySelector(".navbar-your-projects-container"); 
 
   let mainContentProjectContainer = document.querySelector(".main-content-section-container"); 
-
-  // console.log(mainContentProjectContainer); 
 
   let projectNameElement = document.createElement("div"); 
 
@@ -119,10 +58,6 @@ export function appendProjectNameToDOM(value) {
    projectNameElement.innerText = userInputValue;
 
    projectNameElementMain.innerText = userInputValue;
-
-  // console.log(projectContainer);
-
-  // projectContainer.push(userInputValue); 
 
   projectContainer.appendChild(projectNameElement);
 

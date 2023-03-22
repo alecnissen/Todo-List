@@ -31,6 +31,21 @@ import "./eventListenerModule";
 
 // DOM methods for finding out if the container has the child 
 
+
+// What I want: To add the functionality and logic behind my buttons. If the user presses add btn, it will add it to the DOM 
+
+// then it will remove the input field container once the project has been added, 
+
+// I also want the user to be able to click on add project btn again, so they can add another project, 
+
+// problem: Currently user can only add one project, the btn logic does not work after, 
+
+// What I've tried: I've tried using a conditional to check if the input field 
+
+// if input field text field container userValue,  
+
+// log it's variable 
+
 console.log(userInputValue);
 
 export function checkForDOMValue() { 
@@ -39,20 +54,21 @@ export function checkForDOMValue() {
 
     let children = projectDOMContainer.children; 
 
+    let lastChild = projectDOMContainer.lastChild; 
+
     // let arr = Array.from(projectDOMContainer);
 
-   console.log(children);
 
     // console.log(children);
     // let newArr = Array.from(projectDOMContainer); 
 
     // console.log(projectDOMContainer); 
 
-    if (projectDOMContainer.children === userInputValue) {
-        console.log("test");
-        projectDOMContainer.remove();
-    } else { 
-        return
-    }
+    // if (lastChild.contains(userInputValue)) {
+    //     console.log("test");
+    //     projectDOMContainer.remove();
+    // } else { 
+    //     return
+    // }
 } 
 
