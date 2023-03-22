@@ -1,4 +1,4 @@
-import { addProjectFormInput, appendProjectNameToDOM, userValue } from "./domLogic"; 
+import { addProjectFormInput, appendProjectNameToDOM, userInputValue } from "./domLogic"; 
 
 import "./eventListenerModule"; 
 
@@ -15,13 +15,44 @@ import "./eventListenerModule";
 
 // which checks if the container includes that element, if so remove the container, 
 
+// remove the input field, after the value has been added to the DOM 
+
+// to make way for a new element, 
+
+// look at previous post for reason 
+
+// What I am trying to do, is remove the projects container 
+
+// once the user enters the name of project from the input field 
+
+// I need a DOM method to remove the container, if the container 
+
+// contains that value, 
+
+// DOM methods for finding out if the container has the child 
+
+console.log(userInputValue);
+
 export function checkForDOMValue() { 
-    console.log("Test");
+
     let projectDOMContainer = document.getElementById("input-field-container"); 
 
-    if (projectDOMContainer.includes(userValue)) { 
+    let children = projectDOMContainer.children; 
+
+    // let arr = Array.from(projectDOMContainer);
+
+   console.log(children);
+
+    // console.log(children);
+    // let newArr = Array.from(projectDOMContainer); 
+
+    // console.log(projectDOMContainer); 
+
+    if (projectDOMContainer.children === userInputValue) {
+        console.log("test");
         projectDOMContainer.remove();
     } else { 
         return
     }
 } 
+

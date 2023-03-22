@@ -116,8 +116,6 @@ export function appendProjectNameToDOM(value) {
 
   let projectNameElementMain = document.createElement("div");
 
-
-
    projectNameElement.innerText = userInputValue;
 
    projectNameElementMain.innerText = userInputValue;
