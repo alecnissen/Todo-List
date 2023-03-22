@@ -3,21 +3,15 @@
 import { removeInputFieldContainer } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 
+
+
+
+
 const addProjectButton = document.getElementById("add-project-btn"); 
 
  addProjectButton.addEventListener("click", function(){ 
 
-  
-
   addProjectFormInput(); 
-
-  // let cancelBtn = document.querySelector(".cancel-btn"); 
-
-  // console.log(cancelBtn); 
-
-  // cancelBtn.addEventListener("click", function(){
-
-  
 
    [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => { 
 
@@ -25,21 +19,25 @@ const addProjectButton = document.getElementById("add-project-btn");
 
     appendProjectNameToDOM(userValue); 
 
-     let projectDOMContainer = document.getElementById("input-field-container");
+    let projectDOMContainer = document.getElementById("input-field-container");
 
-     let inputFieldTextElement = document.querySelector(".input-field-text");
+    let inputFieldTextElement = document.querySelector(".input-field-text");
 
-     let inputFieldTextValue = inputFieldTextElement.value; 
-
-    console.log(inputFieldTextElement); 
+    let inputFieldTextValue = inputFieldTextElement.value; 
 
     if (inputFieldTextValue === userValue) { 
       projectDOMContainer.textContent = "";
     } else { 
       return 
     } 
+  }) 
 
-  })
+   let cancelBtn = document.querySelector(".cancel-btn"); 
+
+   cancelBtn.addEventListener("click", function(){
+    let projectDOMContainer = document.getElementById("input-field-container"); 
+    projectDOMContainer.textContent = "";
+   })
 }) 
 
 
