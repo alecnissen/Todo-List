@@ -1,13 +1,24 @@
 
 
-import { checkForDOMValue } from "./conditionalLogic";
+import { removeInputFieldContainer } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 
 const addProjectButton = document.getElementById("add-project-btn"); 
 
-  addProjectButton.addEventListener("click", function(){
+ addProjectButton.addEventListener("click", function(){ 
+
+  
 
   addProjectFormInput(); 
+
+  // let cancelBtn = document.querySelector(".cancel-btn"); 
+
+  // console.log(cancelBtn); 
+
+  // cancelBtn.addEventListener("click", function(){
+
+  
+
    [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => { 
 
     let userValue = document.getElementsByClassName("input-field-text")[0].value; 
@@ -23,13 +34,20 @@ const addProjectButton = document.getElementById("add-project-btn");
     console.log(inputFieldTextElement); 
 
     if (inputFieldTextValue === userValue) { 
-      projectDOMContainer.remove(); 
+      projectDOMContainer.textContent = "";
     } else { 
-      return
-    }
+      return 
+    } 
 
-  }); 
+  })
 }) 
+
+
+// apply the same logic with the cancel btn, 
+
+// access the cancel btn element, use a selector, 
+
+// 
 
 
 // what I want to do, is after the project is appended to the DOM section, remove the container, 

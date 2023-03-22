@@ -46,29 +46,37 @@ import "./eventListenerModule";
 
 // log it's variable 
 
+// create a unique variable name, 
+
+// this is the conditional logic function, 
+
+// it determines if the book has been added remove it 
+
 console.log(userInputValue);
 
-export function checkForDOMValue() { 
+export function removeInputFieldContainer() { 
 
-    let projectDOMContainer = document.getElementById("input-field-container"); 
+    // let projectDOMContainer = document.getElementById("input-field-container"); 
 
-    let children = projectDOMContainer.children; 
+    // let children = projectDOMContainer.children; 
 
-    let lastChild = projectDOMContainer.lastChild; 
+    // let lastChild = projectDOMContainer.lastChild;  
 
-    // let arr = Array.from(projectDOMContainer);
+//     let projectDOMContainer = document.getElementById("input-field-container");
+
+//     let inputFieldTextElement = document.querySelector(".input-field-text");
+
+//     let inputFieldTextValue = inputFieldTextElement.value; 
+
+//    console.log(inputFieldTextElement); 
+
+//    if (inputFieldTextValue === userInputValue) { 
+//      projectDOMContainer.textContent = "";
+//    } else { 
+//      return 
+//    }
 
 
-    // console.log(children);
-    // let newArr = Array.from(projectDOMContainer); 
-
-    // console.log(projectDOMContainer); 
-
-    // if (lastChild.contains(userInputValue)) {
-    //     console.log("test");
-    //     projectDOMContainer.remove();
-    // } else { 
-    //     return
-    // }
 } 
 
+// user value is not defined, 

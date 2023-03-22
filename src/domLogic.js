@@ -4,7 +4,7 @@
 
 import "./eventListenerModule"; 
 
-import { checkForDOMValue } from "./conditionalLogic";
+// import { checkForDOMValue } from "./conditionalLogic";
 
 export function addProjectFormInput() {
   const inputField = document.createElement("input");
@@ -63,7 +63,7 @@ export function appendProjectNameToDOM(value) {
 
   mainContentProjectContainer.appendChild(projectNameElementMain); 
 
-  checkForDOMValue();
+  // checkForDOMValue();
 
 } 
 
