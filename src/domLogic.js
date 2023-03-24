@@ -6,7 +6,8 @@ import "./eventListenerModule";
 
 // import { checkForDOMValue } from "./conditionalLogic";
 
-export function addProjectFormInput() {
+export function addProjectFormInput() { 
+
   const inputField = document.createElement("input");
 
   inputField.classList.add("input-field-text");
@@ -40,6 +41,7 @@ export function addProjectFormInput() {
   btnContainer.appendChild(cancelBtn);
 
   inputContainer.appendChild(btnContainer);
+
 } 
 
 
