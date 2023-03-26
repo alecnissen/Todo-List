@@ -3,7 +3,7 @@
 // import { once } from "events";
 import { removeInputFieldContainer } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
-import { storeUserValue } from "./arrayStorage"; 
+import { storeProjectName } from "./arrayStorage"; 
 
 
 const addProjectButton = document.getElementById("add-project-btn"); 
@@ -20,22 +20,26 @@ const addProjectButton = document.getElementById("add-project-btn");
 
  addProjectButton.addEventListener("click", function(){ 
  
+   addProjectFormInput();
 
-  addProjectFormInput();
    
    [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => { 
 
     let userValue = document.getElementsByClassName("input-field-text")[0].value;
 
-    console.log(userValue);
+    // console.log(userValue2);
+
+    // console.log(userValue);
 
     // if (userValue === "") { 
     //   addProjectButton.disabled = "true";
     // }  // if user value has been appended to DOM 
 
-    storeUserValue(userValue); 
+    storeProjectName(userValue); 
 
     appendProjectNameToDOM(userValue); 
+
+  
 
 
     // once appended to the DOM, call another function stores that value into an array 

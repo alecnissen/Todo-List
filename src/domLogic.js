@@ -57,6 +57,10 @@ export function appendProjectNameToDOM(value) {
 
   let projectNameElementMain = document.createElement("div");
 
+  projectNameElement.style.fontSize = "3rem";
+
+  projectNameElementMain.style.fontSize = "3rem";
+
    projectNameElement.innerText = userInputValue;
 
    projectNameElementMain.innerText = userInputValue;
