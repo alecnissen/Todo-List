@@ -46,5 +46,17 @@ import "./arrayStorage";
 
 // It should also add the add todo btn along with cancel btn 
 
-// 
+
+
+// work on fixing the btn issue, creating multiple elements on btn click, 
+
+// if the user value is empty disable the btn or hide it, 
+
+// I have tried both methods with no luck, 
+
+// I was working with someone yesterday, and it seemed like the right method, 
+
+// but I am very confused on why it is not working, I would think placing it before the function call would do the trick, 
+
+// I will experiement with where the code is placed. 
 

@@ -15,6 +15,11 @@ import { storeProjectName } from "./arrayStorage";
 
 const addProjectButton = document.getElementById("add-project-btn"); 
 
+// addProjectButton.style.color = "purple";
+
+// console.log(addProjectButton);
+
+
 // let projectSectionButton = document.getElementsByClassName("project-section-btn");
 
 // let projectSectionNameButtonArray = Array.from(projectSectionButton); 
@@ -30,17 +35,26 @@ const addProjectButton = document.getElementById("add-project-btn");
 // } 
 
 
- addProjectButton.addEventListener("click", function(){ 
- 
-   addProjectFormInput();
+ addProjectButton.addEventListener("click", function() {
 
-   [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => { 
+  // addProjectButton.style.color = "yellow"; 
 
-    let userValue = document.getElementsByClassName("input-field-text")[0].value;
-
-    // if (userValue === "") { 
-    //   addProjectButton.disabled = "true";
-    // }  // if user value has been appended to DOM 
+  // console.log(addProjectButton); 
+  
+  
+  addProjectFormInput(); // btn clicked generate form 
+  
+  [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {  // if user presses add, get the first last element 
+    
+    let userValue = document.getElementsByClassName("input-field-text")[0].value; // get value, 
+    
+    if (userValue === "") {  // conditional if user enters nothing, 
+      // addProjectButton.disabled = true; // disable btn, tried w/ and w/o ""
+      console.log(userValue); 
+      addProjectButton.style.display = "none";
+    }  else { 
+      return; // end function, 
+    } 
 
     storeProjectName(userValue); 
 

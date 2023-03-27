@@ -76,7 +76,7 @@ export function appendProjectNameToDOM(value) {
     projectNameElementMain.innerText = userInputValue;
     mainContentProjectContainer.appendChild(projectNameElementMain); 
 
-    let someBtn = document.createElement("button"); 
+    let someBtn = document.createElement("button");
 
     someBtn.textContent = "Add ToDo";
 
@@ -85,7 +85,7 @@ export function appendProjectNameToDOM(value) {
   }) 
 
 
-  projectContainer.appendChild(projectNameElementProjectSection);
+projectContainer.appendChild(projectNameElementProjectSection);
 
 
 
