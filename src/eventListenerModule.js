@@ -5,9 +5,21 @@ import { removeInputFieldContainer } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 import { storeProjectName } from "./arrayStorage"; 
 
+// tried to grab project name from project section, 
+
+// put them in the global scope for access, 
+
+// tried to add event listener, to it but recevied type error, 
+
+
 
 const addProjectButton = document.getElementById("add-project-btn"); 
 
+// let projectSectionButton = document.getElementsByClassName("project-section-btn");
+
+// let projectSectionNameButtonArray = Array.from(projectSectionButton); 
+
+// console.log(projectSectionNameButtonArray);
 // if a condition is met run this block below? 
 // if input field is blank, don't run 
 
@@ -15,21 +27,16 @@ const addProjectButton = document.getElementById("add-project-btn");
 
 // if (inputFieldText.textContent === '') { 
   
-// }
+// } 
 
 
  addProjectButton.addEventListener("click", function(){ 
  
    addProjectFormInput();
 
-   
    [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => { 
 
     let userValue = document.getElementsByClassName("input-field-text")[0].value;
-
-    // console.log(userValue2);
-
-    // console.log(userValue);
 
     // if (userValue === "") { 
     //   addProjectButton.disabled = "true";
@@ -38,11 +45,6 @@ const addProjectButton = document.getElementById("add-project-btn");
     storeProjectName(userValue); 
 
     appendProjectNameToDOM(userValue); 
-
-  
-
-
-    // once appended to the DOM, call another function stores that value into an array 
 
     let projectDOMContainer = document.getElementById("input-field-container");
 
@@ -64,8 +66,47 @@ const addProjectButton = document.getElementById("add-project-btn");
    cancelBtn.addEventListener("click", function(){
     let projectDOMContainer = document.getElementById("input-field-container"); 
     projectDOMContainer.textContent = "";
-   })
-})
+   }) 
+}) 
+
+
+
+
+// attempts 
+
+// projectSectionNameButtonArray.addEventListener("click", function(){
+//   console.log("print something");
+// })
+
+// let projectSectionNameDiv = document.getElementsByClassName("project-section-btn")[0];
+
+// let arr = Array.from(projectSectionNameDiv);
+
+// console.log(arr);
+
+// arr.addEventListener("click", function(){
+//   console.log("This project sucks!");
+// }) 
+
+
+// projectSectionNameDiv.addEventListener("click", function(){
+//   console.log("hi, I am working");
+// }) 
+
+
+
+// projectNameElementProjectSection.addEventListener("click", function(e){
+//     console.log("Hey I'm in here");
+//     projectNameElementMain.innerText = userInputValue;
+//     mainContentProjectContainer.appendChild(projectNameElementMain); 
+
+//     let someBtn = document.createElement("button"); 
+
+//     someBtn.textContent = "Add ToDo";
+
+//     mainContentProjectContainer.appendChild(someBtn);
+
+//   }) 
 
 
 

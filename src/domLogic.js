@@ -2,6 +2,7 @@
 // call a function which handles DOM logic
 // export then import within another file 
 
+import { some } from "lodash";
 import "./eventListenerModule"; 
 
 // import { checkForDOMValue } from "./conditionalLogic";
@@ -53,28 +54,56 @@ export function appendProjectNameToDOM(value) {
 
   let mainContentProjectContainer = document.querySelector(".main-content-section-container"); 
 
-  let projectNameElement = document.createElement("div"); 
+  let projectNameElementProjectSection = document.createElement("div"); 
+
+  projectNameElementProjectSection.classList.add("project-section-btn");
 
   let projectNameElementMain = document.createElement("div");
 
-  projectNameElement.style.fontSize = "3rem";
+  projectNameElementProjectSection.style.fontSize = "3rem";
 
   projectNameElementMain.style.fontSize = "3rem";
 
-   projectNameElement.innerText = userInputValue;
+  projectNameElementProjectSection.innerText = userInputValue; 
 
-   projectNameElementMain.innerText = userInputValue;
+  /// call a function here, that takes the project div 
 
-  projectContainer.appendChild(projectNameElement);
+  // adds an event event listener to it, 
+  
 
-  mainContentProjectContainer.appendChild(projectNameElementMain); 
+  projectNameElementProjectSection.addEventListener("click", function(e){
+    console.log("Hey I'm in here");
+    projectNameElementMain.innerText = userInputValue;
+    mainContentProjectContainer.appendChild(projectNameElementMain); 
 
-  // checkForDOMValue();
+    let someBtn = document.createElement("button"); 
+
+    someBtn.textContent = "Add ToDo";
+
+    mainContentProjectContainer.appendChild(someBtn); 
+
+  }) 
+
+
+  projectContainer.appendChild(projectNameElementProjectSection);
+
+
 
 } 
 
 
+// function appendProjectToMain() { 
+//   console.log("Hey I'm in here");
+//     projectNameElementMain.innerText = userInputValue;
+//     mainContentProjectContainer.appendChild(projectNameElementMain); 
 
+//     let someBtn = document.createElement("button"); 
+
+//     someBtn.textContent = "Add ToDo";
+
+//     mainContentProjectContainer.appendChild(someBtn); 
+
+// }
 
 
 
