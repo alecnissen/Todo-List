@@ -78,6 +78,11 @@ export function appendProjectNameToDOM(value) {
 
     let someBtn = document.createElement("button");
 
+    someBtn.addEventListener("click", function(){
+      let div = document.createElement("div"); 
+      div.textContent = "blah";
+    })
+
     someBtn.textContent = "Add ToDo";
 
     mainContentProjectContainer.appendChild(someBtn); 

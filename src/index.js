@@ -60,3 +60,17 @@ import "./arrayStorage";
 
 // I will experiement with where the code is placed. 
 
+
+// figuring out the logic for the buttons, user should be able to add multiple projects, 
+
+// one project at a time, if user enters nothing, disable btn, 
+
+// if something changes in the input field, re-enable the btn  
+
+// I am having trouble logging the statement within the input listener, 
+
+// practice in seperate file, I was somehow able to get it to work yesterday, 
+
+// practice in a seperate, if no luck move onto generating the input field based on when user 
+
+// presses the todo btn. 

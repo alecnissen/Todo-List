@@ -1,7 +1,7 @@
 
 
 // import { once } from "events";
-import { removeInputFieldContainer } from "./conditionalLogic";
+// import { removeInputFieldContainer } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 import { storeProjectName } from "./arrayStorage"; 
 
@@ -28,7 +28,7 @@ const addProjectButton = document.getElementById("add-project-btn");
 // } 
 
 
- addProjectButton.addEventListener("click", function() {
+ addProjectButton.addEventListener("click", () => {
   
   
   addProjectFormInput(); // btn clicked generate form 
@@ -37,15 +37,17 @@ const addProjectButton = document.getElementById("add-project-btn");
     
     let userValue = document.getElementsByClassName("input-field-text")[0].value; // get value, 
 
-    console.log(userValue);
+    // console.log(userValue);
 
-    let inputField = document.getElementsByClassName("input-field-text"); 
+    let inputField = document.querySelector(".input-field-text"); 
 
     // let inputFieldArray = Array.from(inputField);
 
     // let inputFieldContainer = document.getElementById("input-field-container");
 
-    // console.log(inputFieldContainer);
+     console.log(inputField); 
+
+    // console.log(inputFieldArray);
 
     if (userValue === "") {  // conditional if user enters nothing, 
       addProjectButton.setAttribute("disabled", ""); // disable btn, tried w/ and w/o ""
@@ -54,17 +56,17 @@ const addProjectButton = document.getElementById("add-project-btn");
       // addProjectButton.style.display = "none";
      } else { 
       return;
-    }
+    } 
   
 
-     inputField.addEventListener("input", () => {
-      console.log("PRINT")
-      if (userValue !== "") { 
-        addProjectButton.disabled = "false";
-      } else { 
-        return;
-      }
-     }
+    inputField.addEventListener("input", () => {
+      console.log("PRINT");
+      // if (userValue !== "") { 
+      //   addProjectButton.disabled = "false";
+      // } else { 
+      //   return;
+      // }
+     }); 
      
     
 
@@ -89,7 +91,7 @@ const addProjectButton = document.getElementById("add-project-btn");
 
   //  cancelBtn.disabled = "true";
 
-   cancelBtn.addEventListener("click", function(){
+   cancelBtn.addEventListener("click", () =>{
     let projectDOMContainer = document.getElementById("input-field-container"); 
     projectDOMContainer.textContent = "";
    }) 
