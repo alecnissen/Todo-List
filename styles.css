@@ -1,10 +1,13 @@
-/* import "/style.scss"; */
+/* import "/style.scss"; */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Rashi+Hebrew:wght@200&family=Noto+Sans+JP&family=Patua+One&family=Permanent+Marker&family=Roboto:ital,wght@1,700&display=swap');
 
 
 body {
   display: grid;
   /* width: 100%; 
     height: 100%; */
+    font-family: 'Patua One', cursive;
   grid-template-columns: 0.2fr 1fr;
   grid-template-areas:
     "header header"
@@ -16,7 +19,7 @@ nav {
   display: grid;
   grid-template-rows: 0.5fr 1fr;
   grid-area: nav;
-  background-color: green;
+  background-color: rgb(29, 109, 29);;
   border: 5px solid black;
   height: 100vh;
 }
@@ -36,11 +39,11 @@ header {
 main {
   grid-area: main;
   width: auto;
-  background-color: skyblue;
+  background-color: rgb(70, 176, 218);
 }
 
 .header-container {
-  background-color: green;
+  background-color: rgb(29, 109, 29);
   grid-area: header;
   padding: 10px;
   border: 5px solid black;
@@ -56,15 +59,17 @@ main {
 #add-project-btn { 
   font-size: 1.5rem;
   color: white; 
-  background-color: green;
+  background-color: rgb(29, 109, 29);
   border: none;
+  font-family: 'Patua One', cursive;
 }  
 
 #add-project-btn:hover { 
   color: white; 
-  background-color: green;
+  background-color: rgb(29, 109, 29);
   border: none;
   font-size: 2rem;
+  font-family: 'Patua One', cursive;
 } 
 
 .project-input-field-container { 
@@ -90,6 +95,7 @@ main {
   font-size: 1.2rem; 
   background-color: red;
   color: white; 
+  font-family: 'Patua One', cursive;
 } 
 
 .add-btn { 

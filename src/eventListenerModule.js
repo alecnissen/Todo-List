@@ -5,13 +5,6 @@ import { removeInputFieldContainer } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 import { storeProjectName } from "./arrayStorage"; 
 
-// tried to grab project name from project section, 
-
-// put them in the global scope for access, 
-
-// tried to add event listener, to it but recevied type error, 
-
-
 
 const addProjectButton = document.getElementById("add-project-btn"); 
 
@@ -36,10 +29,6 @@ const addProjectButton = document.getElementById("add-project-btn");
 
 
  addProjectButton.addEventListener("click", function() {
-
-  // addProjectButton.style.color = "yellow"; 
-
-  // console.log(addProjectButton); 
   
   
   addProjectFormInput(); // btn clicked generate form 
@@ -47,16 +36,39 @@ const addProjectButton = document.getElementById("add-project-btn");
   [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {  // if user presses add, get the first last element 
     
     let userValue = document.getElementsByClassName("input-field-text")[0].value; // get value, 
-    
-    if (userValue === "") {  // conditional if user enters nothing, 
-      // addProjectButton.disabled = true; // disable btn, tried w/ and w/o ""
-      console.log(userValue); 
-      addProjectButton.style.display = "none";
-    }  else { 
-      return; // end function, 
-    } 
 
-    storeProjectName(userValue); 
+    console.log(userValue);
+
+    let inputField = document.getElementsByClassName("input-field-text"); 
+
+    // let inputFieldArray = Array.from(inputField);
+
+    // let inputFieldContainer = document.getElementById("input-field-container");
+
+    // console.log(inputFieldContainer);
+
+    if (userValue === "") {  // conditional if user enters nothing, 
+      addProjectButton.setAttribute("disabled", ""); // disable btn, tried w/ and w/o ""
+      // addProjectButton.disabled = "true";
+      // console.log(userValue); 
+      // addProjectButton.style.display = "none";
+     } else { 
+      return;
+    }
+  
+
+     inputField.addEventListener("input", () => {
+      console.log("PRINT")
+      if (userValue !== "") { 
+        addProjectButton.disabled = "false";
+      } else { 
+        return;
+      }
+     }
+     
+    
+
+    storeProjectName(userValue);
 
     appendProjectNameToDOM(userValue); 
 
