@@ -50,7 +50,7 @@ main {
 } 
 
 .header-title-text-to-do-list { 
- font-size: 2.3rem;
+ font-size: 5rem;
   text-align: center; 
   text-decoration: underline;
   color: white;
@@ -110,4 +110,17 @@ main {
   font-size: 3rem;
   background-color: green;
   color: white;
-} 
+}  
+
+.project-section-name-btn-div {
+  font-size: 2rem; 
+  color: white;
+  text-align: center;
+}  
+
+.main-content-section-project-name-div { 
+  font-size: 5rem;
+  color: white; 
+  text-align: center;
+}
+

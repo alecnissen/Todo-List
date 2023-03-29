@@ -1,85 +1,26 @@
 
-
-// import { once } from "events";
-// import { removeInputFieldContainer } from "./conditionalLogic";
 import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 import { storeProjectName } from "./arrayStorage"; 
 
 
 const addProjectButton = document.getElementById("add-project-btn"); 
 
-// addProjectButton.style.color = "purple";
-
-// console.log(addProjectButton);
-
-
-// let projectSectionButton = document.getElementsByClassName("project-section-btn");
-
-// let projectSectionNameButtonArray = Array.from(projectSectionButton); 
-
-// console.log(projectSectionNameButtonArray);
-// if a condition is met run this block below? 
-// if input field is blank, don't run 
-
-// let inputFieldText = document.getElementsByClassName("input-field-text");
-
-// if (inputFieldText.textContent === '') { 
-  
-// } 
-
-
  addProjectButton.addEventListener("click", () => {
   
-     addProjectButton.disabled = "true";
+  addProjectButton.disabled = "true";
   
-  addProjectFormInput(); // btn clicked generate form  
-
-
-  // let inputFieldValue = document.getElementsByClassName("input-field-text")[0].value;
-
-  // inputFieldValue = document.querySelector(".input-field-text").value;
-
-  // console.log(inputFieldValue);
-
-  // inputFieldValue.addEventListener("input", () => {
-  //   console.log("PRINT");
-  //   // if (inputFieldValue !== "") { 
-  //   //   addProjectButton.disabled = "false";
-  //   // } else { 
-  //   //   return;
-  //   // }
-  //  }); 
+  addProjectFormInput(); 
   
-  [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {  // if user presses add, get the first last element 
+  [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {
     
-    // addProjectButton.disabled = "false"; 
+    let userValue = document.getElementsByClassName("input-field-text")[0].value; 
 
-    let userValue = document.getElementsByClassName("input-field-text")[0].value; // get value, 
-
-    // conditional #1
-
-    if (userValue !== "") {  // conditional if user enters nothing, 
-      // addProjectButton.setAttribute("disabled", "false"); // disable btn, tried w/ and w/o ""
+    if (userValue !== "") { 
       addProjectButton.disabled = false;
-      // console.log(userValue); 
-      // addProjectButton.style.display = "none";
      } else { 
       return;
     } 
-  
-    // conditional #2
-
-    // inputField.addEventListener("input", () => {
-    //   console.log("PRINT");
-    //   // if (userValue !== "") { 
-    //   //   addProjectButton.disabled = "false";
-    //   // } else { 
-    //   //   return;
-    //   // }
-    //  }); 
      
-    
-
     storeProjectName(userValue);
 
     appendProjectNameToDOM(userValue); 
@@ -99,14 +40,28 @@ const addProjectButton = document.getElementById("add-project-btn");
 
    let cancelBtn = document.querySelector(".cancel-btn"); 
 
-  //  cancelBtn.disabled = "true";
-
    cancelBtn.addEventListener("click", () =>{
     let projectDOMContainer = document.getElementById("input-field-container"); 
     projectDOMContainer.textContent = "";
     addProjectButton.disabled = false; 
    }) 
 }) 
+
+
+const navbarProjectNameElement = document.getElementById("project-element-from-navbar-section");
+
+console.log(navbarProjectNameElement); 
+
+// navbarProjectNameElement.addEventListener("click", () => {
+//   console.log("hey"); 
+//   // call the DOM function which handles 
+// })
+
+
+
+
+
+
 
 
 

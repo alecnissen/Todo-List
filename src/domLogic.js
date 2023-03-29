@@ -5,8 +5,6 @@
 import { some } from "lodash";
 import "./eventListenerModule"; 
 
-// import { checkForDOMValue } from "./conditionalLogic";
-
 export function addProjectFormInput() { 
 
   const inputField = document.createElement("input");
@@ -55,30 +53,36 @@ export function appendProjectNameToDOM(value) {
   let mainContentProjectContainer = document.querySelector(".main-content-section-container"); 
 
   let projectNameElementProjectSection = document.createElement("div"); 
+  // get the element and try to use it inside event listener module, 
+  projectNameElementProjectSection.classList.add("project-section-name-btn-div");
 
-  projectNameElementProjectSection.classList.add("project-section-btn");
+  projectNameElementProjectSection.setAttribute("id", "project-element-from-navbar-section"); 
 
-  let projectNameElementMain = document.createElement("div");
+  console.log(projectNameElementProjectSection);
 
-  projectNameElementProjectSection.style.fontSize = "3rem";
+  let projectNameElementMain = document.createElement("div"); 
 
-  projectNameElementMain.style.fontSize = "3rem";
+  projectNameElementMain.classList.add("main-content-section-project-name-div");
 
-  projectNameElementProjectSection.innerText = userInputValue; 
+  projectNameElementProjectSection.innerText = userInputValue;
 
-  /// call a function here, that takes the project div 
+  projectNameElementProjectSection.addEventListener("click", function(e){ 
 
-  // adds an event event listener to it, 
-  
+    // Should go into seperate module, you have listener within your dom, 
 
-  projectNameElementProjectSection.addEventListener("click", function(e){
+    // you need to access that element within the listener, using selector of some sort, 
+
+    // add the listener, then call a DOM function which will handle the properties, 
+
     console.log("Hey I'm in here");
     projectNameElementMain.innerText = userInputValue;
     mainContentProjectContainer.appendChild(projectNameElementMain); 
 
     let someBtn = document.createElement("button");
 
+    
     someBtn.addEventListener("click", function(){
+      someBtn.style.display = "none";
       let div = document.createElement("div"); 
       div.classList.add("todo-pop-up-practice");
       div.textContent = "To-Do Task Form";
