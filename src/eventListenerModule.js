@@ -60,7 +60,7 @@ const addProjectButton = document.getElementById("add-project-btn");
 
     if (userValue !== "") {  // conditional if user enters nothing, 
       // addProjectButton.setAttribute("disabled", "false"); // disable btn, tried w/ and w/o ""
-      addProjectButton.disabled = "false";
+      addProjectButton.disabled = false;
       // console.log(userValue); 
       // addProjectButton.style.display = "none";
      } else { 
@@ -93,7 +93,7 @@ const addProjectButton = document.getElementById("add-project-btn");
     if (inputFieldTextValue === userValue) { 
       projectDOMContainer.textContent = "";
     } else { 
-      return 
+      return;
     } 
   }) 
 
@@ -104,6 +104,7 @@ const addProjectButton = document.getElementById("add-project-btn");
    cancelBtn.addEventListener("click", () =>{
     let projectDOMContainer = document.getElementById("input-field-container"); 
     projectDOMContainer.textContent = "";
+    addProjectButton.disabled = false; 
    }) 
 }) 
 
