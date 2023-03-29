@@ -74,3 +74,7 @@ import "./arrayStorage";
 // practice in a seperate, if no luck move onto generating the input field based on when user 
 
 // presses the todo btn. 
+
+// spend the rest of the time, trying to figure out an input form, 
+
+// 

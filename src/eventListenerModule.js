@@ -30,43 +30,53 @@ const addProjectButton = document.getElementById("add-project-btn");
 
  addProjectButton.addEventListener("click", () => {
   
+     addProjectButton.disabled = "true";
   
-  addProjectFormInput(); // btn clicked generate form 
+  addProjectFormInput(); // btn clicked generate form  
+
+
+  // let inputFieldValue = document.getElementsByClassName("input-field-text")[0].value;
+
+  // inputFieldValue = document.querySelector(".input-field-text").value;
+
+  // console.log(inputFieldValue);
+
+  // inputFieldValue.addEventListener("input", () => {
+  //   console.log("PRINT");
+  //   // if (inputFieldValue !== "") { 
+  //   //   addProjectButton.disabled = "false";
+  //   // } else { 
+  //   //   return;
+  //   // }
+  //  }); 
   
   [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {  // if user presses add, get the first last element 
     
+    // addProjectButton.disabled = "false"; 
+
     let userValue = document.getElementsByClassName("input-field-text")[0].value; // get value, 
 
-    // console.log(userValue);
+    // conditional #1
 
-    let inputField = document.querySelector(".input-field-text"); 
-
-    // let inputFieldArray = Array.from(inputField);
-
-    // let inputFieldContainer = document.getElementById("input-field-container");
-
-     console.log(inputField); 
-
-    // console.log(inputFieldArray);
-
-    if (userValue === "") {  // conditional if user enters nothing, 
-      addProjectButton.setAttribute("disabled", ""); // disable btn, tried w/ and w/o ""
-      // addProjectButton.disabled = "true";
+    if (userValue !== "") {  // conditional if user enters nothing, 
+      // addProjectButton.setAttribute("disabled", "false"); // disable btn, tried w/ and w/o ""
+      addProjectButton.disabled = "false";
       // console.log(userValue); 
       // addProjectButton.style.display = "none";
      } else { 
       return;
     } 
   
+    // conditional #2
 
-    inputField.addEventListener("input", () => {
-      console.log("PRINT");
-      // if (userValue !== "") { 
-      //   addProjectButton.disabled = "false";
-      // } else { 
-      //   return;
-      // }
-     }); 
+    // inputField.addEventListener("input", () => {
+    //   console.log("PRINT");
+    //   // if (userValue !== "") { 
+    //   //   addProjectButton.disabled = "false";
+    //   // } else { 
+    //   //   return;
+    //   // }
+    //  }); 
      
     
 

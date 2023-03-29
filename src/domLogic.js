@@ -80,7 +80,17 @@ export function appendProjectNameToDOM(value) {
 
     someBtn.addEventListener("click", function(){
       let div = document.createElement("div"); 
-      div.textContent = "blah";
+      div.classList.add("todo-pop-up-practice");
+      div.textContent = "To-Do Task Form";
+      // div.style.color = "red";
+      let inputs = document.createElement("input");
+      inputs.style.display = "flex"; 
+      inputs.style.flexDirection = "column";
+      inputs.style.justifyContent = "center";
+      inputs.style.alignItems = "center";
+      // div.appendChild(inputs);
+      mainContentProjectContainer.appendChild(div);
+      mainContentProjectContainer.appendChild(inputs);
     })
 
     someBtn.textContent = "Add ToDo";
