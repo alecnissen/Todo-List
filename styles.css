@@ -102,15 +102,73 @@ main {
   background-color: green;
 } 
 
-.todo-pop-up-practice { 
+.todo-pop-up-container{ 
+  /* display: flex;
+  justify-content: center; */
+  position: absolute;
+  top: 80%; 
+  left: 60%; 
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 50%; 
+  width: 50%;
+  padding: 25px; 
+  /* font-size: 3rem;
+  background-color: white;
+  color: black; */
+}   
+
+.submit-task-btn-pop-up-field { 
+  display: flex; 
+  justify-content: center;
+  color: white;
+  background-color: black;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 5px; 
+  width: 100px;
+} 
+
+.pop-up-content { 
+  background-color: rgba(0, 0, 0, 0.6) ;
+  height: 100%; 
+  width: 100%; 
+  position: absolute;
+  top: 0; 
   display: flex;
   justify-content: center;
-  width: 100%; 
-  height: 100%;
-  font-size: 3rem;
-  background-color: green;
-  color: white;
+  align-items: center;
 }  
+
+/* .title-input-field-styles { 
+  width: 100%;
+} */
+
+.close-btn-to-do-input { 
+  position: absolute;
+  top: -5px; 
+  left: -8px; 
+  background: #fff;
+  height: 20px; 
+  width: 20px;
+  border-radius: 50%; 
+  cursor: pointer;
+
+} 
+
+.submit-task-btn-container-styles { 
+  display: flex;
+  justify-content: center;
+  margin: 15px; 
+}
+
+/* .pop-up-content { 
+  position: relative;
+} */
 
 .project-section-name-btn-div {
   font-size: 2rem; 
@@ -122,5 +180,5 @@ main {
   font-size: 5rem;
   color: white; 
   text-align: center;
-}
+} 
 

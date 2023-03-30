@@ -1,6 +1,7 @@
-import { addProjectFormInput, appendProjectNameToDOM, userInputValue } from "./domLogic"; 
+import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic"; 
 
 import "./eventListenerModule"; 
+
 
 // console.log(projectContainer); 
 
@@ -52,31 +53,31 @@ import "./eventListenerModule";
 
 // it determines if the book has been added remove it 
 
-console.log(userInputValue);
+// console.log(userInputValue);
 
-export function removeInputFieldContainer() { 
+// export function removeInputFieldContainer() { 
 
-    // let projectDOMContainer = document.getElementById("input-field-container"); 
+//     // let projectDOMContainer = document.getElementById("input-field-container"); 
 
-    // let children = projectDOMContainer.children; 
+//     // let children = projectDOMContainer.children; 
 
-    // let lastChild = projectDOMContainer.lastChild;  
+//     // let lastChild = projectDOMContainer.lastChild;  
 
-//     let projectDOMContainer = document.getElementById("input-field-container");
+// //     let projectDOMContainer = document.getElementById("input-field-container");
 
-//     let inputFieldTextElement = document.querySelector(".input-field-text");
+// //     let inputFieldTextElement = document.querySelector(".input-field-text");
 
-//     let inputFieldTextValue = inputFieldTextElement.value; 
+// //     let inputFieldTextValue = inputFieldTextElement.value; 
 
-//    console.log(inputFieldTextElement); 
+// //    console.log(inputFieldTextElement); 
 
-//    if (inputFieldTextValue === userInputValue) { 
-//      projectDOMContainer.textContent = "";
-//    } else { 
-//      return 
-//    }
+// //    if (inputFieldTextValue === userInputValue) { 
+// //      projectDOMContainer.textContent = "";
+// //    } else { 
+// //      return 
+// //    }
 
 
-} 
+// } 
 
 // user value is not defined, 

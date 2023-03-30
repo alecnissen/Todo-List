@@ -22,9 +22,9 @@ export function storeProjectName(value) {
 
     const projectNameStorage = localStorage.getItem("user-input");
 
-    console.log(projectNameStorage);
+    // console.log(projectNameStorage);
 
-    console.log(projectArray);
+    // console.log(projectArray);
 } 
 
 

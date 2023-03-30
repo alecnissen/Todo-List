@@ -3,6 +3,7 @@
 // export then import within another file 
 
 import { some } from "lodash";
+// import { contentType } from "mime-types";
 import "./eventListenerModule"; 
 
 export function addProjectFormInput() { 
@@ -52,13 +53,15 @@ export function appendProjectNameToDOM(value) {
 
   let mainContentProjectContainer = document.querySelector(".main-content-section-container"); 
 
+  console.log(mainContentProjectContainer.children);
+
   let projectNameElementProjectSection = document.createElement("div"); 
   // get the element and try to use it inside event listener module, 
   projectNameElementProjectSection.classList.add("project-section-name-btn-div");
 
   projectNameElementProjectSection.setAttribute("id", "project-element-from-navbar-section"); 
 
-  console.log(projectNameElementProjectSection);
+  // console.log(projectNameElementProjectSection);
 
   let projectNameElementMain = document.createElement("div"); 
 
@@ -68,38 +71,144 @@ export function appendProjectNameToDOM(value) {
 
   projectNameElementProjectSection.addEventListener("click", function(e){ 
 
-    // Should go into seperate module, you have listener within your dom, 
+// if (projectNameElementMain.includes(projectNameElementProjectSection)) { 
+//   console.log("true");
+// }
 
-    // you need to access that element within the listener, using selector of some sort, 
-
-    // add the listener, then call a DOM function which will handle the properties, 
+    // projectNameElementProjectSection.disabled = true; 
 
     console.log("Hey I'm in here");
     projectNameElementMain.innerText = userInputValue;
     mainContentProjectContainer.appendChild(projectNameElementMain); 
 
-    let someBtn = document.createElement("button");
+    
+    let addToDoBtn = document.createElement("button");
 
     
-    someBtn.addEventListener("click", function(){
-      someBtn.style.display = "none";
-      let div = document.createElement("div"); 
-      div.classList.add("todo-pop-up-practice");
-      div.textContent = "To-Do Task Form";
-      // div.style.color = "red";
-      let inputs = document.createElement("input");
-      inputs.style.display = "flex"; 
-      inputs.style.flexDirection = "column";
-      inputs.style.justifyContent = "center";
-      inputs.style.alignItems = "center";
-      // div.appendChild(inputs);
-      mainContentProjectContainer.appendChild(div);
-      mainContentProjectContainer.appendChild(inputs);
-    })
+    // when btn is clicked it will generate a pop-up form 
+    // I think you need a container, a div that holds the content, append the div to the container, 
+    
+    addToDoBtn.addEventListener("click", function(){  
+      
+      // if (mainContentProjectContainer.includes(someBtn)) {
+      //   someBtn.disabled = true;
+      // }
 
-    someBtn.textContent = "Add ToDo";
+    
 
-    mainContentProjectContainer.appendChild(someBtn); 
+      // projectNameElementProjectSection.disabled = true; 
+
+      // someBtn.style.display = "none";
+
+      let contentContainer = document.createElement("container"); 
+
+      contentContainer.classList.add("todo-pop-up-container"); 
+
+      let titleOfToDoInputForm = document.createElement("p"); 
+
+      titleOfToDoInputForm.textContent = "Create Task" 
+
+      titleOfToDoInputForm.style.textDecoration = " underline";
+
+      let submitTaskBtn = document.createElement("button"); 
+
+      // in order to center it you need to append this element 
+
+      // to another container 
+
+      let submitTaskBtnContainer = document.createElement("div"); 
+
+      submitTaskBtnContainer.classList.add("submit-task-btn-container-styles");
+
+      submitTaskBtn.classList.add("submit-task-btn-pop-up-field");
+
+      submitTaskBtn.textContent = "Add To-Do"; 
+
+      // let input = document.createElement("input");
+
+      let popUpContent = document.createElement("div");
+
+      popUpContent.classList.add("pop-up-content");
+
+      let input = document.createElement("input");
+
+      input.classList.add("title-input-field-styles");
+
+      let inputLabel = document.createElement("label");
+
+      inputLabel.textContent = "Title"; 
+
+      let descriptionElement = document.createElement("textarea"); 
+
+      let descriptionElementLabel = document.createElement("label"); 
+
+      descriptionElementLabel.textContent = "Description";
+
+      let closeBtn = document.createElement("img"); 
+
+      closeBtn.classList.add("close-btn-to-do-input")
+
+      closeBtn.src = "../close-circle.png"; 
+
+      let urgencyLabel = document.createElement("label");
+
+      urgencyLabel.textContent = "Urgency";
+
+      let urgencyDropDown = document.createElement("select"); 
+
+      urgencyDropDown.textContent = "Urgency";
+
+      urgencyDropDown.classList.add("urgency-dropdown-styles");
+
+
+
+      let urgencyHigh = document.createElement("option"); 
+
+      urgencyHigh.textContent = "High" 
+
+      let urgencyMedium = document.createElement("option"); 
+
+      urgencyMedium.textContent = "Medium"; 
+
+      let urgencyLow = document.createElement("option"); 
+
+      urgencyLow.textContent = "Low";
+      
+      urgencyDropDown.appendChild(urgencyHigh);
+
+      urgencyDropDown.appendChild(urgencyMedium);
+
+      urgencyDropDown.appendChild(urgencyLow); 
+
+
+      submitTaskBtnContainer.appendChild(submitTaskBtn);
+
+      contentContainer.appendChild(closeBtn);
+
+      contentContainer.appendChild(titleOfToDoInputForm); 
+      
+      contentContainer.appendChild(inputLabel);
+
+      contentContainer.appendChild(input); 
+
+      contentContainer.appendChild(descriptionElementLabel); 
+      
+      contentContainer.appendChild(descriptionElement);
+
+      contentContainer.appendChild(urgencyLabel);
+
+      contentContainer.appendChild(urgencyDropDown);
+      
+      contentContainer.appendChild(submitTaskBtnContainer);
+
+      // should append elements to the content div, then append to container? 
+
+      mainContentProjectContainer.appendChild(contentContainer);
+    }) 
+
+    addToDoBtn.textContent = "Add ToDo";
+
+    mainContentProjectContainer.appendChild(addToDoBtn); 
 
   }) 
 
@@ -109,6 +218,8 @@ projectContainer.appendChild(projectNameElementProjectSection);
 
 
 } 
+
+
 
 
 // function appendProjectToMain() { 

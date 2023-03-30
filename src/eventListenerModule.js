@@ -48,9 +48,15 @@ const addProjectButton = document.getElementById("add-project-btn");
 }) 
 
 
-const navbarProjectNameElement = document.getElementById("project-element-from-navbar-section");
+// const navbarProjectNameElement = document.getElementById("project-element-from-navbar-section");
 
-console.log(navbarProjectNameElement); 
+// console.log(navbarProjectNameElement); 
+
+
+
+// let x = document.querySelectorAll(".input-field-text"); 
+
+// console.log(x); 
 
 // navbarProjectNameElement.addEventListener("click", () => {
 //   console.log("hey"); 

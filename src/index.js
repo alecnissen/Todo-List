@@ -136,3 +136,81 @@ import "./arrayStorage";
 // I'm really not sure why this is happening, I have not ran into this issue yet, 
 
 // importing and exporting and using functions/variables from other modules seemed very straightforward, 
+
+// I would just work on the function in the meantime, keeping everything within the same file, 
+
+// work on issue on clicking project name in projects section 
+
+// it should not append multiple btns. 
+
+// that will cause issues 
+
+// well thinking generally, similar to the previous issue, 
+
+// I need to somehow disable the btn/name of the element, after it has been clicked 
+
+// so the user cannot add another btn, 
+
+// prevent the user from adding another btn, after clicking the btn, 
+
+// If the user value matches what is already in the main content section 
+
+
+// first work on the btn appending issue, if the user clicks the project name again, 
+
+// it will keep adding btn's, don't add more btn's 
+
+// don't add the project again, if it already EXISTS IN THE MAIN CONTAINER 
+
+// NOW TOGGLING BACK AND FORTH BETWEEN TWO PROJECTS 
+
+// YOU ARE SIMPLYING REPLACING THE PROJECT WITHIN THE CONTAINER, 
+
+// ONLY ONE PROJECT CAN BE SHOWN IN THE CONTAINER, 
+
+// the conditional to stop appending multiple projet's to the main content section, 
+
+// the conditional will check if that project element already exists in the main content section, 
+
+
+// the problem seems to be the buttons appending, I need to find a way to prevent the btn's from keeping on appending, 
+
+// if the btn already exists the main container, then don't append, or disable, hide, or remove element 
+
+// I am running into some many problems with to do list, 
+
+// I am trying to keep things in modules and keep the logic/event listeners seperate from the DOM Logic, 
+
+// I want access to the project name element within the event listener, 
+
+// so if the user clicks the project in the little sidebar it gets appended to the DOM, 
+
+// well right now I am performing DOM stuff with event listeners, 
+
+// but that element is only available when the btn is clicked, 
+
+// I guess my question is can I keep my current logic, within my DOM module? 
+
+// The problem is that I want to access a particular but that element is created within a listener, 
+
+// basically the user enters name of project presses add btn, the value gets passed to a function which creates the DOM element 
+
+// such as appending to the projects section and the main content section, 
+
+
+
+// Running into a lot of problems with to do 
+
+// basically I want to access an element in a different module 
+
+// problem is that element is dynamically created within an event listener, 
+
+// I would like to keep my DOM and logic stuff seperate, 
+
+// currently I grabbed the element in the DOM module, and added an event listener to it, 
+
+// now I have to use logic, to make sure the user cannot keep adding the same btn to the DOM based on btn click, 
+
+// basically my question is my current domLogic module ok? Adding an event listener and logic within the dom module 
+
+// It does not seem right but I don't see any other way to do this. 
