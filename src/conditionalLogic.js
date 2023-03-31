@@ -2,8 +2,7 @@ import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 
 import "./eventListenerModule"; 
 
-
-// console.log(projectContainer); 
+console.log()
 
 // if the container, includes the element, remove it  
 

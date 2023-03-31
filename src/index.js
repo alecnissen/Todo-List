@@ -214,3 +214,75 @@ import "./arrayStorage";
 // basically my question is my current domLogic module ok? Adding an event listener and logic within the dom module 
 
 // It does not seem right but I don't see any other way to do this. 
+
+// how can I stop the add -todo btns from appending upon each button click? 
+
+// everything is attached within event listeners, 
+
+// click add project btn form is generated, add btn is pressed value is saved 
+
+// that value is passed to another function, well the function is called then, 
+
+// can we call the function at a different time, why? 
+
+// shouldnt it be passed and called as soon as you get value? 
+
+// can I just create another function, 
+
+// one that stores the user value, 
+
+// one that returns the user value appended to the DOM? 
+
+// you pass the value to another function, 
+
+// that function returns that userValue appended to the DOM/containers 
+
+// capture it;s return value from another function, 
+
+// add an event listener to that function, 
+
+// so lets try to make another function 1 that takes the value and appends to container, DOM 
+
+// I will now try to add the calender option to my todo form 
+
+// another which takes that function above and adds a listener to it, using the logic inside . 
+
+// expierment working with two functions, saving one function to variable, adding the DOM stuff return a value, 
+
+// take that function expression add a listener to it. 
+
+// well the problem is that every time I click the add project btn 
+
+// it will keep appending more add-todo btns to the DOM, 
+
+// because when the form pops up 
+
+// and the user hits the add btn, 
+
+// the function that handles DOM is called, 
+
+// is there a way I can isolate the project section name element? 
+
+// well what I was thinking of yesterday, 
+
+// is can I make a seperate function? 
+
+// can that function store a variable? userValue? 
+
+// then can that function be called? 
+
+// I'm not even sure what the hell to even do 
+
+// that function is being called within the listener, 
+
+// so every time you click that btn or project name, it will keep making btns 
+
+// determine when it's time to append to the DOM ?
+
+// one function to store value 
+
+// one function to take/access that value and then append to DOM 
+
+// store the value, the function can be called there, 
+
+// then 

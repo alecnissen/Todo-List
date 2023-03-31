@@ -18,7 +18,7 @@ const addProjectButton = document.getElementById("add-project-btn");
     if (userValue !== "") { 
       addProjectButton.disabled = false;
      } else { 
-      return;
+      return; 
     } 
      
     storeProjectName(userValue);

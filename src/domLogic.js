@@ -77,12 +77,13 @@ export function appendProjectNameToDOM(value) {
 
     // projectNameElementProjectSection.disabled = true; 
 
-    console.log("Hey I'm in here");
+    console.log("Hey you clicked the project name");
+
     projectNameElementMain.innerText = userInputValue;
+
     mainContentProjectContainer.appendChild(projectNameElementMain); 
 
-    
-    let addToDoBtn = document.createElement("button");
+    let addToDoBtn = document.createElement("button"); 
 
     
     // when btn is clicked it will generate a pop-up form 
@@ -172,7 +173,17 @@ export function appendProjectNameToDOM(value) {
 
       let urgencyLow = document.createElement("option"); 
 
-      urgencyLow.textContent = "Low";
+      urgencyLow.textContent = "Low"; 
+
+      let datePickerLabel = document.createElement("label");
+
+      datePickerLabel.textContent = "Due Date";
+
+      let datePicker = document.createElement("input"); 
+
+      datePicker.type = "date";
+
+      console.log(datePicker);
       
       urgencyDropDown.appendChild(urgencyHigh);
 
@@ -197,9 +208,15 @@ export function appendProjectNameToDOM(value) {
 
       contentContainer.appendChild(urgencyLabel);
 
-      contentContainer.appendChild(urgencyDropDown);
+      contentContainer.appendChild(urgencyDropDown); 
+
+      contentContainer.appendChild(datePickerLabel);
+
+      contentContainer.appendChild(datePicker);
       
-      contentContainer.appendChild(submitTaskBtnContainer);
+      contentContainer.appendChild(submitTaskBtnContainer); 
+
+    
 
       // should append elements to the content div, then append to container? 
 
