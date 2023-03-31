@@ -151,6 +151,10 @@ export function appendProjectNameToDOM(value) {
 
       closeBtn.src = "../close-circle.png"; 
 
+      closeBtn.addEventListener("click", function(){
+        contentContainer.style.display = "none";
+      })
+
       let urgencyLabel = document.createElement("label");
 
       urgencyLabel.textContent = "Urgency";
