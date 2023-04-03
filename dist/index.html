@@ -19,20 +19,56 @@
     </main>
     <nav>
         <div class="navbar-home-content-container"> 
-      <h1 class="navbar-home-content-text">Home</h1>
+      <h1 id="navbar-home-content-text">Home</h1>
     </div>
 
-    <div class="navbar-your-projects-container"> 
-    <h1 class="navbar-your-projects-title-text">Your Projects</h1>
-    <button id="add-project-btn">  + Add Project</button>
-    <div id="input-field-container"></div>
+    <div id="navbar-your-projects-container"> 
+    <h1 id="navbar-your-projects-title-text">Your Projects</h1>
+    <button data-modal-target="#modal" id="add-project-btn">  + Add Project</button>
+    <!-- <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Example Modal</div> 
+        <button class="close-button">&times;</button>
+        <div class="modal-body"> 
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto neque excepturi ratione totam? Illum cumque voluptatum optio reiciendis deleniti, fugiat iste repellendus magni iure quo explicabo debitis perspiciatis voluptatem rerum qui neque maiores unde vero aliquid ea numquam, repudiandae sit, commodi placeat. Doloribus voluptas beatae laborum vel rem error quis, repellat numquam quos veniam nam eligendi earum dolorem tenetur consectetur ad quasi vero obcaecati libero commodi eius quam repellendus quod modi! Aperiam dolorum voluptatum ut autem reiciendis sit temporibus quaerat!
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="input-field-container"></div> -->
 </div>
 
-    </nav>
+    </nav> 
 
-    <div class="pop-up-background"> 
-
+    <!-- <div id="input-form-hidden" hidden> 
+      Hello
+    </div> -->
+<!-- 
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Example Modal</div> 
+        <button data-close-button class="close-button">&times;</button>
+        <div class="modal-body"> 
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto neque excepturi ratione totam? Illum cumque voluptatum optio reiciendis deleniti, fugiat iste repellendus magni iure quo explicabo debitis perspiciatis voluptatem rerum qui neque maiores unde vero aliquid ea numquam, repudiandae sit, commodi placeat. Doloribus voluptas beatae laborum vel rem error quis, repellat numquam quos veniam nam eligendi earum dolorem tenetur consectetur ad quasi vero obcaecati libero commodi eius quam repellendus quod modi! Aperiam dolorum voluptatum ut autem reiciendis sit temporibus quaerat!
+        </div>
+      </div>
     </div>
+    <div id="overlay"></div>
+    <div id="input-field-container"></div> -->
+
+
+     <section class="modal hidden"> 
+      <h3 class="modal-header-text">Name Your Project</h3>
+      <input type="text" class="input-field-modal">
+      <button class="close-btn">X</button> 
+      <button class="Add-Project-btn">Add</button>
+
+     <div class="overlay hidden"></div>
+    </section>
+
+     
+
+
 
     <script src="main.js"></script>
   </body>

@@ -1,8 +1,7 @@
-import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic"; 
+// import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic"; 
 
-import "./eventListenerModule"; 
+// import "./eventListenerModule"; 
 
-console.log()
 
 // if the container, includes the element, remove it  
 

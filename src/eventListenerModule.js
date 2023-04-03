@@ -1,51 +1,129 @@
 
-import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
-import { storeProjectName } from "./arrayStorage"; 
 
 
-const addProjectButton = document.getElementById("add-project-btn"); 
 
- addProjectButton.addEventListener("click", () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
+// import { storeProjectName } from "./arrayStorage"; 
+
+
+// const addProjectButton = document.getElementById("add-project-btn"); 
+
+//  addProjectButton.addEventListener("click", () => {
   
-  addProjectButton.disabled = "true";
+//   addProjectButton.disabled = "true";
   
-  addProjectFormInput(); 
+//   addProjectFormInput(); 
   
-  [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {
+//   [...document.querySelectorAll(".add-btn")] .at(-1).addEventListener("click", (e) => {
     
-    let userValue = document.getElementsByClassName("input-field-text")[0].value; 
+//     let userValue = document.getElementsByClassName("input-field-text")[0].value; 
 
-    if (userValue !== "") { 
-      addProjectButton.disabled = false;
-     } else { 
-      return; 
-    } 
+//     if (userValue !== "") { 
+//       addProjectButton.disabled = false;
+//      } else { 
+//       return; 
+//     } 
      
-    storeProjectName(userValue);
+//     storeProjectName(userValue);
 
-    appendProjectNameToDOM(userValue); 
+//     appendProjectNameToDOM(userValue); 
 
-    let projectDOMContainer = document.getElementById("input-field-container");
+//     let projectDOMContainer = document.getElementById("input-field-container");
 
-    let inputFieldTextElement = document.querySelector(".input-field-text");
+//     let inputFieldTextElement = document.querySelector(".input-field-text");
 
-    let inputFieldTextValue = inputFieldTextElement.value; 
+//     let inputFieldTextValue = inputFieldTextElement.value; 
 
-    if (inputFieldTextValue === userValue) { 
-      projectDOMContainer.textContent = "";
-    } else { 
-      return;
-    } 
-  }) 
+//     if (inputFieldTextValue === userValue) { 
+//       projectDOMContainer.textContent = "";
+//     } else { 
+//       return;
+//     } 
+//   }) 
 
-   let cancelBtn = document.querySelector(".cancel-btn"); 
+//    let cancelBtn = document.querySelector(".cancel-btn"); 
 
-   cancelBtn.addEventListener("click", () =>{
-    let projectDOMContainer = document.getElementById("input-field-container"); 
-    projectDOMContainer.textContent = "";
-    addProjectButton.disabled = false; 
-   }) 
-}) 
+//    cancelBtn.addEventListener("click", () =>{
+//     let projectDOMContainer = document.getElementById("input-field-container"); 
+//     projectDOMContainer.textContent = "";
+//     addProjectButton.disabled = false; 
+//    }) 
+// }) 
+
+
+
+
+
 
 
 // const navbarProjectNameElement = document.getElementById("project-element-from-navbar-section");
