@@ -4,12 +4,25 @@ const overlay = document.querySelector(".overlay");
 
 const addProjectButton = document.getElementById("add-project-btn");
 
-const closeModalBtn = document.querySelector(".btn-close");
+// const closeModalBtn = document.querySelector(".btn-close");
+
+// console.log(closeModalBtn); 
+
+const closeModalBtn = document.getElementsByClassName("close-btn")[0];
+
+console.log(closeModalBtn);
 
 
 
+closeModalBtn.addEventListener("click", () => { 
+  modal.style.display = "none"; 
+  overlay.style.display = "none";
+})
 
-
+addProjectButton.addEventListener("click", () => { 
+  modal.style.display = "flex"; 
+  overlay.style.display = "flex";
+})
 
 
 

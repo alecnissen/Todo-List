@@ -16,6 +16,32 @@ import "./conditionalLogic";
 
 import "./arrayStorage"; 
 
+
+
+// next step is to work on opening the form and closing the form based upon btn click, 
+
+
+// ok seems like just changin the style property, when exiting just change the display to none 
+
+// to activiate the form, change the display the flex, seems to work just fine so I will stick with it 
+
+// posted the git question, dont forget to commit and push this, I think it would be fine, to push these changes to the main branch. 
+
+// starting over was probably a good thing, 
+
+// next we want to capture user value, from the input form, and place that value into storage, 
+
+// then we can write a function which will display the contents of the storage to the DOM. 
+
+// before we dive into that, let's look back at the old posts to make sure the game-plan is solid, seems like it's the right path. 
+
+// lets watch a video on z-index and the stacking context to the make sure we fuly understand it. 
+
+
+
+
+
+
 // import "./style.scss";
 
 // work on how you can, hide and show elements in JS depending on btn click, 
