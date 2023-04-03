@@ -1,3 +1,28 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // export function storeUserValue(value) { 
 //     let arr = [];
 
@@ -12,20 +37,20 @@
 // } 
 
 // just add values to the array 
-let projectArray = [];
+// let projectArray = [];
 
-export function storeProjectName(value) { 
+// export function storeProjectName(value) { 
 
-    projectArray.push(value);
+//     projectArray.push(value);
 
-    localStorage.setItem("user-input", projectArray); 
+//     localStorage.setItem("user-input", projectArray); 
 
-    const projectNameStorage = localStorage.getItem("user-input");
+//     const projectNameStorage = localStorage.getItem("user-input");
 
-    // console.log(projectNameStorage);
+//     // console.log(projectNameStorage);
 
-    // console.log(projectArray);
-} 
+//     // console.log(projectArray);
+// } 
 
 
 

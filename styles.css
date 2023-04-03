@@ -3,6 +3,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Rashi+Hebrew:wght@200&family=Noto+Sans+JP&family=Patua+One&family=Permanent+Marker&family=Roboto:ital,wght@1,700&display=swap');
 
 
+
+.modal { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 0.4rem; */
+  width: 450px;
+  /* padding: 1.3rem; */
+  min-height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: green;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  color: white;
+  z-index: 3;
+}  
+
+.modal-header-text { 
+  text-align: center;
+  font-size: 2rem;
+} 
+
+.Add-Project-btn { 
+  /* width: 40px;  */
+  font-size: 1.5rem; 
+  
+} 
+
+.input-field-modal { 
+  font-size: 1.5rem;
+}
+
+
+
+.close-btn { 
+  position: relative;
+  /* right: 55px; */
+  font-size: 1rem; 
+  width: 25px; 
+  left: -210px; 
+  bottom: 160px;  
+}
+
+.overlay { 
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+
+
+
+
+
 body {
   display: grid;
   /* width: 100%; 
@@ -24,8 +88,8 @@ nav {
   height: 100vh;
 }
 
-.navbar-home-content-text, 
-.navbar-your-projects-title-text {
+#navbar-home-content-text, 
+#navbar-your-projects-title-text {
   color: white;
   text-align: center;
   font-size: 2rem;
@@ -146,7 +210,13 @@ main {
 
 /* .title-input-field-styles { 
   width: 100%;
-} */
+} */ 
+
+.create-to-do-form-btn { 
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
 
 .close-btn-to-do-input { 
   position: absolute;
@@ -181,4 +251,244 @@ main {
   color: white; 
   text-align: center;
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import "/style.scss"; 
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Rashi+Hebrew:wght@200&family=Noto+Sans+JP&family=Patua+One&family=Permanent+Marker&family=Roboto:ital,wght@1,700&display=swap'); */
+
+
+/* body {
+  display: grid;
+  /* width: 100%; 
+    height: 100%; */
+    /* font-family: 'Patua One', cursive; */
+  /* grid-template-columns: 0.2fr 1fr; */ 
+  /* grid-template-areas:
+    "header header"
+    "nav main"
+    "nav main"; */
+/* } */
+
+/* nav {
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+  grid-area: nav;
+  background-color: rgb(29, 109, 29);;
+  border: 5px solid black;
+  height: 100vh;
+} */
+
+/* .navbar-home-content-text, 
+.navbar-your-projects-title-text {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+}  */
+
+/* header {
+  grid-area: header;
+}  */
+
+/* main {
+  grid-area: main;
+  width: auto;
+  background-color: rgb(70, 176, 218);
+} */
+
+/* .header-container {
+  background-color: rgb(29, 109, 29);
+  grid-area: header;
+  padding: 10px;
+  border: 5px solid black;
+}  */
+
+/* .header-title-text-to-do-list { 
+ font-size: 5rem;
+  text-align: center; 
+  text-decoration: underline;
+  color: white;
+} */
+
+/* #add-project-btn { 
+  font-size: 1.5rem;
+  color: white; 
+  background-color: rgb(29, 109, 29);
+  border: none;
+  font-family: 'Patua One', cursive;
+}   */
+
+/* #add-project-btn:hover { 
+  color: white; 
+  background-color: rgb(29, 109, 29);
+  border: none;
+  font-size: 2rem;
+  font-family: 'Patua One', cursive;
+}  */
+
+/* .project-input-field-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}  */
+
+/* .input-field-text { 
+  font-size: 1.5rem;
+  width: 240px; 
+}  */
+
+/* .btn-container { 
+  display: flex;
+  gap: 1em; 
+}  */
+/* 
+.add-btn, 
+.cancel-btn { 
+  font-size: 1.2rem; 
+  background-color: red;
+  color: white; 
+  font-family: 'Patua One', cursive;
+}  */
+
+/* .add-btn { 
+  background-color: green;
+}  */
+/* 
+.todo-pop-up-container{ 
+  /* display: flex;
+  justify-content: center; */
+  /* position: absolute;
+  top: 80%; 
+  left: 60%; 
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 50%; 
+  width: 50%; */
+  /* padding: 25px;  */
+  /* font-size: 3rem;
+  background-color: white;
+  color: black; */
+  
+
+/* .submit-task-btn-pop-up-field { 
+  display: flex; 
+  justify-content: center;
+  color: white;
+  background-color: black;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 5px; 
+  width: auto;
+}  */
+/* 
+.pop-up-content { 
+  background-color: rgba(0, 0, 0, 0.6) ;
+  height: 100%; 
+  width: 100%; 
+  position: absolute;
+  top: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}   */
+
+/* .title-input-field-styles { 
+  width: 100%;
+} */
+
+/* .close-btn-to-do-input { 
+  position: absolute;
+  top: -5px; 
+  left: -8px; 
+  background: #fff;
+  height: 20px; 
+  width: 20px;
+  border-radius: 50%; 
+  cursor: pointer;
+
+}  */
+
+/* .submit-task-btn-container-styles { 
+  display: flex;
+  justify-content: center;
+  margin: 15px; 
+} */
+
+/* .pop-up-content { 
+  position: relative;
+} */
+
+/* .project-section-name-btn-div {
+  font-size: 2rem; 
+  color: white;
+  text-align: center;
+}   */
+
+/* .main-content-section-project-name-div { 
+  font-size: 5rem;
+  color: white; 
+  text-align: center;
+}  */
 

@@ -10,7 +10,23 @@ import "./conditionalLogic";
 
 import "./arrayStorage";
 
-// import "./style.scss";
+// import "./style.scss"; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // check array and local storage,
 
