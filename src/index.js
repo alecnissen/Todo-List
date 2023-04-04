@@ -8,10 +8,20 @@ import "./domLogic";
 
 import "./conditionalLogic";
 
-import "./arrayStorage";
+import "./storage";
 
 // import "./style.scss"; 
 
+
+// should I keep my event listeners in a seperate module? 
+
+// lets test by importing and exporting, 
+
+// Ok input is cleared, now I need to focus on getting the value and passing it to storage. 
+
+// get the value, log the value, save to some type of data structure, 
+
+// 
 
 
 

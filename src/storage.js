@@ -1,5 +1,10 @@
+import "./domLogic";
 
+let array = [];
 
+export default function arrayStorage(arr) { 
+    console.log(arr);
+}
 
 
 

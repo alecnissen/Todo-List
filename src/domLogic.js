@@ -1,33 +1,98 @@
+import "./storage";
+
 const modal = document.querySelector(".modal");
 
 const overlay = document.querySelector(".overlay"); 
 
 const addProjectButton = document.getElementById("add-project-btn");
 
-// const closeModalBtn = document.querySelector(".btn-close");
+const closeModalBtn = document.getElementsByClassName("close-btn")[0]; 
 
-// console.log(closeModalBtn); 
+let modalInputField = document.getElementById("input-field-within-modal"); 
 
-const closeModalBtn = document.getElementsByClassName("close-btn")[0];
+let addProjectBtnWithinModal = document.getElementById("add-project-btn-within-modal"); 
 
-console.log(closeModalBtn);
+let formTagForModule = document.getElementById("form-tag-for-modal"); 
+
+let projectArr = [];
 
 
+// let modalInputFieldValue = document.getElementById("input-field-within-modal").value;
 
-closeModalBtn.addEventListener("click", () => { 
+modalInputField.addEventListener("input", () => { 
+  console.log("data is being entered");
+})
+
+// console.log(modalInputFieldValue);
+
+function preventFormPopUp() { 
+  modal.style.display = "none"; 
+  
+  overlay.style.display = "none";
+
+}
+
+preventFormPopUp();
+
+
+ closeModalBtn.addEventListener("click", (e) => { 
+  // e.preventDefault();
   modal.style.display = "none"; 
   overlay.style.display = "none";
+  // modalInputField.reset();
+  // when you close it, should clear the input field,
+  formTagForModule.reset();
 })
 
-addProjectButton.addEventListener("click", () => { 
+ addProjectButton.addEventListener("click", () => { 
   modal.style.display = "flex"; 
   overlay.style.display = "flex";
+}) 
+
+// store data into array, then add to local storage, 
+
+// create a function which accepts a parameter (an arr) then stores that arr in local storage 
+
+addProjectBtnWithinModal.addEventListener("click", (e) => { 
+  // e.preventDefault();
+  let modalInputFieldValue = modalInputField.value; 
+  console.log(modalInputFieldValue);
+  projectArr.push(modalInputFieldValue);
+  arrayStorage(projectArr);
+  console.log(projectArr);
+  formTagForModule.reset();
+}) 
+
+// let formTagForModule = document.getElementById("form-tag-for-modal"); 
+
+formTagForModule.addEventListener("submit", (e) => { 
+  e.preventDefault();
 })
 
+// let formElement = document.getElementsByTagName("form"); 
+
+// console.log(formElement);
+
+// formElement.addEventListener("click", (e) => { 
+//   e.preventDefault();
+// })
 
 
+// Yeah, I think focusing on the basic idea of how to create a project and 
+// to display the correct project when its sidebar button is clicked would be my first step. 
+// Then you can think about what should be on the project's page: they will need buttons to add a task and what not
 
+// have the user enter a project name, and save the value, pass that value to storage. 
 
+// the value can only be saved, once the user presses the add btn, 
+
+// add an event listener to the add btn, inside the listener, get the input field, capture it's value then console log it 
+
+// the issue of the text in the input field being cleared, 
+
+// well I wrapped it inside a form tag, it works but it refreshes the page, I mean is that a problem, 
+
+// I guess now I'll work on storing the data, 
 
 
 

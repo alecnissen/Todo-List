@@ -41,7 +41,6 @@
 
 
 
-
 // import { addProjectFormInput, appendProjectNameToDOM } from "./domLogic";
 // import { storeProjectName } from "./arrayStorage"; 
 
