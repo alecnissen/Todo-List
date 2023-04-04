@@ -1,15 +1,26 @@
 import "./domLogic";
 
-let array = [];
+// let array = [];
 
-export default function arrayStorage(arr) { 
+export default function arrayStorageSetItem(arr) { 
     console.log(arr);
-}
+
+    // console.log("working")
+
+    localStorage.setItem("user-input", arr); 
+
+    const projectNameStorage = localStorage.getItem("user-input");
+
+    console.log(projectNameStorage)
+} 
 
 
 
 
 
+//     localStorage.setItem("user-input", projectArray); 
+
+//     const projectNameStorage = localStorage.getItem("user-input");
 
 
 

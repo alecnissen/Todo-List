@@ -8,7 +8,9 @@ import "./domLogic";
 
 import "./conditionalLogic";
 
-import "./storage";
+import "./storage"; 
+
+
 
 // import "./style.scss"; 
 
@@ -24,7 +26,21 @@ import "./storage";
 // 
 
 
+// OK so I'm sorta on the right track here, I am gettingthe user value, and passing it a local storage function, 
 
+// I need one function to set the item, the project name 
+
+// another function to get the project name, 
+
+// maybe another function to get all the added todo's of the project, 
+
+// and I believe you need to use obj's instead of array's 
+
+// because the key of the obj === project name, the value/s of the project === the todo's ??? 
+
+
+
+// first lets fix our storage functions to use one set and one get function, 
 
 
 

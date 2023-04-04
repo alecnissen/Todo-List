@@ -1,4 +1,8 @@
-import "./storage";
+// import arrayStorage from "./storage";
+// import defaultExport { arrayStorage } from "./storage";
+// import myExport from "./storage"; 
+
+import arrayStorageSetItem from "./storage.js"
 
 const modal = document.querySelector(".modal");
 
@@ -58,7 +62,7 @@ addProjectBtnWithinModal.addEventListener("click", (e) => {
   let modalInputFieldValue = modalInputField.value; 
   console.log(modalInputFieldValue);
   projectArr.push(modalInputFieldValue);
-  arrayStorage(projectArr);
+  arrayStorageSetItem(projectArr);
   console.log(projectArr);
   formTagForModule.reset();
 }) 
@@ -67,6 +71,8 @@ addProjectBtnWithinModal.addEventListener("click", (e) => {
 
 formTagForModule.addEventListener("submit", (e) => { 
   e.preventDefault();
+  modal.style.display = "none"; 
+  overlay.style.display = "none";
 })
 
 // let formElement = document.getElementsByTagName("form"); 
