@@ -12,6 +12,23 @@ import "./storage";
 
 
 
+
+
+
+// have the project names in an array and pass the array to local storage, so the values don't get overridden each time. 
+
+// get an item from local storage, turn it into an obj using a factory function, 
+
+
+
+
+
+
+
+
+
+
+
 // import "./style.scss"; 
 
 
@@ -42,9 +59,35 @@ import "./storage";
 
 // first lets fix our storage functions to use one set and one get function, 
 
+// well I'm confused on setting and getting items, I tried to make a seperate function but it did not work, 
+
+// one function should set the item, the other function should retrieve the item/project name from local storage, 
+
+// then once the project is retrieved, create logic that allows the user to add todo's, title, description, priority, due date, 
 
 
+// make the project name an obj, 
 
+// how will I store my data? How can I correctly store my data? 
+
+// look over old posts to gameplan,  
+
+
+// How can I properly store the projects name in todo, 
+
+// once stored write a function which displays the contents of the storage, to the DOM. 
+
+// what type of data will my projects be? I think obj's, key is project name, it's todo's are the values, 
+
+// work on changing the project's name to an obj, instead of an array 
+
+// how can I add items to an obj? 
+
+// can I just pass the arr to a factory function which will create a project name obj, key is name value/s are the todo's
+
+// I want to properly store project names into local storage, I am running into a problem that I want to make a project name obj, 
+
+// then pass that obj to local storage, I am just having trouble, with my factory function, 
 
 
 

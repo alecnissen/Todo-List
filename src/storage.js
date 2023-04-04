@@ -1,18 +1,48 @@
+
 import "./domLogic";
 
-// let array = [];
 
-export default function arrayStorageSetItem(arr) { 
-    console.log(arr);
+export default function arrayStorageSetItem(name) { 
 
     // console.log("working")
 
-    localStorage.setItem("user-input", arr); 
+    
+    localStorage.setItem("Project-Names", JSON.stringify(name));  
 
-    const projectNameStorage = localStorage.getItem("user-input");
+    console.log(localStorage);
+    
 
-    console.log(projectNameStorage)
+   getItemStorage();
+
+  //  arrayStorageGetItem(localStorage);
+
+
+    // const projectNameStorage = localStorage.getItem("user-input");
+
+    // console.log(projectNameStorage)
 } 
+
+
+export function getItemStorage() { 
+  let getName = localStorage.getItem("Project-Names"); 
+  
+  console.log(getName); 
+
+  let projectNameObj = projectNameFactory(getName); 
+
+  console.log(projectNameObj);
+}
+
+
+
+
+
+function projectNameFactory(name) { 
+  return { 
+    project: name,
+  }
+} 
+
 
 
 

@@ -2,7 +2,9 @@
 // import defaultExport { arrayStorage } from "./storage";
 // import myExport from "./storage"; 
 
-import arrayStorageSetItem from "./storage.js"
+import arrayStorageSetItem from "./storage.js" 
+
+import getItemStorage from "./storage.js";
 
 const modal = document.querySelector(".modal");
 
@@ -18,16 +20,8 @@ let addProjectBtnWithinModal = document.getElementById("add-project-btn-within-m
 
 let formTagForModule = document.getElementById("form-tag-for-modal"); 
 
-let projectArr = [];
+let projectArray = [];
 
-
-// let modalInputFieldValue = document.getElementById("input-field-within-modal").value;
-
-modalInputField.addEventListener("input", () => { 
-  console.log("data is being entered");
-})
-
-// console.log(modalInputFieldValue);
 
 function preventFormPopUp() { 
   modal.style.display = "none"; 
@@ -57,23 +51,53 @@ preventFormPopUp();
 
 // create a function which accepts a parameter (an arr) then stores that arr in local storage 
 
+
+// function projectNameFactory(name) { 
+//   return { 
+//     project: name,
+//   }
+// } 
+
+
 addProjectBtnWithinModal.addEventListener("click", (e) => { 
   // e.preventDefault();
   let modalInputFieldValue = modalInputField.value; 
-  console.log(modalInputFieldValue);
-  projectArr.push(modalInputFieldValue);
-  arrayStorageSetItem(projectArr);
-  console.log(projectArr);
+  
+  // let NameOfProject = projectNameFactory(modalInputFieldValue);
+
+  // console.log(NameOfProject); 
+
+  projectArray.push(modalInputFieldValue);
+
+  // console.log(projectArray);
+
+  // console.log(projectNameFactory);
+
+  // get the project name obj then pass into local storage, 
+
+  // arrayStorageSetItem(NameOfProject);
+
+  arrayStorageSetItem(projectArray);
+  
   formTagForModule.reset();
 }) 
 
-// let formTagForModule = document.getElementById("form-tag-for-modal"); 
 
 formTagForModule.addEventListener("submit", (e) => { 
   e.preventDefault();
   modal.style.display = "none"; 
   overlay.style.display = "none";
 })
+
+
+
+
+
+
+
+
+
+
 
 // let formElement = document.getElementsByTagName("form"); 
 
