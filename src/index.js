@@ -12,12 +12,52 @@ import "./storage";
 
 
 
+// I think I can just put the array within storage and within DOM logic 
 
+// I can pass the project object to the 
+
+
+// read back over messages to determine game-plan, 
+
+// properly store the data, objects are stored within an array, the array is being overwritten each time, 
+
+// put those items that were added to local storage back into the array, so the array can keep those values, 
+
+// keep the values in storage, values are being overwritten each time, 
+
+// keep the contents of the array and local storage, 
+
+// objects are stored within an array, get the project name object, add to local storage, get the value from local storage, and pass back into array?? 
+
+// now seems like storage data is being overwritten, it's not updating, and not keeping data, 
+
+
+
+
+// an array that stores objects, 
+
+// factory function will make the project name title, give it an ID, and todo's / todo's will be an array, 
+
+// have a global array, 
+
+// double check your factory function, 
+
+// factory must make, a name of project, id,, todo's in an array, 
 
 
 // have the project names in an array and pass the array to local storage, so the values don't get overridden each time. 
 
 // get an item from local storage, turn it into an obj using a factory function, 
+
+// I want to make sure I am properly storing my data, both in the array the global array 
+
+// and within local storage, if user enters info, it should save both of those values, 
+
+// currently I can add values and I am putting name objects within an array 
+
+// but it is overwritting each time and not saving the data, 
+
+// store the array every time setItem is called 
 
 
 

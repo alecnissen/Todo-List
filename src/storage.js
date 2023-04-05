@@ -1,18 +1,48 @@
 
 import "./domLogic";
+import { projectArray } from "./domLogic";
+
+
+
+// function projectNameFactory(name) { 
+//   return { 
+//     project: name,
+//   } 
+// } 
+
+// pass the project name obj to local storage, 
 
 
 export default function arrayStorageSetItem(name) { 
 
-    // console.log("working")
+    // console.log("working") 
 
+    // set the project name, 
     
     localStorage.setItem("Project-Names", JSON.stringify(name));  
 
-    console.log(localStorage);
+    // let projectsContainer = document.getElementById("navbar-your-projects-container"); 
+
+    // console.log(projectsContainer); 
+
+    // get the project names, 
+
+    // let getStorage = localStorage.getItem("Project-Names"); 
+
+
+  // push the project names into local storage, 
+    // projectArray.push(getStorage);
+
+    // console.log(projectArray);
+
+    // console.log(getStorage);
+
+    // projectsContainer.append(JSON.stringify(localStorage));
+
+    // console.log(localStorage);
     
 
-   getItemStorage();
+  //  getItemStorage();
 
   //  arrayStorageGetItem(localStorage);
 
@@ -23,27 +53,34 @@ export default function arrayStorageSetItem(name) {
 } 
 
 
-export function getItemStorage() { 
-  let getName = localStorage.getItem("Project-Names"); 
+
+
+
+
+
+
+
+
+// export function getItemStorage() { 
+//   let getName = localStorage.getItem("Project-Names"); 
   
-  console.log(getName); 
+//   console.log(getName); 
 
-  let projectNameObj = projectNameFactory(getName); 
+//   let projectNameObj = projectNameFactory(getName); 
 
-  console.log(projectNameObj);
-}
-
-
+//   console.log(projectNameObj);
+// }
 
 
 
-function projectNameFactory(name) { 
-  return { 
-    project: name,
-  }
-} 
 
 
+
+// my goal is to have indivdual project name objects, 
+
+// I am able to create project names, but when I use objects it only adds onto, and does not create unique projects. 
+
+// 
 
 
 

@@ -2,6 +2,9 @@
 // import defaultExport { arrayStorage } from "./storage";
 // import myExport from "./storage"; 
 
+import { stringify } from "flatted";
+import "./storage";
+
 import arrayStorageSetItem from "./storage.js" 
 
 import getItemStorage from "./storage.js";
@@ -20,7 +23,9 @@ let addProjectBtnWithinModal = document.getElementById("add-project-btn-within-m
 
 let formTagForModule = document.getElementById("form-tag-for-modal"); 
 
-let projectArray = [];
+export let projectArray = []; 
+
+console.log(projectArray);
 
 
 function preventFormPopUp() { 
@@ -52,35 +57,72 @@ preventFormPopUp();
 // create a function which accepts a parameter (an arr) then stores that arr in local storage 
 
 
-// function projectNameFactory(name) { 
-//   return { 
-//     project: name,
-//   }
-// } 
+function projectNameFactory(name) { 
+  return { 
+    project: name,
+    id: crypto.randomUUID(),
+    todoItems: [],
+  }
+} 
+
+// let x = projectNameFactory("Alec"); 
+
+// let y = projectNameFactory("Amy the little lab");
+
+// console.log(x);
+
+// console.log(y);
 
 
 addProjectBtnWithinModal.addEventListener("click", (e) => { 
   // e.preventDefault();
   let modalInputFieldValue = modalInputField.value; 
+
+  // let x = JSON.stringify(modalInputFieldValue); 
+
+  // console.log(x);
   
   // let NameOfProject = projectNameFactory(modalInputFieldValue);
 
   // console.log(NameOfProject); 
 
-  projectArray.push(modalInputFieldValue);
+  
+  // printProjectNameDOM(modalInputFieldValue);
 
   // console.log(projectArray);
-
+  
   // console.log(projectNameFactory);
-
+  
   // get the project name obj then pass into local storage, 
+  
+  // arrayStorageSetItem(NameOfProject); 
 
-  // arrayStorageSetItem(NameOfProject);
+  // objects into the array, 
+
+
+  // getting the project name object here 
+  
+  let projectNameObject = projectNameFactory(modalInputFieldValue); 
+  
+  projectArray.push(projectNameObject); 
+
+  // console.log(projectArray);
+  // console.log(projectNameObject);
+
+  // passing the project name obj, to localStorage 
 
   arrayStorageSetItem(projectArray);
   
   formTagForModule.reset();
 }) 
+
+
+
+// function printProjectNameDOM(value) { 
+//   let x = document.getElementById("navbar-your-projects-container")
+
+//   x.append(value);
+// }
 
 
 formTagForModule.addEventListener("submit", (e) => { 
@@ -90,6 +132,13 @@ formTagForModule.addEventListener("submit", (e) => {
 })
 
 
+  let getStorage = localStorage.getItem("Project-Names"); 
+
+  let parseData = JSON.parse(getStorage); 
+
+  let string = JSON.stringify(parseData);
+
+  projectArray.push(parseData);
 
 
 
