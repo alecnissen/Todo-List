@@ -18,7 +18,40 @@ let parseData = JSON.parse(getStorage);
 
 projectArray.push(parseData);
 
-// projectArray.clear();
+// console.log(projectArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// projectArray.clear(); 
+
+
+// I am running into some problems, on storage with todo list, my data is being stored correctly,  
+
+// but I am noticing my project names are keep getting nested inside multiple array's, currently 
+
+// project names are are made into objects then objects are passed to array for storage, once the page reloads, 
+
+// I parse through the data in storage, and push the data back into the array, so the data is saved, 
+
+// like I said, array's are being nested within multiple levels and I'm not sure why. 
+
+// picture attached and some snippets of my code attached for context, I can also attach my repo if that helps to further debug this, 
+
+
+
 
 
 

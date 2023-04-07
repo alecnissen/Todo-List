@@ -64,51 +64,15 @@ function projectNameFactory(name) {
   }
 } 
 
-// let x = projectNameFactory("Alec"); 
-
-// let y = projectNameFactory("Amy the little lab");
-
-// console.log(x);
-
-// console.log(y);
 
 
 addProjectBtnWithinModal.addEventListener("click", (e) => { 
   // e.preventDefault();
   let modalInputFieldValue = modalInputField.value; 
 
-  // let x = JSON.stringify(modalInputFieldValue); 
-
-  // console.log(x);
-  
-  // let NameOfProject = projectNameFactory(modalInputFieldValue);
-
-  // console.log(NameOfProject); 
-
-  
-  // printProjectNameDOM(modalInputFieldValue);
-
-  // console.log(projectArray);
-  
-  // console.log(projectNameFactory);
-  
-  // get the project name obj then pass into local storage, 
-  
-  // arrayStorageSetItem(NameOfProject); 
-
-  // objects into the array, 
-
-
-  // getting the project name object here 
-  
   let projectNameObject = projectNameFactory(modalInputFieldValue); 
   
   projectArray.push(projectNameObject); 
-
-  // console.log(projectArray);
-  // console.log(projectNameObject);
-
-  // passing the project name obj, to localStorage 
 
   arrayStorageSetItem(projectArray);
   
@@ -122,12 +86,6 @@ addProjectBtnWithinModal.addEventListener("click", (e) => {
 }) 
 
 
-
-// function printProjectNameDOM(value) { 
-//   let x = document.getElementById("navbar-your-projects-container")
-
-//   x.append(value);
-// }
 
 
 formTagForModule.addEventListener("submit", (e) => { 

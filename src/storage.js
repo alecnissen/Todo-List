@@ -2,15 +2,7 @@
 import "./domLogic";
 import { projectArray } from "./domLogic";
 
-
-
-// function projectNameFactory(name) { 
-//   return { 
-//     project: name,
-//   } 
-// } 
-
-// pass the project name obj to local storage, 
+ 
 
 
 export default function arrayStorageSetItem(name) { 
