@@ -15,41 +15,12 @@ import { projectArray } from "./domLogic";
 
 export default function arrayStorageSetItem(name) { 
 
-    // console.log("working") 
-
-    // set the project name, 
     
     localStorage.setItem("Project-Names", JSON.stringify(name));  
-
-    // let projectsContainer = document.getElementById("navbar-your-projects-container"); 
-
-    // console.log(projectsContainer); 
-
-    // get the project names, 
-
-    // let getStorage = localStorage.getItem("Project-Names"); 
-
-
-  // push the project names into local storage, 
-    // projectArray.push(getStorage);
-
-    // console.log(projectArray);
-
-    // console.log(getStorage);
-
-    // projectsContainer.append(JSON.stringify(localStorage));
-
-    // console.log(localStorage);
     
-
-  //  getItemStorage();
-
-  //  arrayStorageGetItem(localStorage);
-
-
-    // const projectNameStorage = localStorage.getItem("user-input");
-
-    // console.log(projectNameStorage)
+    
+    // localStorage.clear();
+   
 } 
 
 

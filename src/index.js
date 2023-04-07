@@ -10,6 +10,16 @@ import "./conditionalLogic";
 
 import "./storage"; 
 
+import { projectArray } from "./domLogic";
+
+let getStorage = localStorage.getItem("Project-Names"); 
+
+let parseData = JSON.parse(getStorage); 
+
+projectArray.push(parseData);
+
+// projectArray.clear();
+
 
 
 // I think I can just put the array within storage and within DOM logic 

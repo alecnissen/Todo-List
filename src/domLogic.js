@@ -2,7 +2,6 @@
 // import defaultExport { arrayStorage } from "./storage";
 // import myExport from "./storage"; 
 
-import { stringify } from "flatted";
 import "./storage";
 
 import arrayStorageSetItem from "./storage.js" 
@@ -113,7 +112,13 @@ addProjectBtnWithinModal.addEventListener("click", (e) => {
 
   arrayStorageSetItem(projectArray);
   
-  formTagForModule.reset();
+  formTagForModule.reset(); 
+
+  // let getStorage = localStorage.getItem("Project-Names"); 
+
+  // let parseData = JSON.parse(getStorage); 
+
+  // projectArray.push(parseData);
 }) 
 
 
@@ -132,13 +137,11 @@ formTagForModule.addEventListener("submit", (e) => {
 })
 
 
-  let getStorage = localStorage.getItem("Project-Names"); 
+  // let getStorage = localStorage.getItem("Project-Names"); 
 
-  let parseData = JSON.parse(getStorage); 
+  // let parseData = JSON.parse(getStorage); 
 
-  let string = JSON.stringify(parseData);
-
-  projectArray.push(parseData);
+  // projectArray.push(parseData);
 
 
 
