@@ -16,16 +16,75 @@ let getStorage = localStorage.getItem("Project-Names");
 
 let parseData = JSON.parse(getStorage); 
 
-projectArray.push(parseData);
+// console.log(parseData);
 
-// console.log(projectArray);
+// let project 
+
+for (let variable in parseData) { 
+     let project = variable; 
+     let projectValues = Object.values(parseData);
+
+     // console.log(projectValues);
+     // let keys = Object.keys(project);
+     // console.log(project);
+     projectArray.push(projectValues);
+     // console.log(projectArray);
+}  
+
+// projectArray.push(parseData);
+
+console.log(projectArray);
+
+
+
+// const someArray = [ {a: 1}, {b: 2}, {c: 3} ];
+// const newArray = [ ];
+// for (const blah in someArray) {
+//   console.log(blah)
+//   newArray.push(blah);
+// };
+
+// const someArray = [ {a: 1}, {b: 2}, {c: 3} ];
+// const newArray = [ ];
+// for (const project in someArray) {
+//   console.log(project); 
+//   newArray.push(project);
+// };    
+
+
+
+// this
+// const someArray = [ {a: 1}, {b: 2}, {c: 3} ];
+// const newArray = [ ];
+// for (const index in someArray) {
+// //   console.log(index);
+// let x = Object.values(someArray);
+
+// // console.log(x);
+
+//   newArray.push(x);
+
+//   console.log(newArray);
+// };
 
 
 
 
 
 
+// I will next write a function within DOM logic, that will get the local storage, grab the project names, then print them to the DOM, with in the projects section, 
 
+// then if user clicks the project name, attach a listener, then within listener logic append project to the DOM, in both places 
+
+// you will need to clear main content to make way for the new content, using replace child, 
+
+// you need to make sure to convert the obj to a string, make sure it's in the proper format before appending, 
+
+// if just needs to be the straight project name, 
+
+// so once clicked populate with two buttons, delete, and add btn, if add btn is clicked, generate form which will save data and add to todo's within local storage, 
+
+// append those todo's to the DOM as they are added, and remove if they are deleted. 
 
 
 

@@ -24,7 +24,7 @@ let formTagForModule = document.getElementById("form-tag-for-modal");
 
 export let projectArray = []; 
 
-console.log(projectArray);
+// console.log(projectArray);
 
 
 function preventFormPopUp() { 
@@ -71,8 +71,12 @@ addProjectBtnWithinModal.addEventListener("click", (e) => {
   let modalInputFieldValue = modalInputField.value; 
 
   let projectNameObject = projectNameFactory(modalInputFieldValue); 
+
+  // console.log(projectNameObject);
   
   projectArray.push(projectNameObject); 
+
+  // console.log(projectArray);
 
   arrayStorageSetItem(projectArray);
   
@@ -93,6 +97,24 @@ formTagForModule.addEventListener("submit", (e) => {
   modal.style.display = "none"; 
   overlay.style.display = "none";
 })
+
+
+
+// make a function which takes the contents of local storage, 
+// appends the result to the DOM. 
+
+// function printStorageToDom() { 
+//   let getStorageItems = localStorage.getItem("Project-Names"); 
+//   let parsedItems = JSON.parse(getStorageItems);
+//   let string = JSON.stringify(parsedItems);
+//   let navProjectsContainer = document.getElementById("navbar-your-projects-container"); 
+//   navProjectsContainer.append(string);
+// } 
+
+// printStorageToDom();
+
+
+
 
 
   // let getStorage = localStorage.getItem("Project-Names"); 
