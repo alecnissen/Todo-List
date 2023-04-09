@@ -6,7 +6,9 @@ import "./storage";
 
 import arrayStorageSetItem from "./storage.js" 
 
-import getItemStorage from "./storage.js";
+import getItemStorage from "./storage.js"; 
+
+import  projectNameLoop from "./index.js";
 
 const modal = document.querySelector(".modal");
 
@@ -97,6 +99,87 @@ formTagForModule.addEventListener("submit", (e) => {
   modal.style.display = "none"; 
   overlay.style.display = "none";
 })
+
+
+
+ export function printProjectNameToNavbarProjectSection(value) { 
+
+  let projectValue = value; 
+
+  let stringValue = projectValue["project"];  
+
+  let projectDiv = document.createElement("div"); 
+
+  projectDiv.classList.add("project-names-styles-navbar-section");
+
+  projectDiv.append(stringValue);
+
+  let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
+
+  navbarProjectContainer.append(projectDiv);
+
+  // console.log("Hey this works");
+  // console.log("hash slinging slasher");
+}
+
+
+// for (let variable in parseData) { 
+//   let projectIndex = variable; 
+//   let valueInProject = parseData[projectIndex]; 
+
+//   let stringValue = valueInProject["project"];  
+
+//   let projectDiv = document.createElement("div"); 
+
+//   projectDiv.style.textAlign = "center";
+
+//   projectDiv.style.fontSize = "2rem";
+
+//   projectDiv.style.color = "white";
+
+//   projectDiv.append(stringValue);
+
+
+//   console.log(stringValue);
+
+
+
+
+//   // console.log(x); 
+
+//   let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
+
+//   navbarProjectContainer.append(projectDiv);
+
+//   // console.log(valueInProject);
+
+//   // let projectValues = Object.values(parseData);
+
+//   // console.log(projectValues);
+//   // console.log(parseData);
+//   // let keys = Object.keys(project);
+//   // console.log(project); 
+//   projectArray.push(valueInProject);
+
+//   // console.log(projectArray);
+// }  
+
+
+
+
+
+
+
+
+
+
+// 
+
+
+
+
+
+
 
 
 

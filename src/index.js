@@ -10,7 +10,7 @@ import "./conditionalLogic";
 
 import "./storage"; 
 
-import { projectArray } from "./domLogic";
+import { projectArray, printProjectNameToNavbarProjectSection } from "./domLogic";
 
 let getStorage = localStorage.getItem("Project-Names"); 
 
@@ -20,23 +20,69 @@ let parseData = JSON.parse(getStorage);
 
 // let project 
 
+export default function projectNameLoop() {   
 for (let variable in parseData) { 
+
      let projectIndex = variable; 
-     let valueInProject = parseData[projectIndex];
-     // console.log(valueInProject);
 
-     // let projectValues = Object.values(parseData);
+     let valueInProject = parseData[projectIndex]; 
 
-     // console.log(projectValues);
-     // console.log(parseData);
-     // let keys = Object.keys(project);
-     // console.log(project); 
+     printProjectNameToNavbarProjectSection(valueInProject);
+
+     // let stringValue = valueInProject["project"];  
+
+     // let projectDiv = document.createElement("div"); 
+
+     // projectDiv.style.textAlign = "center";
+
+     // projectDiv.style.fontSize = "2rem";
+
+     // projectDiv.style.color = "white";
+
+     // projectDiv.append(stringValue);
+
+     // console.log(stringValue);
+
+     // let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
+
+     // navbarProjectContainer.append(projectDiv);
+
      projectArray.push(valueInProject);
 
-     // console.log(projectArray);
 }  
 
+} 
+
+projectNameLoop();
+
 console.log(projectArray);
+
+
+
+
+// function printProjectNameToNavbarProjectSection() { 
+//      console.log("Hey this works");
+//    }
+   
+
+
+// -- one issue I notice is that if I add a project name, I have to refresh for it to get it too show. !!!
+
+
+// what I want to do next is to take the values/project names that are in local storage, 
+// and append those to the DOM, 
+// first just try to grab the elemnent and append value within the function, then work from there, 
+
+
+
+// OK I am able to do it within the function 
+
+// now try to seperate it, put that logic within the DOM Module, then once you get that working, style within seperate sheet, 
+
+
+
+
+
 
 // projectArray.push(parseData);
 
