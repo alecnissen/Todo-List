@@ -21,19 +21,25 @@ let parseData = JSON.parse(getStorage);
 // let project 
 
 for (let variable in parseData) { 
-     let project = variable; 
-     let projectValues = Object.values(parseData);
+     let projectIndex = variable; 
+     let valueInProject = parseData[projectIndex];
+     // console.log(valueInProject);
+
+     // let projectValues = Object.values(parseData);
 
      // console.log(projectValues);
+     // console.log(parseData);
      // let keys = Object.keys(project);
-     // console.log(project);
-     projectArray.push(projectValues);
+     // console.log(project); 
+     projectArray.push(valueInProject);
+
      // console.log(projectArray);
 }  
 
+console.log(projectArray);
+
 // projectArray.push(parseData);
 
-console.log(projectArray);
 
 
 

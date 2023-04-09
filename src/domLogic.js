@@ -104,12 +104,18 @@ formTagForModule.addEventListener("submit", (e) => {
 // appends the result to the DOM. 
 
 // function printStorageToDom() { 
-//   let getStorageItems = localStorage.getItem("Project-Names"); 
-//   let parsedItems = JSON.parse(getStorageItems);
-//   let string = JSON.stringify(parsedItems);
+//   // let getStorageItems = localStorage.getItem("Project-Names"); 
+//   // let parsedItems = JSON.parse(getStorageItems);
+//   // let string = JSON.stringify(parsedItems);
+//   // let values = Object.values(parsedItems);
+//   // let string = JSON.stringify(parsedItems);
+
+ 
+
 //   let navProjectsContainer = document.getElementById("navbar-your-projects-container"); 
-//   navProjectsContainer.append(string);
+//   navProjectsContainer.append(stupidValue);
 // } 
+
 
 // printStorageToDom();
 
