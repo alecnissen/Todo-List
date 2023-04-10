@@ -100,7 +100,15 @@ formTagForModule.addEventListener("submit", (e) => {
   overlay.style.display = "none";
 })
 
+// add an event listener to each project, loop through all the projects, 
 
+// I'm not sure you need to loop through all the projects, seems like your getting project target value, with e.target.textContent 
+
+// now I believe what you need to figure out is how to display the certain project, based on when the user clicks on the project name in the projects section, 
+
+// remember replace the content within main container, and update accordingly all based on btn click 
+
+// think back to restaurant page, 
 
  export function printProjectNameToNavbarProjectSection(value) { 
 
@@ -108,18 +116,43 @@ formTagForModule.addEventListener("submit", (e) => {
 
   let stringValue = projectValue["project"];  
 
-  let projectDiv = document.createElement("div"); 
+  let projectDivNameBtn = document.createElement("div"); 
 
-  projectDiv.classList.add("project-names-styles-navbar-section");
+  projectDivNameBtn.addEventListener("click", (e) => { 
+    let targetValueProjectName = e.target.textContent; 
 
-  projectDiv.append(stringValue);
+    let projectNameMainContainerDiv = document.createElement("div"); 
+
+    projectNameMainContainerDiv.classList.add("project-name-div-styles-main");
+    
+    let mainContainer = document.getElementsByClassName("main-content-section-container")[0];
+
+    let addButton = document.createElement("button"); 
+
+    addButton.textContent = "Add";
+
+    let deleteButton = document.createElement("button"); 
+
+    deleteButton.textContent = "Delete";
+
+    mainContainer.append(projectNameMainContainerDiv);
+
+    projectNameMainContainerDiv.append(targetValueProjectName);
+
+    mainContainer.append(addButton); 
+
+    mainContainer.append(deleteButton);
+
+  })
+
+  projectDivNameBtn.classList.add("project-names-styles-navbar-section");
+
+  projectDivNameBtn.append(stringValue);
 
   let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
 
-  navbarProjectContainer.append(projectDiv);
+  navbarProjectContainer.append(projectDivNameBtn);
 
-  // console.log("Hey this works");
-  // console.log("hash slinging slasher");
 }
 
 

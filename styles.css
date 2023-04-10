@@ -255,9 +255,15 @@ main {
 .project-names-styles-navbar-section { 
   text-align: center;
   color: white; 
-  font-size: 2rem; 
-}
+  font-size: 3rem; 
+} 
 
+
+.project-name-div-styles-main { 
+  font-size: 5rem; 
+  text-align: center;
+  color: white; 
+}
 
 
 
