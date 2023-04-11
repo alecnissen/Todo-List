@@ -252,19 +252,50 @@ main {
   text-align: center;
 } 
 
-.project-names-styles-navbar-section { 
+/* .project-names-styles-navbar-section { 
   text-align: center;
   color: white; 
   font-size: 3rem; 
-} 
+}  */
 
 
-.project-name-div-styles-main { 
+/* .project-name-div-styles-main { 
   font-size: 5rem; 
   text-align: center;
   color: white; 
+}  */
+
+
+#navbar-project-names-go-here { 
+  font-size: 2rem; 
+  color: white; 
+  text-align: center;
 }
 
+.project-name-click-event-container-for-styles { 
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+} 
+
+/* .add-btn-svg-project-name-styles { 
+  height: 1em; 
+  width: 1em; 
+} */ 
+
+.delete-btn-trash-can-svg-icon-styles, 
+.add-btn-svg-project-name-styles { 
+  height: 1em; 
+  width: 1em; 
+}
+
+.add-delete-btn-for-todo-container-styles { 
+  font-size: 2rem;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  gap: 1em; 
+}
 
 
 

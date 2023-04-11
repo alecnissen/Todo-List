@@ -39,39 +39,9 @@ projectNameLoop();
 
 console.log(projectArray); 
 
-
-
-// function printValuesToDOM(array) { 
-
-//      let theProjectsArray = array; 
-     
-//      for (let i = 0; i < theProjectsArray.length; i++) { 
-   
-//        let projectIndex = theProjectsArray[i]; 
-   
-//        let projectNameContainer = document.createElement("div"); 
-   
-//        projectNameContainer.append(projectIndex.project);
-   
-//        let navbarContainer = document.getElementById("navbar-your-projects-container");
-   
-//        navbarContainer.append(projectNameContainer);
-//      }
-//    } 
-
-
-
-// for (let i = 0; i < projectArray.length; i++) { 
-//      let projectIndex = projectArray[i]; 
-
-//       let projectValue = projectIndex.project; 
-
-     
-//      } 
      
 
-
-     printValuesToDOM(projectArray); 
+printValuesToDOM(projectArray); 
 
 
 

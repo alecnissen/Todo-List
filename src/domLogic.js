@@ -1,6 +1,3 @@
-// import arrayStorage from "./storage";
-// import defaultExport { arrayStorage } from "./storage";
-// import myExport from "./storage"; 
 
 import "./storage";
 
@@ -26,9 +23,6 @@ let formTagForModule = document.getElementById("form-tag-for-modal");
 
 export let projectArray = []; 
 
-// console.log(projectArray);
-
-
 function preventFormPopUp() { 
   modal.style.display = "none"; 
   
@@ -53,10 +47,6 @@ preventFormPopUp();
   overlay.style.display = "flex";
 }) 
 
-// store data into array, then add to local storage, 
-
-// create a function which accepts a parameter (an arr) then stores that arr in local storage 
-
 
 function projectNameFactory(name) { 
   return { 
@@ -66,131 +56,200 @@ function projectNameFactory(name) {
   }
 } 
 
-// Ok so we can add project names to the navbar section, 
-// lets make a function that we can pass the project name object, key into it's title, 
-
-// function will take in the project array, your job is to get the objects within, 
-
-// append those the DOM, 
-
 addProjectBtnWithinModal.addEventListener("click", (e) => { 
   // e.preventDefault();
   let modalInputFieldValue = modalInputField.value; 
 
   let projectNameObject = projectNameFactory(modalInputFieldValue); 
-
-  // console.log(projectNameObject.project);
-
-  // let mainContainer = document.getElementsByClassName("main-content-section-container")[0]; 
-
-  // mainContainer.append(projectNameObject.project);
-
-  // let navbarContainer = document.getElementById("navbar-your-projects-container"); 
   
   projectArray.push(projectNameObject); 
-
-  // console.log(projectArray);
 
   arrayStorageSetItem(projectArray); 
 
   printValuesToDOM(projectArray); 
-
-  // navbarContainer.append(projectNameObject.project);
-
-  // let stringProjectArray = JSON.stringify(projectArray); 
-
-  // let parseTheString = JSON.parse(stringProjectArray);
-
-  // console.log(stringProjectArray);
-
-  // mainContainer.append(projectArray);
   
   formTagForModule.reset(); 
 
-  // let getStorage = localStorage.getItem("Project-Names"); 
-
-  // let parseData = JSON.parse(getStorage); 
-
-  // projectArray.push(parseData);
 }) 
-
-// an array of objects, I need to loop through the array, get the project name titles, append them to the DOM, on each loop iteration, 
-
-// print title to the DOM, call the function so it continues to run, 
-
-// well this function works, but only when the btn is pressed and we add a project, 
-
-// Do I need two functions? One that handles the logic of adding new project names to the DOM, 
-
-// one that displays, whats inside the project array? 
-
-// that seems like an option, 
-
-// adding new project to the array, 
-
-// taking the array and getting the project names, printing them to the DOM"? 
-
-// I just want a function to run which displays the contents of the project array, it still will only run and display when the btn is clicked, 
-
-// export function printValuesToDOM(value) { 
-
-//   let projectValue = value; 
-  
-//   // for (let i = 0; i < theProjectsArray.length; i++) { 
-
-//     // let projectIndex = theProjectsArray[i]; 
-
-//     let projectNameContainer = document.createElement("div"); 
-
-//     projectNameContainer.append(projectValue);
-
-//     let navbarContainer = document.getElementById("navbar-your-projects-container");
-
-//     navbarContainer.append(projectNameContainer);
-//   }
-// } 
-
 
 
 export function printValuesToDOM(array) { 
 
   let theProjectsArray = array; 
 
-  // let navbarContainer = document.getElementById("navbar-your-projects-container"); 
-
   let navbarProjectNameContainer = document.getElementById("navbar-project-names-go-here"); 
 
   navbarProjectNameContainer.replaceChildren();
-
-  // navbarContainer.replaceChildren();
-
   
   for (let i = 0; i < theProjectsArray.length; i++) { 
 
     let projectIndex = theProjectsArray[i]; 
 
+    let projectIndexProjectNameValue = projectIndex.project; 
+
+    // console.log(projectIndexProjectNameValue);
+
     let projectNameContainer = document.createElement("div"); 
 
-    projectNameContainer.append(projectIndex.project);
+    projectNameContainer.append(projectIndexProjectNameValue);
 
-    // let navbarContainer = document.getElementById("navbar-your-projects-container"); 
+    navbarProjectNameContainer.append(projectNameContainer); 
 
-    navbarProjectNameContainer.append(projectNameContainer);
+    projectNameContainer.addEventListener("click", (e) => { 
+      
+      let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
+
+      let projectNameValueContainerForStyles = document.createElement("div"); 
+
+      projectNameValueContainerForStyles.classList.add("project-name-click-event-container-for-styles"); 
+
+      let btnContainerAddandDelete = document.createElement("div");
+
+      let addBtnToCreateModal = document.createElement("img"); 
+
+      let deleteBtnToDeleteTodo = document.createElement("img"); 
+
+      addBtnToCreateModal.src = "../plus-sign-svgrepo-com (1).svg";
+
+      addBtnToCreateModal.classList.add("add-btn-svg-project-name-styles");
+
+      deleteBtnToDeleteTodo.src = "../trashcan-svgrepo-com (1).svg";
+
+      deleteBtnToDeleteTodo.classList.add("delete-btn-trash-can-svg-icon-styles");
+
+      btnContainerAddandDelete.classList.add("add-delete-btn-for-todo-container-styles"); 
+
+      btnContainerAddandDelete.append(addBtnToCreateModal); 
+
+      btnContainerAddandDelete.append(deleteBtnToDeleteTodo); 
+
+      let projectNameValueClicked = e.target.textContent; 
+
+      projectNameValueContainerForStyles.append(projectNameValueClicked);
+      
+      mainContentContainerProjectNames.append(projectNameValueContainerForStyles);
+
+      mainContentContainerProjectNames.append(btnContainerAddandDelete);
+    })
   }
 } 
 
-// printValuesToDOM(projectArray); 
+// I think I can just use this one function, if you are already making the loop, grabbing elements why seperate to another function? 
 
-// printValuesToDOM();
+// next if the project name is clicked, append the textContent to the main container section, 
 
+// OK I am able to grab the main content container, and add the event target text Content, can I also append the btn's? 
 
+// once that is complete, don't forget to add a class, so the text Content can be styled, 
+
+// once you are able to do that, you need to add some type of conditional logic, that will prevent the user from adding the same project again, 
+
+// THIS WILL HAVE TO INSIDE ANOTHER FUNCTION
+
+// you will have to append the two btns for the todo's, add and delete, you can use svg icons, 
+
+// I don't think the project names should stay in the container, one student did not have that logic, 
+
+// Next replace the btn text with an svg, on an + icon and trash btn, 
+
+// OK svg icons are added, sometimes a little slow to render but that can be addressed another time, 
+
+// lets move onto making the logic that prevents the user from adding, the same project multiple times, 
+
+// now begins, how we can prevent user from adding the same project multiple times, and if the user clicks another project, 
+
+// replace the new and clear the old, 
+
+// seperate function, within a totally different module, 
+
+// export and import the correct functions, 
+
+// make a function, loop through projet array, 
+
+// get the project ID or the value, projectname.project if that matches what was clicked on, generate that project, else, prevent the user from adding another project, 
+
+// there will have to some sort of conditional logic, 
+
+// something needs to be checked before a project name can be added to the section, or to prevent a user from adding multiple projects, 
 
 
 formTagForModule.addEventListener("submit", (e) => { 
   e.preventDefault();
   modal.style.display = "none"; 
   overlay.style.display = "none";
-})
+}) 
+
+// grab the main container, 
+
+// let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
+
+// console.log(mainContentContainerProjectNames);
+
+// function projectNamesClickEvent(array) { 
+//   for (let i = 0; i < projectArray.length; i++) { 
+//     let projectNameIndex = projectArray[i]; 
+    
+//   }
+// }
+
+// projectNamesClickEvent(projectArray);
+
+
+
+// I think I Need to make a seperate function, don't want to have too much going on in one function, 
+
+// use the same logic, loop through project array, 
+ 
+// for (let i = 0; i < theProjectsArray.length; i++) { 
+
+//   let projectIndex = theProjectsArray[i]; 
+
+//   let projectNameContainer = document.createElement("div"); 
+
+//   projectNameContainer.append(projectIndex.project);
+
+//   navbarProjectNameContainer.append(projectNameContainer);
+// }
+
+
+
+
+
+
+// ok next, project names are being added dynamically, they are properly being added to the array and properly being added to local storage, 
+
+// next when I click on the project, that project's name should be displayed in the main content container, 
+
+// if another project is clicked on, clear the contents of the previous project and display the new project, 
+
+// remember only one project is added at a time, should not add onto. show the clicked on project, along with the two btns, add and delete for the todo's 
+
+// project name is clicked, show that project, user cannot append that project multiple times by clicking, 
+
+// if another project name is clicked, clear the old and make way for the new project that was clicked, 
+
+// this will be a seperate function, first I feel like you will need to loop through project's array, 
+
+// add an event listener to each project from the array, inside the listener, logic will grab the main content section, 
+
+// and append values to it, 
+
+// you will probably need some type of conditional to determine if the project is already added such as ID's matching, 
+
+// if ID matches what was clicked on, prevent from adding again, else if add the project to the container, 
+
+// before the project name is appended to the main content container, call a function which checks if that names id matches the ID that was clicked, 
+
+// I would say first let's make a function that can grab all the project names and ID? 
+
+
+
+
+
+
+
+
+
 
 // add an event listener to each project, loop through all the projects, 
 
