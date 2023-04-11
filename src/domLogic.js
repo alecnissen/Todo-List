@@ -156,11 +156,14 @@ export function printValuesToDOM(array) {
 
   let theProjectsArray = array; 
 
-  // let navbarContainer = document.getElementById("navbar-your-projects-container");
+  // let navbarContainer = document.getElementById("navbar-your-projects-container"); 
 
-  // while(navbarContainer.firstChild) { 
-  //   navbarContainer.removeChild(navbarContainer.lastChild);
-  // }
+  let navbarProjectNameContainer = document.getElementById("navbar-project-names-go-here"); 
+
+  navbarProjectNameContainer.replaceChildren();
+
+  // navbarContainer.replaceChildren();
+
   
   for (let i = 0; i < theProjectsArray.length; i++) { 
 
@@ -170,9 +173,9 @@ export function printValuesToDOM(array) {
 
     projectNameContainer.append(projectIndex.project);
 
-    let navbarContainer = document.getElementById("navbar-your-projects-container");
+    // let navbarContainer = document.getElementById("navbar-your-projects-container"); 
 
-    navbarContainer.append(projectNameContainer);
+    navbarProjectNameContainer.append(projectNameContainer);
   }
 } 
 
@@ -247,15 +250,22 @@ formTagForModule.addEventListener("submit", (e) => {
 
 // make a loop get the project's ID, compare the ID to the ID that was clicked on, 
 
- export function printProjectNameToNavbarProjectSection(value) { 
 
-  let projectValue = value; 
 
-  let projectValueID = projectValue.id; 
 
-  let stringValue = projectValue["project"];  
+//  export function printProjectNameToNavbarProjectSection(value) { 
 
-  let projectDivNameBtnNavbar = document.createElement("div"); 
+//   let projectValue = value; 
+
+//   let projectValueID = projectValue.id; 
+
+//   let stringValue = projectValue["project"];  
+
+//   let projectDivNameBtnNavbar = document.createElement("div");  
+
+// here to top of function, 
+
+
 
   // projectDivNameBtnNavbar.addEventListener("click", (e) => { 
   //   for (let project in localStorage) { 
@@ -321,15 +331,17 @@ formTagForModule.addEventListener("submit", (e) => {
 
   // })
 
-  projectDivNameBtnNavbar.classList.add("project-names-styles-navbar-section");
+  // here to bottom bracket 
 
-  projectDivNameBtnNavbar.append(stringValue);
+//   projectDivNameBtnNavbar.classList.add("project-names-styles-navbar-section");
 
-  let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
+//   projectDivNameBtnNavbar.append(stringValue);
 
-  navbarProjectContainer.append(projectDivNameBtnNavbar);
+//   let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
 
-}
+//   navbarProjectContainer.append(projectDivNameBtnNavbar);
+
+// }
 
 
 // for (let variable in parseData) { 
