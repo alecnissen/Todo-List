@@ -66,7 +66,12 @@ function projectNameFactory(name) {
   }
 } 
 
+// Ok so we can add project names to the navbar section, 
+// lets make a function that we can pass the project name object, key into it's title, 
 
+// function will take in the project array, your job is to get the objects within, 
+
+// append those the DOM, 
 
 addProjectBtnWithinModal.addEventListener("click", (e) => { 
   // e.preventDefault();
@@ -74,13 +79,31 @@ addProjectBtnWithinModal.addEventListener("click", (e) => {
 
   let projectNameObject = projectNameFactory(modalInputFieldValue); 
 
-  // console.log(projectNameObject);
+  // console.log(projectNameObject.project);
+
+  // let mainContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+
+  // mainContainer.append(projectNameObject.project);
+
+  // let navbarContainer = document.getElementById("navbar-your-projects-container"); 
   
   projectArray.push(projectNameObject); 
 
   // console.log(projectArray);
 
-  arrayStorageSetItem(projectArray);
+  arrayStorageSetItem(projectArray); 
+
+  printValuesToDOM(projectArray); 
+
+  // navbarContainer.append(projectNameObject.project);
+
+  // let stringProjectArray = JSON.stringify(projectArray); 
+
+  // let parseTheString = JSON.parse(stringProjectArray);
+
+  // console.log(stringProjectArray);
+
+  // mainContainer.append(projectArray);
   
   formTagForModule.reset(); 
 
@@ -90,6 +113,72 @@ addProjectBtnWithinModal.addEventListener("click", (e) => {
 
   // projectArray.push(parseData);
 }) 
+
+// an array of objects, I need to loop through the array, get the project name titles, append them to the DOM, on each loop iteration, 
+
+// print title to the DOM, call the function so it continues to run, 
+
+// well this function works, but only when the btn is pressed and we add a project, 
+
+// Do I need two functions? One that handles the logic of adding new project names to the DOM, 
+
+// one that displays, whats inside the project array? 
+
+// that seems like an option, 
+
+// adding new project to the array, 
+
+// taking the array and getting the project names, printing them to the DOM"? 
+
+// I just want a function to run which displays the contents of the project array, it still will only run and display when the btn is clicked, 
+
+// export function printValuesToDOM(value) { 
+
+//   let projectValue = value; 
+  
+//   // for (let i = 0; i < theProjectsArray.length; i++) { 
+
+//     // let projectIndex = theProjectsArray[i]; 
+
+//     let projectNameContainer = document.createElement("div"); 
+
+//     projectNameContainer.append(projectValue);
+
+//     let navbarContainer = document.getElementById("navbar-your-projects-container");
+
+//     navbarContainer.append(projectNameContainer);
+//   }
+// } 
+
+
+
+export function printValuesToDOM(array) { 
+
+  let theProjectsArray = array; 
+
+  // let navbarContainer = document.getElementById("navbar-your-projects-container");
+
+  // while(navbarContainer.firstChild) { 
+  //   navbarContainer.removeChild(navbarContainer.lastChild);
+  // }
+  
+  for (let i = 0; i < theProjectsArray.length; i++) { 
+
+    let projectIndex = theProjectsArray[i]; 
+
+    let projectNameContainer = document.createElement("div"); 
+
+    projectNameContainer.append(projectIndex.project);
+
+    let navbarContainer = document.getElementById("navbar-your-projects-container");
+
+    navbarContainer.append(projectNameContainer);
+  }
+} 
+
+// printValuesToDOM(projectArray); 
+
+// printValuesToDOM();
 
 
 
@@ -110,48 +199,135 @@ formTagForModule.addEventListener("submit", (e) => {
 
 // think back to restaurant page, 
 
+// I somehow need to think this out, project name is clicked, clear contents of previous project and make way for new, 
+
+// I think I need some sort of conditional, if this project is clicked, change to a variable then use replace child. 
+
+// if the variable targetValueProjectName already exists in the main content container, or the div, 
+
+// prevent the user from adding another project,  
+
+// 
+
+// -- how to make sure only that when user clicks the project name, in the projects section, 
+
+// it will populate, with that project name, wipe the contents of the previous project and show the clicked on project, 
+
+// -- why is the project's section not dynamically adding projects? I have to refresh the page for it to show up? 
+
+// handle the conditional logic first, and correctly displaying the project names in the main container first, 
+
+// some type of conditional is needed to complete this, remember only one project can be displayed at a time, 
+
+// if project container includes the project that was clicked on, prevent the user from adding another project, 
+
+// should it be similar to restaurant page, each project is given a variable, then if that project is clicked on it's given a variable or index, 
+
+// then conditional will check if that project's ID, matches what is inside the main container, if not clicked, replace with new click, 
+
+// if it is clicked again, prevent the user from replacing the content, 
+
+// replace the content with the projects unqiue ID, if project.id === targetValueProjectName, prevent the user from adding that btn again, just return, 
+
+// can we go back and look at what you did previously with your code?
+
+// I don't think it's the same previously, because we are using a div here instead of a button, 
+
+// I want to find a way that I can only display the project that was clicked on, should add duplicates, 
+
+// if another project is clicked, replace contents of old and wipe the new, 
+
+// I think the DOM Display is fine, getting the value from a function, creating a div that stores the projects name, 
+
+// now once the project is clicked on, loop through storage, find out the project that was clicked on and display's it's contents, 
+
+// stick with how you are displaying the projects in the DOM, 
+
+// how will you add things to the main content container, display only the project that was clicked on? 
+
+// make a loop get the project's ID, compare the ID to the ID that was clicked on, 
+
  export function printProjectNameToNavbarProjectSection(value) { 
 
   let projectValue = value; 
 
+  let projectValueID = projectValue.id; 
+
   let stringValue = projectValue["project"];  
 
-  let projectDivNameBtn = document.createElement("div"); 
+  let projectDivNameBtnNavbar = document.createElement("div"); 
 
-  projectDivNameBtn.addEventListener("click", (e) => { 
-    let targetValueProjectName = e.target.textContent; 
+  // projectDivNameBtnNavbar.addEventListener("click", (e) => { 
+  //   for (let project in localStorage) { 
+  //     let x = project; 
+  //     let names = localStorage.getItem("id");
+  //     console.log(names);
+  //   }
+  // })
 
-    let projectNameMainContainerDiv = document.createElement("div"); 
+  // projectDivNameBtnNavbar.addEventListener("click", (e) => { 
+  //   for (let i = 0; i < localStorage.length; i++) { 
+  //     let y = localStorage.key("Project-Names");
+  //     console.log(y);
+  //   }
+  // } 
+  //   for(let project in localStorage) { 
+  //     // let x = localStorage.getItem("Project-Names");
+  //     let x = project["key"]; 
 
-    projectNameMainContainerDiv.classList.add("project-name-div-styles-main");
+  //     // let xid = project["id"]; 
+
+  //     // console.log(xid);
+  //     console.log(x);
+  //   }
+  // })
+
+
+  // old logic below 
+
+  // projectDivNameBtnNavbar.addEventListener("click", (e) => { 
+  //   let targetValueProjectName = e.target.textContent; 
     
-    let mainContainer = document.getElementsByClassName("main-content-section-container")[0];
+  //   console.log(projectValueID);
 
-    let addButton = document.createElement("button"); 
+  //   // if (projectValueID === targetValueProjectName) { 
+  //   //       projectDivNameBtnNavbar.removeEventListener("click");
+  
+  //   //    }
 
-    addButton.textContent = "Add";
 
-    let deleteButton = document.createElement("button"); 
 
-    deleteButton.textContent = "Delete";
+  //   let projectNameMainContainerDiv = document.createElement("div"); 
 
-    mainContainer.append(projectNameMainContainerDiv);
+  //   projectNameMainContainerDiv.classList.add("project-name-div-styles-main");
+    
+  //   let mainContainer = document.getElementsByClassName("main-content-section-container")[0];
 
-    projectNameMainContainerDiv.append(targetValueProjectName);
+  //   let addButton = document.createElement("button"); 
 
-    mainContainer.append(addButton); 
+  //   addButton.textContent = "Add";
 
-    mainContainer.append(deleteButton);
+  //   let deleteButton = document.createElement("button"); 
 
-  })
+  //   deleteButton.textContent = "Delete";
 
-  projectDivNameBtn.classList.add("project-names-styles-navbar-section");
+  //   mainContainer.append(projectNameMainContainerDiv);
 
-  projectDivNameBtn.append(stringValue);
+  //   projectNameMainContainerDiv.append(targetValueProjectName);
+
+  //   mainContainer.append(addButton); 
+
+  //   mainContainer.append(deleteButton);
+
+  // })
+
+  projectDivNameBtnNavbar.classList.add("project-names-styles-navbar-section");
+
+  projectDivNameBtnNavbar.append(stringValue);
 
   let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
 
-  navbarProjectContainer.append(projectDivNameBtn);
+  navbarProjectContainer.append(projectDivNameBtnNavbar);
 
 }
 

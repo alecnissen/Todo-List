@@ -10,7 +10,7 @@ import "./conditionalLogic";
 
 import "./storage"; 
 
-import { projectArray, printProjectNameToNavbarProjectSection } from "./domLogic";
+import { projectArray, printProjectNameToNavbarProjectSection, printValuesToDOM } from "./domLogic";
 
 let getStorage = localStorage.getItem("Project-Names"); 
 
@@ -27,27 +27,9 @@ for (let variable in parseData) {
 
      let valueInProject = parseData[projectIndex]; 
 
-     printProjectNameToNavbarProjectSection(valueInProject);
+     // printProjectNameToNavbarProjectSection(valueInProject);
 
-     // let stringValue = valueInProject["project"];  
-
-     // let projectDiv = document.createElement("div"); 
-
-     // projectDiv.style.textAlign = "center";
-
-     // projectDiv.style.fontSize = "2rem";
-
-     // projectDiv.style.color = "white";
-
-     // projectDiv.append(stringValue);
-
-     // console.log(stringValue);
-
-     // let navbarProjectContainer = document.getElementById("navbar-your-projects-container"); 
-
-     // navbarProjectContainer.append(projectDiv);
-
-     projectArray.push(valueInProject);
+     projectArray.push(valueInProject); 
 
 }  
 
@@ -55,7 +37,58 @@ for (let variable in parseData) {
 
 projectNameLoop();
 
-console.log(projectArray);
+console.log(projectArray); 
+
+
+
+// function printValuesToDOM(array) { 
+
+//      let theProjectsArray = array; 
+     
+//      for (let i = 0; i < theProjectsArray.length; i++) { 
+   
+//        let projectIndex = theProjectsArray[i]; 
+   
+//        let projectNameContainer = document.createElement("div"); 
+   
+//        projectNameContainer.append(projectIndex.project);
+   
+//        let navbarContainer = document.getElementById("navbar-your-projects-container");
+   
+//        navbarContainer.append(projectNameContainer);
+//      }
+//    } 
+
+
+
+// for (let i = 0; i < projectArray.length; i++) { 
+//      let projectIndex = projectArray[i]; 
+
+//       let projectValue = projectIndex.project; 
+
+     
+//      } 
+     
+
+
+     printValuesToDOM(projectArray); 
+
+
+
+
+
+
+
+// So I need to reconsider my approach, instead of having storage reflect what is in the DOM, 
+
+// DOM and storage are seperate, when a project name is created, save to storage but you also have project's array, 
+
+// and whatever is inside projects array needs to be appended to the DOM, in the correct format, you may have to parse or stringify the data to work, 
+
+// reflect whatever is in the projects array to the DOM. 
+
+
+
 
 
 
