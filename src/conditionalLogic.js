@@ -1,20 +1,20 @@
-import { projectArray, printProjectNameToNavbarProjectSection, printValuesToDOM } from "./domLogic"; 
+// import { projectArray, printProjectNameToNavbarProjectSection, printValuesToDOM } from "./domLogic"; 
 
-function projectDisplayConditionalLogic() { 
+// function projectDisplayConditionalLogic() { 
 
-    console.log("HEYYY");
+//     console.log("HEYYY");
 
-    // let theProjectArray = arr;
+//     // let theProjectArray = arr;
 
-    // for (let i = 0; i < theProjectArray.length; i++) { 
-    //     let projectArrayIndex = theProjectArray[i]; 
+//     // for (let i = 0; i < theProjectArray.length; i++) { 
+//     //     let projectArrayIndex = theProjectArray[i]; 
 
-    //     console.log(projectArrayIndex);
+//     //     console.log(projectArrayIndex);
     
-    // }
-} 
+//     // }
+// } 
 
-projectDisplayConditionalLogic(); 
+// projectDisplayConditionalLogic(); 
 
 
 

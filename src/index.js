@@ -44,6 +44,29 @@ projectNameLoop();
 printValuesToDOM(projectArray); 
 
 
+
+// OK today the goal is to figure out, how to disable/exit the modal, and how to activate it 
+
+// based upon a button click, 
+
+// then once those are good, then we can focus on the styling of the modal, 
+
+// first let's add the logic that can exit the modal, 
+
+// grab the id or class from HTML, and first log the element correctly, 
+
+// then add event listener, that sets the modals display to none, 
+
+// then if the user pressed the + icon, set the display to flex, 
+
+
+
+
+
+
+
+
+
 // projectDisplayConditionalLogic(); 
 
 

@@ -23,6 +23,12 @@ let addProjectBtnWithinModal = document.getElementById("add-project-btn-within-m
 
 let formTagForModule = document.getElementById("form-tag-for-modal"); 
 
+let modalContainerForTodo = document.getElementsByClassName("modal-todo")[0]; 
+
+let overlayForTodoModal = document.getElementsByClassName("overlay-for-todo-modal")[0]; 
+
+// console.log(overlayForTodoModal);
+
 export let projectArray = []; 
 
 function preventFormPopUp() { 
@@ -203,9 +209,24 @@ formTagForModule.addEventListener("submit", (e) => {
   overlay.style.display = "none";
 })  
 
-let cancelBtnAddTodoModal = document.querySelector(".close-the-todo-modal");
+let cancelBtnAddTodoModal = document.getElementsByClassName("close-the-todo-modal")[0];
 
-console.log(cancelBtnAddTodoModal); 
+console.log(cancelBtnAddTodoModal);
+
+cancelBtnAddTodoModal.addEventListener("click", (e) => { 
+
+  modalContainerForTodo.style.display = "none"; 
+
+  overlayForTodoModal.style.display = "none";
+
+
+  // console.log("heyyyy"); 
+
+  // log is working, can access the element, now grab the modal, and set the display to none, 
+  // you can grab the variable above for reference, 
+})
+
+
 
 
 
