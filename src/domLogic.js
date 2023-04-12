@@ -27,7 +27,9 @@ let modalContainerForTodo = document.getElementsByClassName("modal-todo")[0];
 
 let overlayForTodoModal = document.getElementsByClassName("overlay-for-todo-modal")[0]; 
 
-// console.log(overlayForTodoModal);
+modalContainerForTodo.style.display = "none"; 
+
+overlayForTodoModal.style.display = "none";
 
 export let projectArray = []; 
 
@@ -127,7 +129,10 @@ export function printValuesToDOM(array) {
       let addBtnToCreateModal = document.createElement("img"); 
 
       addBtnToCreateModal.addEventListener("click", (e) => { 
-        console.log("yo");
+
+        modalContainerForTodo.style.display = "flex"; 
+
+        overlayForTodoModal.style.display = "flex";
       })
 
       let deleteBtnToDeleteTodo = document.createElement("img"); 

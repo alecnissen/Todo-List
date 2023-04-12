@@ -59,6 +59,28 @@ printValuesToDOM(projectArray);
 
 // then if the user pressed the + icon, set the display to flex, 
 
+// ok so I am able to toggle back and forth, opening the modal and closing the modal, 
+
+// now you will need to make logic, that will set the default display of the modal to none, 
+
+// then if the user presses the add btn, it will pop-up, cancel it will not display 
+
+// I think just grabbing the variables at the top is fine, and just in the global scope, 
+
+// set the display to none, 
+
+// works, save and commit, then figure out how to get the delete btn working, 
+
+// now would probably be the best time to do that, since the add btn is working, now we can
+
+// work on the logic, that once btn is clicked, generate another modal, asking the user 
+
+// are you sure you want to delete the project? It will clear that project for the DOM In main 
+
+// but also in the project's section, 
+
+/// style the modal, one btn to confirm and the other btn to cancel the order, 
+
 
 
 
