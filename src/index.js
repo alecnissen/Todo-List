@@ -6,7 +6,7 @@ import "./eventListenerModule";
 
 import "./domLogic";
 
-import "./conditionalLogic";
+import  { projectDisplayConditionalLogic } from "./conditionalLogic";
 
 import "./storage"; 
 
@@ -37,14 +37,14 @@ for (let variable in parseData) {
 
 projectNameLoop();
 
-console.log(projectArray); 
+// console.log(projectArray); 
 
      
 
 printValuesToDOM(projectArray); 
 
 
-
+// projectDisplayConditionalLogic(); 
 
 
 

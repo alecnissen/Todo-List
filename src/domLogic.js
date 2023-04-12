@@ -7,6 +7,8 @@ import getItemStorage from "./storage.js";
 
 import  projectNameLoop from "./index.js";
 
+import projectDisplayConditionalLogic from "./conditionalLogic.js";
+
 const modal = document.querySelector(".modal");
 
 const overlay = document.querySelector(".overlay"); 
@@ -95,11 +97,24 @@ export function printValuesToDOM(array) {
 
     navbarProjectNameContainer.append(projectNameContainer); 
 
+    let mainContentContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+
+    
     projectNameContainer.addEventListener("click", (e) => { 
+      // works too
+      // mainContentContainer.replaceChildren();
+
+      // once the project name/container is clicked, clear the DOM and then create the elements, 
+
+      // or clear the DOM before the btn is clicked, so that way a new element gets created each time, 
       
       let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
 
+      mainContentContainerProjectNames.replaceChildren();
+      
       let projectNameValueContainerForStyles = document.createElement("div"); 
+      
+      // projectNameValueContainerForStyles.replaceChildren();
 
       projectNameValueContainerForStyles.classList.add("project-name-click-event-container-for-styles"); 
 
@@ -119,6 +134,10 @@ export function printValuesToDOM(array) {
 
       btnContainerAddandDelete.classList.add("add-delete-btn-for-todo-container-styles"); 
 
+      // function call/conditional logic call here before the values are appended? 
+
+      // projectDisplayConditionalLogic(projectArray); 
+
       btnContainerAddandDelete.append(addBtnToCreateModal); 
 
       btnContainerAddandDelete.append(deleteBtnToDeleteTodo); 
@@ -129,7 +148,10 @@ export function printValuesToDOM(array) {
       
       mainContentContainerProjectNames.append(projectNameValueContainerForStyles);
 
-      mainContentContainerProjectNames.append(btnContainerAddandDelete);
+      mainContentContainerProjectNames.append(btnContainerAddandDelete); 
+
+      // btnContainerAddandDelete.replaceChildren();
+
     })
   }
 } 
