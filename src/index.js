@@ -49,6 +49,31 @@ printValuesToDOM(projectArray);
 
 
 
+// so now we figured out how to prevent the user from adding more projects, 
+
+// bascically clear the DOM, then add projects, 
+
+// now add the logic, that will generate a modal, for the user to create a todo, 
+
+// first I would just try it within the function, then maybe see if you can split the code up a bit, 
+
+// print a simple message within the event listener first, 
+
+// ok works good, now start constructing your modal, follow along with the article, or video, 
+
+// needs title, priority, due date, description, 
+
+// those values are then added to the todo array within that specific project, 
+
+
+
+
+
+
+
+
+
+
 // So I need to reconsider my approach, instead of having storage reflect what is in the DOM, 
 
 // DOM and storage are seperate, when a project name is created, save to storage but you also have project's array, 

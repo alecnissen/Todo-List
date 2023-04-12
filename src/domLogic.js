@@ -113,14 +113,16 @@ export function printValuesToDOM(array) {
       mainContentContainerProjectNames.replaceChildren();
       
       let projectNameValueContainerForStyles = document.createElement("div"); 
-      
-      // projectNameValueContainerForStyles.replaceChildren();
 
       projectNameValueContainerForStyles.classList.add("project-name-click-event-container-for-styles"); 
 
       let btnContainerAddandDelete = document.createElement("div");
 
       let addBtnToCreateModal = document.createElement("img"); 
+
+      addBtnToCreateModal.addEventListener("click", (e) => { 
+        console.log("yo");
+      })
 
       let deleteBtnToDeleteTodo = document.createElement("img"); 
 
@@ -199,7 +201,17 @@ formTagForModule.addEventListener("submit", (e) => {
   e.preventDefault();
   modal.style.display = "none"; 
   overlay.style.display = "none";
-}) 
+})  
+
+let cancelBtnAddTodoModal = document.querySelector(".close-the-todo-modal");
+
+console.log(cancelBtnAddTodoModal); 
+
+
+
+// let cancelBtnArray = Array.from(cancelBtnAddTodoModal);
+
+
 
 // grab the main container, 
 

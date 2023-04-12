@@ -50,8 +50,35 @@
      
 
 
-
     <script src="main.js"></script>
+
+    <section class="modal-todo hidden-modal-todo">
+      <div class="flex-for-todo-modal">
+        <!-- <img src="user.png" width="50px" height="50px" alt="user" /> -->
+        <div id="container-for-add-todo-text"> 
+        <h1 id="add-todo-title-text">Add Task</h1>
+      </div>
+        <button class="close-the-todo-modal" id="close-todo-modal-btn">⨉</button>
+      </div>
+      <label>Title:</label>
+      <input type="text" id="title" placeholder="Title of Task" />
+      <label>Description:</label>
+      <textarea></textarea>
+      <label>Due Date:</label>
+      <input type="date">
+      <label>Priority</label>
+      <select>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+      <button class="Add-task-todo-modal">Add Task</button>
+
+    </section>
+    
+    
+    <div class="overlay-for-todo-modal hidden-property-for-todo"></div>
+
 
 
   </body>
