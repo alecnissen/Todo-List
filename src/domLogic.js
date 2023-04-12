@@ -27,9 +27,30 @@ let modalContainerForTodo = document.getElementsByClassName("modal-todo")[0];
 
 let overlayForTodoModal = document.getElementsByClassName("overlay-for-todo-modal")[0]; 
 
+let modalForTodoDeleteBtn = document.getElementsByClassName("modal-for-delete-btn-todo")[0];
+
+let overlayForTodoDeleteBtn = document.getElementsByClassName("overlay-for-todo-delete-btn")[0]; 
+
+
+
+function preventDoYouWantToDeleteModal() { 
+  
+  modalForTodoDeleteBtn.style.display = "none"; 
+
+  overlayForTodoDeleteBtn.style.display = "none";
+} 
+
+preventDoYouWantToDeleteModal();
+
+
+function preventTodoModalPopUp() { 
+
 modalContainerForTodo.style.display = "none"; 
 
 overlayForTodoModal.style.display = "none";
+} 
+
+preventTodoModalPopUp();
 
 export let projectArray = []; 
 
@@ -137,6 +158,17 @@ export function printValuesToDOM(array) {
 
       let deleteBtnToDeleteTodo = document.createElement("img"); 
 
+      deleteBtnToDeleteTodo.addEventListener("click", (e) => { 
+        console.log("you clicked the cancel button");
+
+        modalForTodoDeleteBtn.style.display = "flex"; 
+
+        overlayForTodoDeleteBtn.style.display = "flex";
+
+      })
+
+
+
       addBtnToCreateModal.src = "../plus-sign-svgrepo-com (1).svg";
 
       addBtnToCreateModal.classList.add("add-btn-svg-project-name-styles");
@@ -224,11 +256,17 @@ cancelBtnAddTodoModal.addEventListener("click", (e) => {
 
   overlayForTodoModal.style.display = "none";
 
+}) 
 
-  // console.log("heyyyy"); 
 
-  // log is working, can access the element, now grab the modal, and set the display to none, 
-  // you can grab the variable above for reference, 
+let cancelBtnForDeleteProjectModalX = document.getElementById("close-mark-x"); 
+
+cancelBtnForDeleteProjectModalX.addEventListener("click", (e) => { 
+
+  modalForTodoDeleteBtn.style.display = "none"; 
+
+  overlayForTodoDeleteBtn.style.display = "none";
+  
 })
 
 

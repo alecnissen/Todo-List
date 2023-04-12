@@ -81,10 +81,27 @@ printValuesToDOM(projectArray);
 
 /// style the modal, one btn to confirm and the other btn to cancel the order, 
 
+// Ok so we have the print values to the DOM function, 
+
+// if user clicks project name, values append to main container, 
+
+// if user presses, add or delete, logic is within the same function, 
+
+// I don't see that becoming a problem, my thinking is that it's better to do that there 
+
+// than passing the variable to another function, might as well do that all there, 
+
+// so the delete btn, make the markup in the HTML first, follow the guidelines before, go slow, 
 
 
+// modal is working but just trying to add space 
+// between the elements the check and the x, element 
 
+// ok got the delete btn modal working as I want to, next I will add the event listener to the element, 
 
+// that once clicked it will close the modal, 
+
+// dont forget to add the overlay! 
 
 
 
