@@ -45,6 +45,87 @@ printValuesToDOM(projectArray);
 
 
 
+
+
+// getting project ID 
+
+// for (let i = 0; i < projectArray.length; i++) { 
+     
+//      let projectIndex = projectArray[i]; 
+
+//      let projectValue = projectIndex.id; 
+     
+//      console.log(projectValue);
+// } 
+
+
+
+
+
+
+
+// get the project's ID, get the ID's within the projects section, and the ID's within the main section, 
+
+// create a loop inside each section and get the value, 
+
+
+
+
+// well you can delete the project name and the btn container from the DOM, 
+
+// can we figure out a way to delete the project, from the your projects section, 
+
+// lets take a look at how the value is stored, 
+
+// figure out how the values are stored and see if somehow you  
+
+// grab a value, or the container div that contains the value.
+
+
+// I am able to grab the values wtihin the your projects section, 
+
+// I am able to get the value within the main content section, 
+
+// I think I need to use a loop, to get all the elements within the your projects section, 
+
+// if the value's text content matches, set the textContent to "" or delete the element, 
+
+// try to loop through the elements with that your projects section, 
+
+// if values match, delete the value from the your projects section that matches main contents value, 
+
+// id's, each project has a unqiue ID, compare ID's, why cant I do, if the textContents/strings match remove? 
+
+// I got the string values of the element in the main, and all the elements in your projects, 
+
+// does the string match the other string, 
+
+// do ID's match? 
+
+
+
+
+
+// same issue, I am trying to grab the values, and if the user presses the check mark, delete the project, 
+
+// delete the project from both places, I am able to get the value in the main section, 
+
+// and the list on values in the your projects section, 
+
+// how can I delete both in the same place once the user presses the check mark, 
+
+// just check to see when the element is created and appended to the DOM, see if you can add a class to it, 
+
+
+// while were waiting can we get the projects ID? 
+
+// just simply try to get a projects ID. and log it, 
+
+
+
+
+
+
 // OK today the goal is to figure out, how to disable/exit the modal, and how to activate it 
 
 // based upon a button click, 
@@ -102,6 +183,19 @@ printValuesToDOM(projectArray);
 // that once clicked it will close the modal, 
 
 // dont forget to add the overlay! 
+
+
+
+
+// next will work on deleting a todo, once the user presses the checkmark, it should delete the project from the DOM, the array 
+
+// and I believe from local storage too, then work on saving todo info, from the modal and pushing into the DOM and storage where 
+
+// each project has a list of todo's, it will added there while also reflecting that into the DOM. 
+
+// yes next step is either deleting the project, once the user presses the check btn, and getting all the user info 
+
+// that was entered and saving that todo, to the array of todo's that each project has, 
 
 
 

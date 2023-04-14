@@ -32,7 +32,6 @@ let modalForTodoDeleteBtn = document.getElementsByClassName("modal-for-delete-bt
 let overlayForTodoDeleteBtn = document.getElementsByClassName("overlay-for-todo-delete-btn")[0]; 
 
 
-
 function preventDoYouWantToDeleteModal() { 
   
   modalForTodoDeleteBtn.style.display = "none"; 
@@ -118,8 +117,6 @@ export function printValuesToDOM(array) {
 
     let projectIndexProjectNameValue = projectIndex.project; 
 
-    // console.log(projectIndexProjectNameValue);
-
     let projectNameContainer = document.createElement("div"); 
 
     projectNameContainer.append(projectIndexProjectNameValue);
@@ -159,7 +156,7 @@ export function printValuesToDOM(array) {
       let deleteBtnToDeleteTodo = document.createElement("img"); 
 
       deleteBtnToDeleteTodo.addEventListener("click", (e) => { 
-        console.log("you clicked the cancel button");
+        // console.log("you clicked the cancel button");
 
         modalForTodoDeleteBtn.style.display = "flex"; 
 
@@ -189,6 +186,10 @@ export function printValuesToDOM(array) {
 
       let projectNameValueClicked = e.target.textContent; 
 
+      // getValue(projectNameValueClicked);
+
+      // console.log(projectNameValueClicked); 
+
       projectNameValueContainerForStyles.append(projectNameValueClicked);
       
       mainContentContainerProjectNames.append(projectNameValueContainerForStyles);
@@ -201,44 +202,24 @@ export function printValuesToDOM(array) {
   }
 } 
 
-// I think I can just use this one function, if you are already making the loop, grabbing elements why seperate to another function? 
+// pass this value, to a function which will delete it from both places, 
 
-// next if the project name is clicked, append the textContent to the main container section, 
+// function getValue(value) { 
+//   let projectNames = value; 
 
-// OK I am able to grab the main content container, and add the event target text Content, can I also append the btn's? 
+//   // console.log(projectNames);
 
-// once that is complete, don't forget to add a class, so the text Content can be styled, 
+//   let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
 
-// once you are able to do that, you need to add some type of conditional logic, that will prevent the user from adding the same project again, 
+//   // console.log(checkMarkWithinDeleteTodoModal); 
 
-// THIS WILL HAVE TO INSIDE ANOTHER FUNCTION
+//   checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
+    
+//   })
 
-// you will have to append the two btns for the todo's, add and delete, you can use svg icons, 
+// } 
 
-// I don't think the project names should stay in the container, one student did not have that logic, 
-
-// Next replace the btn text with an svg, on an + icon and trash btn, 
-
-// OK svg icons are added, sometimes a little slow to render but that can be addressed another time, 
-
-// lets move onto making the logic that prevents the user from adding, the same project multiple times, 
-
-// now begins, how we can prevent user from adding the same project multiple times, and if the user clicks another project, 
-
-// replace the new and clear the old, 
-
-// seperate function, within a totally different module, 
-
-// export and import the correct functions, 
-
-// make a function, loop through projet array, 
-
-// get the project ID or the value, projectname.project if that matches what was clicked on, generate that project, else, prevent the user from adding another project, 
-
-// there will have to some sort of conditional logic, 
-
-// something needs to be checked before a project name can be added to the section, or to prevent a user from adding multiple projects, 
-
+ 
 
 formTagForModule.addEventListener("submit", (e) => { 
   e.preventDefault();
@@ -248,7 +229,7 @@ formTagForModule.addEventListener("submit", (e) => {
 
 let cancelBtnAddTodoModal = document.getElementsByClassName("close-the-todo-modal")[0];
 
-console.log(cancelBtnAddTodoModal);
+// console.log(cancelBtnAddTodoModal);
 
 cancelBtnAddTodoModal.addEventListener("click", (e) => { 
 
@@ -267,9 +248,80 @@ cancelBtnForDeleteProjectModalX.addEventListener("click", (e) => {
 
   overlayForTodoDeleteBtn.style.display = "none";
   
-})
+}) 
+
+let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
+
+checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => { 
+  // console.log("you clicked the check mark within the delete modal"); 
+  // let mainContentContainerContainsProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
+
+  let mainContentProjectNamesStyleContainer = document.getElementsByClassName("project-name-click-event-container-for-styles")[0]; 
+
+  let valueFromMainContentSection = mainContentProjectNamesStyleContainer.innerText; 
+
+  console.log(valueFromMainContentSection); 
+
+  // let getValuesProjectName = valueFromMainContentSection.id; 
+
+  // console.log(getValuesProjectName);
+
+  let yourProjectsContainer = document.getElementById("navbar-project-names-go-here");
+
+  console.log(yourProjectsContainer); 
+
+  let yourProjectsContainerValues = yourProjectsContainer.innerText;
+
+  console.log(yourProjectsContainerValues); 
+
+  let addAndDeleteBtnTodoModal = document.getElementsByClassName("add-delete-btn-for-todo-container-styles")[0]; 
+
+  console.log(addAndDeleteBtnTodoModal);
+  
+  mainContentProjectNamesStyleContainer.replaceChildren();
+
+  addAndDeleteBtnTodoModal.replaceChildren(); 
+
+  yourProjectsContainer.replaceChildren();
+
+  console.log(projectArray);
+
+  printValuesToDOM(projectArray);
+
+  modalForTodoDeleteBtn.style.display = "none"; 
+
+  overlayForTodoDeleteBtn.style.display = "none"; 
+
+}) 
 
 
+
+// Hello, I am running into a small problem with todo, I'm trying to implement some logic that when the user presses the trash icon/delete project btn, it will clear the project name from the DOM, and in the "your projects" section. Basically just using a listener, that when the user confirms to delete the project, I get the value from the display, then remove the value. The problem is I get undefined when I try this approach, which is strange because I'm getting the element, there is a value inside there, then just usingr .value. 
+
+
+
+// running into a problem with todo, once the user presses the trash icon/delete btn and they confirm 
+
+// they want to delete the project, I want to delete it from main container as well as the your projects section, 
+
+// Not sure If I'm doing this right but I can grab the main container, and then use replaceChildren to clear the DOM ]
+
+// but I am getting pretty stuck on how to delete it from the your projects section? 
+
+// Basically I think of somehow getting the value from the main container, as well as the projects section, 
+
+// then using removeChild to delete the project name in both places, 
+
+
+
+  
+// OK well this is one way to clear the project name from the DOM, 
+
+// but how can I access that same project name from the your projects section and delete that? 
+
+// I need to also delete that same project name within the your projects section. look up replaceChildren
+
+// not going to work because what are you replacing with? How do you know which element to replace it with? 
 
 
 
