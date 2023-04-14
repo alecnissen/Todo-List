@@ -250,6 +250,14 @@ cancelBtnForDeleteProjectModalX.addEventListener("click", (e) => {
   
 }) 
 
+for (let i = 0; i < projectArray.length; i++) { 
+  let projectIndex = projectArray[i]; 
+
+  let projectValue = projectIndex.id; 
+
+  console.log(projectValue);
+}
+
 let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
 
 checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => { 
@@ -292,7 +300,34 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 
   overlayForTodoDeleteBtn.style.display = "none"; 
 
-}) 
+})  
+
+
+
+const App =  (() => {
+  let projectArray = []
+  let currentProject
+
+  function setCurrentProject(project) {
+          currentProject = project;
+  }
+
+  function getCurrentProject() {
+          return currentProject;
+  }
+
+  function addProject(project) {
+      projectArray.push(project);
+      arrayStorageSetItem(projectArray)
+  }
+
+  function deleteProject(project = currentProject) {
+      projectArray = project.filter(p => p.id !== project.id)
+      arrayStorageSetItem(projectArray)
+  }
+
+  return {setCurrentProject, getCurrentProject, addProject, deleteProject}
+})()
 
 
 
