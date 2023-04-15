@@ -47,6 +47,32 @@ printValuesToDOM(projectArray);
 
 
 
+// thinking of the next step after the deleting projects, 
+
+// that would be getting the values from the form input and 
+
+// pushing them back into the todo array that each project containers 
+
+// you will need access to that todo array, try a simple log first 
+
+// but the todo's will be added to there but also it needs to be 
+
+// reflected in your DOM too, 
+
+// so thinking of some way to access the todo array within the obj 
+
+
+// if you can access it you add the values to it, 
+
+// then once the values are stored properly within each object, 
+
+// you want to reflect that in the DOM, access the todo and display it's properties 
+
+// then having a way to delete todo's and having that update 
+
+// within storage and within DOM. 
+
+
 // getting project ID 
 
 // for (let i = 0; i < projectArray.length; i++) { 

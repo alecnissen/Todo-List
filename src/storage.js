@@ -11,8 +11,7 @@ export default function arrayStorageSetItem(name) {
     
     localStorage.setItem("Project-Names", JSON.stringify(name));  
     
-    
-    // localStorage.clear();
+    console.log(localStorage);
    
 } 
 

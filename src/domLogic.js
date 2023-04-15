@@ -31,6 +31,7 @@ let modalForTodoDeleteBtn = document.getElementsByClassName("modal-for-delete-bt
 
 let overlayForTodoDeleteBtn = document.getElementsByClassName("overlay-for-todo-delete-btn")[0]; 
 
+let currentProject 
 
 function preventDoYouWantToDeleteModal() { 
   
@@ -119,6 +120,8 @@ export function printValuesToDOM(array) {
 
     let projectNameContainer = document.createElement("div"); 
 
+    // console.log(projectNameContainer.id);
+
     projectNameContainer.append(projectIndexProjectNameValue);
 
     navbarProjectNameContainer.append(projectNameContainer); 
@@ -127,6 +130,17 @@ export function printValuesToDOM(array) {
 
     
     projectNameContainer.addEventListener("click", (e) => { 
+
+      currentProject = projectIndex; 
+
+      // let id = currentProject.id;
+
+      // console.log(id);
+
+      // console.log(currentProject);
+
+
+
       // works too
       // mainContentContainer.replaceChildren();
 
@@ -255,79 +269,76 @@ for (let i = 0; i < projectArray.length; i++) {
 
   let projectValue = projectIndex.id; 
 
-  console.log(projectValue);
+  // console.log(projectValue);
 }
 
 let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
 
-checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => { 
-  // console.log("you clicked the check mark within the delete modal"); 
-  // let mainContentContainerContainsProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
+checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {  
 
   let mainContentProjectNamesStyleContainer = document.getElementsByClassName("project-name-click-event-container-for-styles")[0]; 
 
-  let valueFromMainContentSection = mainContentProjectNamesStyleContainer.innerText; 
-
-  console.log(valueFromMainContentSection); 
-
-  // let getValuesProjectName = valueFromMainContentSection.id; 
-
-  // console.log(getValuesProjectName);
-
-  let yourProjectsContainer = document.getElementById("navbar-project-names-go-here");
-
-  console.log(yourProjectsContainer); 
-
-  let yourProjectsContainerValues = yourProjectsContainer.innerText;
-
-  console.log(yourProjectsContainerValues); 
-
   let addAndDeleteBtnTodoModal = document.getElementsByClassName("add-delete-btn-for-todo-container-styles")[0]; 
-
-  console.log(addAndDeleteBtnTodoModal);
   
-  mainContentProjectNamesStyleContainer.replaceChildren();
+  let projectID = currentProject.id; 
+  
+  let value = currentProject; 
+  
+  console.log(projectID);
+  
+  console.log(value); 
+  
+  projectArray = projectArray.filter(project => project.id !== currentProject.id);
+  
+  mainContentProjectNamesStyleContainer.replaceChildren(); 
 
-  addAndDeleteBtnTodoModal.replaceChildren(); 
+  addAndDeleteBtnTodoModal.replaceChildren();
 
-  yourProjectsContainer.replaceChildren();
+  printValuesToDOM(projectArray); 
 
-  console.log(projectArray);
-
-  printValuesToDOM(projectArray);
+  arrayStorageSetItem(projectArray);
 
   modalForTodoDeleteBtn.style.display = "none"; 
 
-  overlayForTodoDeleteBtn.style.display = "none"; 
+  overlayForTodoDeleteBtn.style.display = "none";  
 
+  // able to get the project ID, and the name of the project, 
+
+  // do I need to get the ID and name within the other section too? 
+
+  // noticing with my current code that it will delete the first number 
+
+  // why? well I have to current project selected and able to get it's id, 
+
+  // how can I find the same project name within the your projects section. 
 })  
 
 
 
-const App =  (() => {
-  let projectArray = []
-  let currentProject
+// const App =  (() => {
+//   // let projectArray = []
+//   let currentProject
 
-  function setCurrentProject(project) {
-          currentProject = project;
-  }
+//   function setCurrentProject(project) {
+//           currentProject = project;
+//   }
 
-  function getCurrentProject() {
-          return currentProject;
-  }
+//   function getCurrentProject() {
+//           return currentProject;
+//   }
 
-  function addProject(project) {
-      projectArray.push(project);
-      arrayStorageSetItem(projectArray)
-  }
+//   function addProject(project) {
+//       projectArray.push(project);
+//       arrayStorageSetItem(projectArray)
+//   }
 
-  function deleteProject(project = currentProject) {
-      projectArray = project.filter(p => p.id !== project.id)
-      arrayStorageSetItem(projectArray)
-  }
+//   function deleteProject(project = currentProject) {
+//       projectArray = project.filter(p => p.id !== project.id)
+//       arrayStorageSetItem(projectArray)
+//   }
 
-  return {setCurrentProject, getCurrentProject, addProject, deleteProject}
-})()
+//   return {setCurrentProject, getCurrentProject, addProject, deleteProject}
+// })()
 
 
 
