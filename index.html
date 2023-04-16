@@ -51,7 +51,7 @@
 
 
     <!-- <script src="main.js"></script> -->
-
+  <form id="input-form-for-creating-todo-task">
     <section class="modal-todo hidden-modal-todo">
       <div class="flex-for-todo-modal">
         <div id="container-for-add-todo-text"> 
@@ -60,21 +60,21 @@
         <button class="close-the-todo-modal" id="close-todo-modal-btn">⨉</button>
       </div>
       <label>Title:</label>
-      <input type="text" id="title" placeholder="Title of Task" />
+      <input type="text" id="title-of-todo-input-form" placeholder="Title of Task" />
       <label>Description:</label>
-      <textarea></textarea>
+      <textarea id="description-for-todo"></textarea>
       <label>Due Date:</label>
-      <input type="date">
+      <input type="date" id="due-date-for-todo-task">
       <label>Priority</label>
-      <select>
+      <select id="priority-for-todo-task">
         <option>High</option>
         <option>Medium</option>
         <option>Low</option>
       </select>
-      <button class="Add-task-todo-modal">Add Task</button>
+      <button class="Add-task-todo-modal" id="add-task-todo-modal">Add Task</button>
 
     </section>
-    
+  </form>
     <div class="overlay-for-todo-modal hidden-property-for-todo"></div> 
 
 
