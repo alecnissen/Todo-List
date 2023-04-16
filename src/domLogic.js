@@ -132,21 +132,6 @@ export function printValuesToDOM(array) {
     projectNameContainer.addEventListener("click", (e) => { 
 
       currentProject = projectIndex; 
-
-      // let id = currentProject.id;
-
-      // console.log(id);
-
-      // console.log(currentProject);
-
-
-
-      // works too
-      // mainContentContainer.replaceChildren();
-
-      // once the project name/container is clicked, clear the DOM and then create the elements, 
-
-      // or clear the DOM before the btn is clicked, so that way a new element gets created each time, 
       
       let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
 
@@ -216,23 +201,6 @@ export function printValuesToDOM(array) {
   }
 } 
 
-// pass this value, to a function which will delete it from both places, 
-
-// function getValue(value) { 
-//   let projectNames = value; 
-
-//   // console.log(projectNames);
-
-//   let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
-
-//   // console.log(checkMarkWithinDeleteTodoModal); 
-
-//   checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
-    
-//   })
-
-// } 
-
  
 
 formTagForModule.addEventListener("submit", (e) => { 
@@ -264,13 +232,13 @@ cancelBtnForDeleteProjectModalX.addEventListener("click", (e) => {
   
 }) 
 
-for (let i = 0; i < projectArray.length; i++) { 
-  let projectIndex = projectArray[i]; 
+// for (let i = 0; i < projectArray.length; i++) { 
+//   let projectIndex = projectArray[i]; 
 
-  let projectValue = projectIndex.id; 
+//   let projectValue = projectIndex.id; 
 
-  // console.log(projectValue);
-}
+//   // console.log(projectValue);
+// }
 
 let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
 
@@ -296,7 +264,7 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 
   printValuesToDOM(projectArray); 
 
-  arrayStorageSetItem(projectArray);
+  arrayStorageSetItem(projectArray); 
 
   modalForTodoDeleteBtn.style.display = "none"; 
 
@@ -312,6 +280,73 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 
   // how can I find the same project name within the your projects section. 
 })  
+
+
+
+
+// function getToDoValuesFromInput() { 
+// }
+
+
+
+let addBtnToDoModal = document.getElementById("add-task-todo-modal"); 
+
+console.log(addBtnToDoModal);
+
+// look back at how you got the values from naming the project, 
+
+
+addBtnToDoModal.addEventListener("click", (e) => { 
+
+  console.log(currentProject);
+
+  // console.log(currentProject.todoItems);
+  
+  e.preventDefault(); 
+
+  let titleInputForTodo = document.getElementById("title-of-todo-input-form"); 
+
+  let titleInputValue = titleInputForTodo.value; 
+
+  currentProject.todoItems.push(titleInputValue); 
+
+  console.log(currentProject.todoItems);
+
+  let descriptionForTodo = document.getElementById("description-for-todo"); 
+
+  let descriptionForTodoValue = descriptionForTodo.value; 
+  
+  currentProject.todoItems.push(descriptionForTodoValue); 
+
+  let dueDateForTodo = document.getElementById("due-date-for-todo-task"); 
+
+  let dueDateForTodoValue = dueDateForTodo.value; 
+
+  currentProject.todoItems.push(dueDateForTodoValue);
+
+  let priorityForTodo = document.getElementById("priority-for-todo-task"); 
+
+  let priorityForTodoValue = priorityForTodo.value;  
+
+  currentProject.todoItems.push(priorityForTodoValue);
+
+  console.log(currentProject.todoItems);
+
+  
+}) 
+
+// get all the values, within the modal, 
+
+// first get the values of all the input fields, 
+
+// once user presses the add btn, values are saved, 
+
+// passed to the specific projects todo array, 
+
+// also passed to storage too so the todo array is the same as regular project array 
+
+// 
+
 
 
 

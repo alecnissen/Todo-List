@@ -47,6 +47,25 @@ printValuesToDOM(projectArray);
 
 
 
+
+
+// OK so the deleting project method works!! I am now able to delete a project from main as well as the navbar, 
+
+// next I did to add the logic so the user can add todo's, 
+
+// remember todo's are added to the project obj array, 
+
+// first we probably need a function that will capture the value 
+
+// on each input field, lets start there, 
+
+// a function will be needed to get the correct input fields 
+
+// and then get the values from them, 
+
+
+
+
 // thinking of the next step after the deleting projects, 
 
 // that would be getting the values from the form input and 
