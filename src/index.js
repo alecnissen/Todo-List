@@ -30,6 +30,23 @@ projectNameLoop();
 printValuesToDOM(projectArray);  
 
 
+
+// ok we have something working here, 
+
+// you have two functions, 
+
+// at least data is being printed to the DOM, and is storing in local storage correctly 
+
+// check your functions again, 
+
+// remember one to create the elements/style, other to just display the currentProjects todo's 
+
+// one function to grab the main container, append values, style, 
+
+// the other function should just display them. 
+
+
+
 // let getTodoItems = localStorage.getItem("todoItems"); 
 
 // let parseTodoItems = JSON.parse(getTodoItems); 

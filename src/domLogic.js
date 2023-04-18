@@ -199,16 +199,27 @@ export function printValuesToDOM(array) {
       mainContentContainerProjectNames.append(btnContainerAddandDelete); 
 
       function displayCurrentProjectTodo() { 
+
+        let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
+        
+        projectTodoContainerDisplay.replaceChildren();
+
         for (let i = 0; i < currentProject.todoItems.length; i++) { 
-          let x = currentProject.todoItems[i]; 
+          let selectedProject = currentProject.todoItems[i]; 
+
+          console.log(selectedProject); 
 
           
-
-          console.log(x); 
-
-          mainContentContainerProjectNames.append(x);
-        }
-      } 
+           
+           projectTodoContainerDisplay.append(selectedProject);
+          
+          // projectTodoContainerDisplay.replaceChildren();
+          // closing brackets for display function 
+          // projectTodoContainerDisplay.replaceChildren();
+          
+        } 
+        
+       } 
 
       displayCurrentProjectTodo(); 
 
@@ -357,9 +368,9 @@ addBtnToDoModal.addEventListener("click", (e) => {
 
 // printToDoValues(currentProjectsTodos);
 
-let x =  todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue)
+let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue)
 
-printToDoValues(x);
+printToDoValues(todosForProject);
 
 })   
 
@@ -377,24 +388,53 @@ function printToDoValues(project) {
   
   let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
 
+  let projectTodoContainer = document.getElementById("project-todos-container"); 
+
   let displayTodoCurrentProject = project; 
 
   let displayTitle = displayTodoCurrentProject.title; 
+
+  let displayTitleStyleDiv = document.createElement("div");
 
   let displayDescription = displayTodoCurrentProject.description; 
 
   let displayPriority = displayTodoCurrentProject.priority; 
 
-  let displayDueDate = displayTodoCurrentProject.dueDate; 
-  // console.log(displayTodoCurrentProject);
+  let displayDueDate = displayTodoCurrentProject.dueDate;  
 
-  mainSectionContainer.append(displayTitle);
+  // let stylesDiv = document.createElement("container"); 
+
+  // stylesDiv.style.backgroundColor = "white"; 
+
+  // stylesDiv.style.textAlign = "center"; 
+
+  // stylesDiv.style.display = "flex"; 
+
+  // stylesDiv.style.flexDirection = "row";
+
+  // stylesDiv.style.fontSize = "1.5rem"; 
+
+  // stylesDiv.style.justifyContent = "center"; 
+
+  // stylesDiv.style.alignItems = "center";
+
+  // stylesDiv.style.width = "70%";
+
+  // stylesDiv.append(displayTitle); 
+
+  // stylesDiv.append(displayDescription); 
+
+  // stylesDiv.append(displayPriority); 
+
+  // stylesDiv.append(displayDueDate); 
+
+  projectTodoContainer.append(displayTitle);
   
-  mainSectionContainer.append(displayDescription); 
+  projectTodoContainer.append(displayDescription); 
 
-  mainSectionContainer.append(displayPriority);
+  projectTodoContainer.append(displayDueDate);
 
-  mainSectionContainer.append(displayDueDate); 
+  projectTodoContainer.append(displayPriority); 
 
 
 
