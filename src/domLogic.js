@@ -9,6 +9,8 @@ import  projectNameLoop from "./index.js";
 
 import projectDisplayConditionalLogic from "./conditionalLogic.js";
 
+import arrayStorageTodoItems from "./storage";
+
 const modal = document.querySelector(".modal");
 
 const overlay = document.querySelector(".overlay"); 
@@ -71,7 +73,7 @@ preventFormPopUp();
   // modalInputField.reset();
   // when you close it, should clear the input field,
   formTagForModule.reset();
-})
+}) 
 
  addProjectButton.addEventListener("click", () => { 
   modal.style.display = "flex"; 
@@ -127,7 +129,6 @@ export function printValuesToDOM(array) {
     navbarProjectNameContainer.append(projectNameContainer); 
 
     let mainContentContainer = document.getElementsByClassName("main-content-section-container")[0]; 
-
     
     projectNameContainer.addEventListener("click", (e) => { 
 
@@ -135,7 +136,9 @@ export function printValuesToDOM(array) {
       
       let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
 
-      mainContentContainerProjectNames.replaceChildren();
+      mainContentContainerProjectNames.replaceChildren(); 
+
+
       
       let projectNameValueContainerForStyles = document.createElement("div"); 
 
@@ -195,6 +198,20 @@ export function printValuesToDOM(array) {
 
       mainContentContainerProjectNames.append(btnContainerAddandDelete); 
 
+      function displayCurrentProjectTodo() { 
+        for (let i = 0; i < currentProject.todoItems.length; i++) { 
+          let x = currentProject.todoItems[i]; 
+
+          
+
+          console.log(x); 
+
+          mainContentContainerProjectNames.append(x);
+        }
+      } 
+
+      displayCurrentProjectTodo(); 
+
       // btnContainerAddandDelete.replaceChildren();
 
     })
@@ -252,9 +269,9 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
   
   let value = currentProject; 
   
-  console.log(projectID);
+  // console.log(projectID);
   
-  console.log(value); 
+  // console.log(value); 
   
   projectArray = projectArray.filter(project => project.id !== currentProject.id);
   
@@ -270,15 +287,7 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 
   overlayForTodoDeleteBtn.style.display = "none";  
 
-  // able to get the project ID, and the name of the project, 
 
-  // do I need to get the ID and name within the other section too? 
-
-  // noticing with my current code that it will delete the first number 
-
-  // why? well I have to current project selected and able to get it's id, 
-
-  // how can I find the same project name within the your projects section. 
 })  
 
 
@@ -291,26 +300,31 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 
 let addBtnToDoModal = document.getElementById("add-task-todo-modal"); 
 
-console.log(addBtnToDoModal);
+// console.log(addBtnToDoModal);
 
 // look back at how you got the values from naming the project, 
 
 
+let formInput = document.getElementById("input-form-for-creating-todo-task");
+
+formInput.addEventListener("submit", (e) => { 
+  e.preventDefault();
+})
+
+
+
 addBtnToDoModal.addEventListener("click", (e) => { 
-
-  console.log(currentProject);
-
-  // console.log(currentProject.todoItems);
   
   e.preventDefault(); 
+
 
   let titleInputForTodo = document.getElementById("title-of-todo-input-form"); 
 
   let titleInputValue = titleInputForTodo.value; 
 
-  currentProject.todoItems.push(titleInputValue); 
+  // console.log(currentProject.todoItems); 
 
-  console.log(currentProject.todoItems);
+  currentProject.todoItems.push(titleInputValue); 
 
   let descriptionForTodo = document.getElementById("description-for-todo"); 
 
@@ -330,10 +344,83 @@ addBtnToDoModal.addEventListener("click", (e) => {
 
   currentProject.todoItems.push(priorityForTodoValue);
 
-  console.log(currentProject.todoItems);
+  let currentProjectsTodos = currentProject.todoItems; 
 
+  let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+
+  // mainSectionContainer.append(currentProjectsTodos); 
+
+  arrayStorageSetItem(projectArray);
+
+  // printValuesToDOM(projectArray); 
+
+
+// printToDoValues(currentProjectsTodos);
+
+let x =  todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue)
+
+printToDoValues(x);
+
+})   
+
+function todoObjectFactory(title, description, priority, dueDate) { 
+  return { 
+    title: title, 
+    description: description, 
+    priority: priority, 
+    dueDate: dueDate 
+  }
+} 
+
+
+function printToDoValues(project) { 
   
-}) 
+  let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+
+  let displayTodoCurrentProject = project; 
+
+  let displayTitle = displayTodoCurrentProject.title; 
+
+  let displayDescription = displayTodoCurrentProject.description; 
+
+  let displayPriority = displayTodoCurrentProject.priority; 
+
+  let displayDueDate = displayTodoCurrentProject.dueDate; 
+  // console.log(displayTodoCurrentProject);
+
+  mainSectionContainer.append(displayTitle);
+  
+  mainSectionContainer.append(displayDescription); 
+
+  mainSectionContainer.append(displayPriority);
+
+  mainSectionContainer.append(displayDueDate); 
+
+
+
+} 
+
+
+// ok I am able to get the values, I am able to print the values to the DOM, 
+
+// how can I permanently add these todo items onto each project 
+
+// and save them each time so they reload on refresh? 
+
+// I can grab the current project, toggle back and forth, between projects 
+
+// then how can I add these newly added todo's back into the array, 
+
+// push them back into the array?  
+
+// I able to add todo items into a project, but how can I permanently add  them? 
+
+// do I need to push them back into the array? 
+
+// 
+
+
+
 
 // get all the values, within the modal, 
 
@@ -344,6 +431,26 @@ addBtnToDoModal.addEventListener("click", (e) => {
 // passed to the specific projects todo array, 
 
 // also passed to storage too so the todo array is the same as regular project array 
+
+// so we have to ability to get the values, 
+
+// and push them to the correct project, 
+
+// they do not save, and clear upon refresh. 
+
+// how can I push these values into the array, permanently save them, 
+
+// and then display them? How can I display the todo's? 
+
+// Do I have to do something with the projects array? 
+
+// do I have to pass project array again? 
+
+// you will have to display the projects again 
+
+// the todo's are being updated 
+
+// push the updated projectsArray, and find a way to display todo's,
 
 // 
 

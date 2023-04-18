@@ -2,11 +2,7 @@
 
 // import "src/eventListenerModule.js";
 
-import "./eventListenerModule";
-
 import "./domLogic";
-
-import  { projectDisplayConditionalLogic } from "./conditionalLogic";
 
 import "./storage"; 
 
@@ -16,18 +12,12 @@ let getStorage = localStorage.getItem("Project-Names");
 
 let parseData = JSON.parse(getStorage); 
 
-// console.log(parseData);
-
-// let project 
-
 export default function projectNameLoop() {   
 for (let variable in parseData) { 
 
      let projectIndex = variable; 
 
      let valueInProject = parseData[projectIndex]; 
-
-     // printProjectNameToNavbarProjectSection(valueInProject);
 
      projectArray.push(valueInProject); 
 
@@ -36,17 +26,70 @@ for (let variable in parseData) {
 } 
 
 projectNameLoop();
-
-// console.log(projectArray); 
-
-     
-
-printValuesToDOM(projectArray); 
+  
+printValuesToDOM(projectArray);  
 
 
+// let getTodoItems = localStorage.getItem("todoItems"); 
+
+// let parseTodoItems = JSON.parse(getTodoItems); 
 
 
 
+
+// for (let todo in parseTodoItems) { 
+//      let todoItem = parseTodoItems; 
+
+//      let valueInTodo = parseTodoItems[todoItem]; 
+
+//      projectArray.push(valueInTodo); 
+
+//      // console.log(todoItem);
+// }
+
+// printValuesToDOM(projectArray);
+
+
+
+
+
+
+// store the todos like I did with names, 
+
+// loop within the function, take in project, add the values, 
+
+// push the project back into projects array, and then 
+
+// pass the projectsArray back to DOM function, and storage, 
+
+// add the todo's on a project, update it again 
+
+
+
+
+// console.log(parseTodoItems);
+
+
+// how can I keep my todo's after page refresh? Yesterday it seemed like it was a problem in how I'm storing them and how I parse them 
+
+// it seems like it is a storage problem, how can I properly store the todo array within each project, 
+
+// try to parse the data like u did before? 
+
+
+// let getTodoItems = localStorage.getItem("todoItems"); 
+
+// let parseTodoItems = JSON.parse(getTodoItems); 
+
+
+// function parseTodo() { 
+//      for (let item in parseTodoItems) { 
+//           let todo = item; 
+//           console.log(todo);
+//      }
+// } 
+
+// parseData();
 
 
 // OK so the deleting project method works!! I am now able to delete a project from main as well as the navbar, 

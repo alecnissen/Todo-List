@@ -11,13 +11,16 @@ export default function arrayStorageSetItem(name) {
     
     localStorage.setItem("Project-Names", JSON.stringify(name));  
     
-    console.log(localStorage);
-   
+    
+    
 } 
 
 
+//  export function arrayStorageTodoItems(project) { 
 
-
+//     localStorage.setItem("todoItems", JSON.stringify(project)); 
+    
+//  }
 
 
 
