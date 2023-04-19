@@ -191,38 +191,38 @@ export function printValuesToDOM(array) {
       mainContentContainerProjectNames.append(projectNameValueContainerForStyles);
 
       mainContentContainerProjectNames.append(btnContainerAddandDelete); 
+      // old location of display todo function 
+      // function displayCurrentProjectTodo() { 
 
-      function displayCurrentProjectTodo() { 
-
-        let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
+      //   let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
         
-        projectTodoContainerDisplay.style.display = "flex"; 
+      //   projectTodoContainerDisplay.style.display = "flex"; 
 
-        projectTodoContainerDisplay.style.flexDirection = "column";
-        // let div = document.createElement("div"); 
+      //   projectTodoContainerDisplay.style.flexDirection = "column";
+      //   // let div = document.createElement("div"); 
 
-        // div.style.backgroundColor = "white"; 
+      //   // div.style.backgroundColor = "white"; 
 
-        // div.style.fontSize = "2rem"; 
+      //   // div.style.fontSize = "2rem"; 
 
-        projectTodoContainerDisplay.replaceChildren(); 
+      //   projectTodoContainerDisplay.replaceChildren(); 
 
-        for (let i = 0; i < currentProject.todoItems.length; i++) { 
-          let taskHolder = document.createElement("div"); 
+      //   for (let i = 0; i < currentProject.todoItems.length; i++) { 
+      //     let taskHolder = document.createElement("div"); 
 
-          projectTodoContainerDisplay.append(taskHolder);
+      //     projectTodoContainerDisplay.append(taskHolder);
 
-          let selectedProject = currentProject.todoItems[i]; 
+      //     let selectedProject = currentProject.todoItems[i]; 
            
-          taskHolder.append(selectedProject);
+      //     taskHolder.append(selectedProject);
 
-           projectTodoContainerDisplay.append(taskHolder);
+      //      projectTodoContainerDisplay.append(taskHolder);
           
-        } 
+      //   } 
         
-       } 
+      //  } 
 
-      displayCurrentProjectTodo(); 
+      // displayCurrentProjectTodo(); 
 
     })
   }
@@ -348,7 +348,51 @@ function todoObjectFactory(title, description, priority, dueDate) {
     priority: priority, 
     dueDate: dueDate 
   }
-} 
+}  
+
+
+
+
+function displayCurrentProjectTodo() { 
+
+  let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
+  
+  projectTodoContainerDisplay.style.display = "flex"; 
+
+  projectTodoContainerDisplay.style.flexDirection = "column";
+  // let div = document.createElement("div"); 
+
+  // div.style.backgroundColor = "white"; 
+
+  // div.style.fontSize = "2rem"; 
+
+  projectTodoContainerDisplay.replaceChildren(); 
+
+  for (let i = 0; i < currentProject.todoItems.length; i++) { 
+    let taskHolder = document.createElement("div"); 
+
+    projectTodoContainerDisplay.append(taskHolder);
+
+    let selectedProject = currentProject.todoItems[i]; 
+     
+    taskHolder.append(selectedProject);
+
+     projectTodoContainerDisplay.append(taskHolder);
+    
+  } 
+  
+ } 
+
+// displayCurrentProjectTodo(); 
+
+
+
+
+
+
+
+
+
 
 
 function printToDoValues(project) { 
