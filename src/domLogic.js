@@ -11,6 +11,8 @@ import projectDisplayConditionalLogic from "./conditionalLogic.js";
 
 import arrayStorageTodoItems from "./storage";
 
+
+
 const modal = document.querySelector(".modal");
 
 const overlay = document.querySelector(".overlay"); 
@@ -178,19 +180,11 @@ export function printValuesToDOM(array) {
 
       btnContainerAddandDelete.classList.add("add-delete-btn-for-todo-container-styles"); 
 
-      // function call/conditional logic call here before the values are appended? 
-
-      // projectDisplayConditionalLogic(projectArray); 
-
       btnContainerAddandDelete.append(addBtnToCreateModal); 
 
       btnContainerAddandDelete.append(deleteBtnToDeleteTodo); 
 
       let projectNameValueClicked = e.target.textContent; 
-
-      // getValue(projectNameValueClicked);
-
-      // console.log(projectNameValueClicked); 
 
       projectNameValueContainerForStyles.append(projectNameValueClicked);
       
@@ -202,28 +196,33 @@ export function printValuesToDOM(array) {
 
         let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
         
-        projectTodoContainerDisplay.replaceChildren();
+        projectTodoContainerDisplay.style.display = "flex"; 
+
+        projectTodoContainerDisplay.style.flexDirection = "column";
+        // let div = document.createElement("div"); 
+
+        // div.style.backgroundColor = "white"; 
+
+        // div.style.fontSize = "2rem"; 
+
+        projectTodoContainerDisplay.replaceChildren(); 
 
         for (let i = 0; i < currentProject.todoItems.length; i++) { 
+          let taskHolder = document.createElement("div"); 
+
+          projectTodoContainerDisplay.append(taskHolder);
+
           let selectedProject = currentProject.todoItems[i]; 
-
-          console.log(selectedProject); 
-
-          
            
-           projectTodoContainerDisplay.append(selectedProject);
-          
-          // projectTodoContainerDisplay.replaceChildren();
-          // closing brackets for display function 
-          // projectTodoContainerDisplay.replaceChildren();
+          taskHolder.append(selectedProject);
+
+           projectTodoContainerDisplay.append(taskHolder);
           
         } 
         
        } 
 
       displayCurrentProjectTodo(); 
-
-      // btnContainerAddandDelete.replaceChildren();
 
     })
   }
@@ -238,8 +237,6 @@ formTagForModule.addEventListener("submit", (e) => {
 })  
 
 let cancelBtnAddTodoModal = document.getElementsByClassName("close-the-todo-modal")[0];
-
-// console.log(cancelBtnAddTodoModal);
 
 cancelBtnAddTodoModal.addEventListener("click", (e) => { 
 
@@ -260,13 +257,6 @@ cancelBtnForDeleteProjectModalX.addEventListener("click", (e) => {
   
 }) 
 
-// for (let i = 0; i < projectArray.length; i++) { 
-//   let projectIndex = projectArray[i]; 
-
-//   let projectValue = projectIndex.id; 
-
-//   // console.log(projectValue);
-// }
 
 let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
 
@@ -279,10 +269,6 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
   let projectID = currentProject.id; 
   
   let value = currentProject; 
-  
-  // console.log(projectID);
-  
-  // console.log(value); 
   
   projectArray = projectArray.filter(project => project.id !== currentProject.id);
   
@@ -302,18 +288,8 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 })  
 
 
-
-
-// function getToDoValuesFromInput() { 
-// }
-
-
-
 let addBtnToDoModal = document.getElementById("add-task-todo-modal"); 
 
-// console.log(addBtnToDoModal);
-
-// look back at how you got the values from naming the project, 
 
 
 let formInput = document.getElementById("input-form-for-creating-todo-task");
@@ -332,8 +308,6 @@ addBtnToDoModal.addEventListener("click", (e) => {
   let titleInputForTodo = document.getElementById("title-of-todo-input-form"); 
 
   let titleInputValue = titleInputForTodo.value; 
-
-  // console.log(currentProject.todoItems); 
 
   currentProject.todoItems.push(titleInputValue); 
 
@@ -359,14 +333,7 @@ addBtnToDoModal.addEventListener("click", (e) => {
 
   let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
 
-  // mainSectionContainer.append(currentProjectsTodos); 
-
   arrayStorageSetItem(projectArray);
-
-  // printValuesToDOM(projectArray); 
-
-
-// printToDoValues(currentProjectsTodos);
 
 let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue)
 
@@ -390,43 +357,23 @@ function printToDoValues(project) {
 
   let projectTodoContainer = document.getElementById("project-todos-container"); 
 
+  let containerDiv = document.createElement("div");
+
   let displayTodoCurrentProject = project; 
 
-  let displayTitle = displayTodoCurrentProject.title; 
+  // for (let i = 0; i < displayTodoCurrentProject.length; i++) { 
+  //   let x = displayTodoCurrentProject[i]; 
 
-  let displayTitleStyleDiv = document.createElement("div");
+  //   console.log(x); 
+  // }
+
+  let displayTitle = displayTodoCurrentProject.title; 
 
   let displayDescription = displayTodoCurrentProject.description; 
 
   let displayPriority = displayTodoCurrentProject.priority; 
 
-  let displayDueDate = displayTodoCurrentProject.dueDate;  
-
-  // let stylesDiv = document.createElement("container"); 
-
-  // stylesDiv.style.backgroundColor = "white"; 
-
-  // stylesDiv.style.textAlign = "center"; 
-
-  // stylesDiv.style.display = "flex"; 
-
-  // stylesDiv.style.flexDirection = "row";
-
-  // stylesDiv.style.fontSize = "1.5rem"; 
-
-  // stylesDiv.style.justifyContent = "center"; 
-
-  // stylesDiv.style.alignItems = "center";
-
-  // stylesDiv.style.width = "70%";
-
-  // stylesDiv.append(displayTitle); 
-
-  // stylesDiv.append(displayDescription); 
-
-  // stylesDiv.append(displayPriority); 
-
-  // stylesDiv.append(displayDueDate); 
+  let displayDueDate = displayTodoCurrentProject.dueDate; 
 
   projectTodoContainer.append(displayTitle);
   
@@ -435,7 +382,6 @@ function printToDoValues(project) {
   projectTodoContainer.append(displayDueDate);
 
   projectTodoContainer.append(displayPriority); 
-
 
 
 } 
