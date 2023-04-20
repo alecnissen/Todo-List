@@ -31,7 +31,19 @@ printValuesToDOM(projectArray);
 
 
 
+// ok so today, the unqiue todos are being displayed 
 
+// now we must style the todo's 
+
+// each block should be styled, 
+
+// not a container than has a style that holds everything, 
+
+// try to make sure each set of todo is appended to a container, 
+
+// you are appending everything to that same container, 
+
+// append to one container, style that then append to main container 
 
 
 

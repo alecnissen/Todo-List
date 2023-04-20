@@ -124,8 +124,6 @@ export function printValuesToDOM(array) {
 
     let projectNameContainer = document.createElement("div"); 
 
-    // console.log(projectNameContainer.id);
-
     projectNameContainer.append(projectIndexProjectNameValue);
 
     navbarProjectNameContainer.append(projectNameContainer); 
@@ -135,15 +133,11 @@ export function printValuesToDOM(array) {
     projectNameContainer.addEventListener("click", (e) => { 
 
       currentProject = projectIndex; 
-
-      // console.log(currentProject.todoItems);
       
       let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
 
       mainContentContainerProjectNames.replaceChildren(); 
 
-
-      
       let projectNameValueContainerForStyles = document.createElement("div"); 
 
       projectNameValueContainerForStyles.classList.add("project-name-click-event-container-for-styles"); 
@@ -162,7 +156,6 @@ export function printValuesToDOM(array) {
       let deleteBtnToDeleteTodo = document.createElement("img"); 
 
       deleteBtnToDeleteTodo.addEventListener("click", (e) => { 
-        // console.log("you clicked the cancel button");
 
         modalForTodoDeleteBtn.style.display = "flex"; 
 
@@ -193,39 +186,7 @@ export function printValuesToDOM(array) {
       mainContentContainerProjectNames.append(projectNameValueContainerForStyles);
 
       mainContentContainerProjectNames.append(btnContainerAddandDelete); 
-      // old location of display todo function 
-      // function displayCurrentProjectTodo() { 
-
-      //   let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
-        
-      //   projectTodoContainerDisplay.style.display = "flex"; 
-
-      //   projectTodoContainerDisplay.style.flexDirection = "column";
-      //   // let div = document.createElement("div"); 
-
-      //   // div.style.backgroundColor = "white"; 
-
-      //   // div.style.fontSize = "2rem"; 
-
-      //   projectTodoContainerDisplay.replaceChildren(); 
-
-      //   for (let i = 0; i < currentProject.todoItems.length; i++) { 
-      //     let taskHolder = document.createElement("div"); 
-
-      //     projectTodoContainerDisplay.append(taskHolder);
-
-      //     let selectedProject = currentProject.todoItems[i]; 
-           
-      //     taskHolder.append(selectedProject);
-
-      //      projectTodoContainerDisplay.append(taskHolder);
-          
-      //   } 
-        
-      //  } 
-
-      // displayCurrentProjectTodo(); 
-
+     
       displayCurrentProjectTodo(); 
     })
   }
@@ -338,11 +299,7 @@ addBtnToDoModal.addEventListener("click", (e) => {
 
   arrayStorageSetItem(projectArray);
 
-let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue)
-
-// printToDoValues(todosForProject);
-
-// pushTodoObject(todosForProject);
+let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue);
 
 todoObjectFactory(todosForProject); 
 
@@ -366,47 +323,75 @@ function displayCurrentProjectTodo() {
 
   let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
   
-  projectTodoContainerDisplay.style.display = "flex"; 
+  // projectTodoContainerDisplay.style.display = "flex"; 
 
-  projectTodoContainerDisplay.style.flexDirection = "row";
-  // let div = document.createElement("div"); 
+  // projectTodoContainerDisplay.style.flexDirection = "row"; 
 
-  // div.style.backgroundColor = "white"; 
-
-  // div.style.fontSize = "2rem"; 
+  projectTodoContainerDisplay.style.display = "block";
 
   projectTodoContainerDisplay.replaceChildren(); 
 
+  // let taskHolder = document.createElement("div"); 
+
+  let todoContainer = document.createElement("div");
+  
   for (let i = 0; i < currentProject.todoItems.length; i++) { 
+    // let selectedProject = currentProject.todoItems[i]; 
+    // projectTodoContainerDisplay.append(lineBreak);
+    
+    let selectedProject = currentProject.todoItems[i]; 
+    
     let taskHolder = document.createElement("div"); 
 
-    taskHolder.style.color = "red";
+    taskHolder.append(selectedProject);  
 
-    // taskHolder.style.backgroundColor = "wheat"; 
+    taskHolder.style.backgroundColor = "blue";
 
-    // console.log(currentProject); 
+    taskHolder.style.lineHeight = "3em"; 
 
-    // console.log(currentProject.todoItems);
+    taskHolder.style.textAlign = "center"; 
 
+    let checkboxElement = document.createElement("input"); 
+
+    checkboxElement.type = "checkbox";
 
     projectTodoContainerDisplay.append(taskHolder);
-
-    let selectedProject = currentProject.todoItems[i]; 
-
-    // projectNameFactory.todoItems.push(selectedProject); 
-
-    // console.log(selectedProject);
-
-    // console.log(projectNameFactory(selectedProject)); 
      
-    taskHolder.append(selectedProject); 
-
-    projectTodoContainerDisplay.append(taskHolder);
-    
   } 
   
  } 
 
+
+ // it was the loop, [i] was taking in a single variable 
+
+ // now we have the todo item within a single div and style 
+
+// each todo item is inside it's own div, 
+
+// each todo item needs to be inside one div, 
+
+// NOT EACH TODO ITEM INSIDE A DIV, 
+
+// get all the todo's. 
+
+
+// I dont understand why this is so fucking confusing, 
+
+// i just want each todo to be it's own div, 
+
+// then append to the FUCKING CONTAINER!!! 
+
+// use a loop, get project, append to div, then append to section, 
+
+// why are they still bunched together??? 
+
+
+// how can I make each set of todos a seperate div?? 
+
+// append the todo's to a div then append to container, 
+
+
+// style each div, then append to container, 
 
 // Look over code, 
 
