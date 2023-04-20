@@ -31,6 +31,60 @@ printValuesToDOM(projectArray);
 
 
 
+
+// Now down to one function, one function which will just display 
+
+// todo's, 
+
+// plan is to look back at old messages, 
+
+// think of a plan on how to attack this, 
+
+// look at the function and try to understand what is going 
+
+// plan an attack, understand, and if you are stuck as for help. 
+
+// display the unqiue todo's for each project, 
+
+// I notice that if I add a new todo, all the todo's will show, 
+
+// display the unique todo's, if project name is clicked on 
+
+// display all the todo's for that project, 
+
+// I really do not understand what the fucking problem is 
+
+// where the fuck do I even start? 
+
+// what the hell am I supposed to "figure out" from this? 
+
+// complete bullshit, 
+
+// I guess, just experiment in the function, I have no clue, 
+
+// you will have to ask rayray later, I would stick with him 
+
+// because he knows your project, 
+
+// for now I would just try to understand what is happening, 
+
+// use some console logs to understand what you are appending, 
+
+// the overall problem is that 
+
+// 1. todos cannot be displayed, until a new todo is added 
+
+// 2. each project, displays all todo's instead of unqiue, 
+
+// 3. 
+
+
+
+
+
+
+
+
 // ok we have something working here, 
 
 // you have two functions, 

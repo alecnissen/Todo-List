@@ -135,6 +135,8 @@ export function printValuesToDOM(array) {
     projectNameContainer.addEventListener("click", (e) => { 
 
       currentProject = projectIndex; 
+
+      console.log(currentProject.todoItems);
       
       let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
 
@@ -337,7 +339,13 @@ addBtnToDoModal.addEventListener("click", (e) => {
 
 let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue)
 
-printToDoValues(todosForProject);
+// printToDoValues(todosForProject);
+
+// pushTodoObject(todosForProject);
+
+todoObjectFactory(todosForProject); 
+
+displayCurrentProjectTodo(); 
 
 })   
 
@@ -371,17 +379,40 @@ function displayCurrentProjectTodo() {
   for (let i = 0; i < currentProject.todoItems.length; i++) { 
     let taskHolder = document.createElement("div"); 
 
+    // console.log(currentProject); 
+
+    // console.log(currentProject.todoItems);
+
+
     projectTodoContainerDisplay.append(taskHolder);
 
     let selectedProject = currentProject.todoItems[i]; 
-     
-    taskHolder.append(selectedProject);
 
-     projectTodoContainerDisplay.append(taskHolder);
+    // projectNameFactory.todoItems.push(selectedProject); 
+
+    // console.log(selectedProject);
+
+    // console.log(projectNameFactory(selectedProject)); 
+     
+    taskHolder.append(selectedProject); 
+
+    projectTodoContainerDisplay.append(taskHolder);
     
   } 
   
  } 
+
+
+// Look over code, 
+
+// I want to display the todo's for each project, 
+
+// how am I adding the todo's, 
+
+// strickly look at the function, 
+
+
+
 
 // displayCurrentProjectTodo(); 
 
@@ -389,46 +420,49 @@ function displayCurrentProjectTodo() {
 
 
 
+// console.log(currentProject);
 
 
 
-
-
-
-function printToDoValues(project) { 
+// function printToDoValues(project) { 
   
-  let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+//   let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
 
-  let projectTodoContainer = document.getElementById("project-todos-container"); 
+//   let projectTodoContainer = document.getElementById("project-todos-container"); 
 
-  let containerDiv = document.createElement("div");
+//   let containerDiv = document.createElement("div");
 
-  let displayTodoCurrentProject = project; 
+//   let displayTodoCurrentProject = project; 
 
-  // for (let i = 0; i < displayTodoCurrentProject.length; i++) { 
-  //   let x = displayTodoCurrentProject[i]; 
+//   // for (let i = 0; i < displayTodoCurrentProject.length; i++) { 
+//   //   let x = displayTodoCurrentProject[i]; 
 
-  //   console.log(x); 
-  // }
+//   //   console.log(x); 
+//   // }
 
-  let displayTitle = displayTodoCurrentProject.title; 
+//   let displayTitle = displayTodoCurrentProject.title; 
 
-  let displayDescription = displayTodoCurrentProject.description; 
+//   let displayDescription = displayTodoCurrentProject.description; 
 
-  let displayPriority = displayTodoCurrentProject.priority; 
+//   let displayPriority = displayTodoCurrentProject.priority; 
 
-  let displayDueDate = displayTodoCurrentProject.dueDate; 
+//   let displayDueDate = displayTodoCurrentProject.dueDate; 
 
-  projectTodoContainer.append(displayTitle);
+//   projectTodoContainer.append(displayTitle);
   
-  projectTodoContainer.append(displayDescription); 
+//   projectTodoContainer.append(displayDescription); 
 
-  projectTodoContainer.append(displayDueDate);
+//   projectTodoContainer.append(displayDueDate);
 
-  projectTodoContainer.append(displayPriority); 
+//   projectTodoContainer.append(displayPriority); 
 
 
-} 
+// } 
+
+
+
+
+
 
 
 // ok I am able to get the values, I am able to print the values to the DOM, 

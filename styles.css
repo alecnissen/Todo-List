@@ -83,7 +83,8 @@ nav {
   display: grid;
   grid-template-rows: 0.5fr 1fr;
   grid-area: nav;
-  background-color: rgb(29, 109, 29);;
+  /* background-color: rgb(29, 109, 29);; */
+  background-color: darkblue;
   border: 5px solid black;
   height: 100vh;
 }
@@ -103,11 +104,13 @@ header {
 main {
   grid-area: main;
   width: auto;
-  background-color: rgb(70, 176, 218);
+  /* background-color: rgb(70, 176, 218); */
+  background-color: rgb(240, 227, 227);
 }
 
 .header-container {
-  background-color: rgb(29, 109, 29);
+  /* background-color: rgb(29, 109, 29); */
+  background-color: darkblue;
   grid-area: header;
   padding: 10px;
   border: 5px solid black;
@@ -123,7 +126,8 @@ main {
 #add-project-btn { 
   font-size: 1.5rem;
   color: white; 
-  background-color: rgb(29, 109, 29);
+  /* background-color: rgb(29, 109, 29); */
+  background-color: darkblue;
   border: none;
   font-family: 'Patua One', cursive;
 }  
@@ -420,7 +424,35 @@ main {
 
 
 
+/* media query practice working on response design, 
 
+making sure everything looks ok on mobile, 
+
+lets spend a little time, just playing around with the layout 
+
+shrinking it's size */ 
+
+@media (max-width: 400px) { 
+
+  body { 
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-title-text-to-do-list { 
+    font-size: 1.5rem; 
+  }  
+
+  main { 
+    width: auto;
+    padding: 25px;
+  } 
+
+  nav { 
+    width: auto; 
+    font-size: 1.2rem;
+  }
+}
 
 
 
