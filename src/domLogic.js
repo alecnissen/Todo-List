@@ -136,7 +136,7 @@ export function printValuesToDOM(array) {
 
       currentProject = projectIndex; 
 
-      console.log(currentProject.todoItems);
+      // console.log(currentProject.todoItems);
       
       let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
 
@@ -226,6 +226,7 @@ export function printValuesToDOM(array) {
 
       // displayCurrentProjectTodo(); 
 
+      displayCurrentProjectTodo(); 
     })
   }
 } 
@@ -367,7 +368,7 @@ function displayCurrentProjectTodo() {
   
   projectTodoContainerDisplay.style.display = "flex"; 
 
-  projectTodoContainerDisplay.style.flexDirection = "column";
+  projectTodoContainerDisplay.style.flexDirection = "row";
   // let div = document.createElement("div"); 
 
   // div.style.backgroundColor = "white"; 
@@ -378,6 +379,10 @@ function displayCurrentProjectTodo() {
 
   for (let i = 0; i < currentProject.todoItems.length; i++) { 
     let taskHolder = document.createElement("div"); 
+
+    taskHolder.style.color = "red";
+
+    // taskHolder.style.backgroundColor = "wheat"; 
 
     // console.log(currentProject); 
 
