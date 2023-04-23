@@ -31,6 +31,40 @@ printValuesToDOM(projectArray);
 
 
 
+
+// right now a problem I see is that projects 
+
+// are not being added to project 2, 
+
+// the todo's won't show, and any project that's not 1, erases on refresh, 
+
+
+
+
+
+// ok so today is a new day, 
+
+// look back over the messages, get an idea, 
+
+// then grab some of your functions, 
+
+// try to implement the plan that ex came up with, 
+
+// pass objects into array and loop thru them, 
+
+// first look over the messages,  
+
+
+// ok so go into code pen, copy the display function over, 
+
+// try to make a new object, each time you enter form data, 
+
+// then add those projects to the array, 
+
+
+
+
+
 // ok so today, the unqiue todos are being displayed 
 
 // now we must style the todo's 

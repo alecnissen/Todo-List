@@ -273,35 +273,37 @@ addBtnToDoModal.addEventListener("click", (e) => {
 
   let titleInputValue = titleInputForTodo.value; 
 
-  currentProject.todoItems.push(titleInputValue); 
+  // currentProject.todoItems.push(titleInputValue); 
 
   let descriptionForTodo = document.getElementById("description-for-todo"); 
 
   let descriptionForTodoValue = descriptionForTodo.value; 
   
-  currentProject.todoItems.push(descriptionForTodoValue); 
+  // currentProject.todoItems.push(descriptionForTodoValue); 
 
   let dueDateForTodo = document.getElementById("due-date-for-todo-task"); 
 
   let dueDateForTodoValue = dueDateForTodo.value; 
 
-  currentProject.todoItems.push(dueDateForTodoValue);
+  // currentProject.todoItems.push(dueDateForTodoValue);
 
   let priorityForTodo = document.getElementById("priority-for-todo-task"); 
 
   let priorityForTodoValue = priorityForTodo.value;  
 
-  currentProject.todoItems.push(priorityForTodoValue);
+  // currentProject.todoItems.push(priorityForTodoValue);
 
-  let currentProjectsTodos = currentProject.todoItems; 
+  // let currentProjectsTodos = currentProject.todoItems; 
 
-  let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+  // let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
 
+  
+  let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue);
+  
+  currentProject.todoItems.push(todosForProject); 
+  
   arrayStorageSetItem(projectArray);
-
-let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue);
-
-todoObjectFactory(todosForProject); 
+// console.log(currentProject.todoItems);
 
 displayCurrentProjectTodo(); 
 
@@ -314,52 +316,172 @@ function todoObjectFactory(title, description, priority, dueDate) {
     priority: priority, 
     dueDate: dueDate 
   }
-}  
+}     
 
+// problem is appending and displaying todo values 
 
+// for each project, 
+
+// issue is saving every single input as a new array entry, 
+
+// 
 
 
 function displayCurrentProjectTodo() { 
 
   let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
   
-  // projectTodoContainerDisplay.style.display = "flex"; 
+  projectTodoContainerDisplay.style.display = "flex"; 
 
-  // projectTodoContainerDisplay.style.flexDirection = "row"; 
+  projectTodoContainerDisplay.style.flexDirection = "row"; 
 
-  projectTodoContainerDisplay.style.display = "block";
+  projectTodoContainerDisplay.style.gap = "2em";
+
+  // projectTodoContainerDisplay.style.display = "block";
 
   projectTodoContainerDisplay.replaceChildren(); 
-
-  // let taskHolder = document.createElement("div"); 
-
-  let todoContainer = document.createElement("div");
   
   for (let i = 0; i < currentProject.todoItems.length; i++) { 
     // let selectedProject = currentProject.todoItems[i]; 
-    // projectTodoContainerDisplay.append(lineBreak);
+    let taskHolder = document.createElement("div"); 
+  
     
     let selectedProject = currentProject.todoItems[i]; 
-    
-    let taskHolder = document.createElement("div"); 
 
-    taskHolder.append(selectedProject);  
-
-    taskHolder.style.backgroundColor = "blue";
-
-    taskHolder.style.lineHeight = "3em"; 
-
-    taskHolder.style.textAlign = "center"; 
+    // let x = JSON.stringify(selectedProject);
 
     let checkboxElement = document.createElement("input"); 
 
-    checkboxElement.type = "checkbox";
+    checkboxElement.type = "checkbox"; 
+
+    let todoTitle = document.createElement("p"); 
+
+    todoTitle.textContent = "Title: "; 
+
+    todoTitle.append(selectedProject.title);
+
+    let todoDescription = document.createElement("p"); 
+
+    todoDescription.textContent = "Description: "
+
+    todoDescription.append(selectedProject.description);
+
+    let todoPriority = document.createElement("p"); 
+
+    let todoDueDate = document.createElement("p"); 
+
+    todoDueDate.textContent = "Due Date: "
+
+    todoPriority.textContent = "Priority: ";
+    
+    todoPriority.append(selectedProject.priority);
+    
+    todoDueDate.append(selectedProject.dueDate);
+
+    taskHolder.append(todoTitle);  
+
+    taskHolder.append(todoDescription);
+
+    taskHolder.append(todoPriority); 
+
+    taskHolder.append(todoDueDate); 
+
+    taskHolder.append(checkboxElement);
+
+    taskHolder.style.backgroundColor = "darkblue";
+
+    taskHolder.style.color = "white";
+
+    taskHolder.style.lineHeight = "1em"; 
+
+    taskHolder.style.textAlign = "center"; 
+
+    taskHolder.style.width = "275px"; 
 
     projectTodoContainerDisplay.append(taskHolder);
-     
+    
+    // projectTodoContainerDisplay.append(checkboxElement);
   } 
   
  } 
+
+
+// practice with objects 
+
+// let array1 = [];
+
+// const Todo = function(title, date) {
+//   this.title = title;
+//   this.date = date;
+// };
+
+// for (let i = 0; i < 3; i++) {
+//   let xyz = new Todo(`${i} title`, i)
+//   array1.push(xyz);
+// }
+
+// console.log(array1) 
+
+
+// practice making objects 
+
+// pushing into an array 
+
+// iterating through the array, 
+
+// get each field by it's key,  
+
+// let newArr = []; 
+
+// function creatingObjects(title,description, date, priority) { 
+//   const newObject = { title, description, date, priority } 
+//   newArr.push(newObject); 
+  
+//   for (let i = 0; i < newArr.length; i++) { 
+   
+//     let title = newArr[0].title;
+//     let description = newArr[0].description; 
+//     let dueDate = newArr[0].date;
+//     let priorityLevel = newArr[0].priority;
+    
+    
+//   }
+// } 
+
+// creatingObjects("Alec", "working on todo-list", "4/20/23", "High");  
+
+// creatingObjects("Hello", "Check 1..2", "6/20/23", "High"); 
+
+// getting all the keys from the first obj in the array
+
+// console.log(newArr[0].title);
+
+// console.log(newArr[0].description);
+
+// console.log(newArr[0].date);
+
+// console.log(newArr[0].priority); 
+
+// getting all the keys from the second obj in the array 
+
+// console.log(newArr[1].title);
+
+// console.log(newArr[1].description);
+
+// console.log(newArr[1].date);
+
+// console.log(newArr[1].priority); 
+
+
+
+
+
+
+
+
+
+
+
 
 
  // it was the loop, [i] was taking in a single variable 
