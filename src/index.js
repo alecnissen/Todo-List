@@ -30,7 +30,15 @@ projectNameLoop();
 printValuesToDOM(projectArray);  
 
 
+// I made a new folder in my repos called todo list-B 
 
+// then I cloned within there, then copied all my code from my module 
+
+// into the new project, things seem to be working ok 
+
+// am I ok to push and commit changes, will these changes still go to 
+
+// todo list-A ? 
 
 // right now a problem I see is that projects 
 

@@ -459,12 +459,32 @@ shrinking it's size */
     width: auto; 
     height: auto; 
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+  } 
+  #form-tag-for-modal { 
+    position: fixed;
+    left: 0%; 
+    bottom: 50%; 
+    width: 2em;
+  } 
+  
+  .modal-header-text { 
+    font-size: 1.5rem; 
+
   } 
 
+  .modal {
+    width: 150px; 
+  } 
+
+  .modal > input { 
+    width: 50px; 
+  }
 
 } 
  
-
+/* 
 @media (max-width: 400px) { 
   #form-tag-for-modal { 
     position: fixed;
@@ -485,7 +505,7 @@ shrinking it's size */
   .modal > input { 
     width: 50px; 
   }
-}
+} */
 
 
 

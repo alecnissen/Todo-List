@@ -230,6 +230,10 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 
   let addAndDeleteBtnTodoModal = document.getElementsByClassName("add-delete-btn-for-todo-container-styles")[0]; 
   
+  let projectsWithinTodoContainer = document.getElementById("project-todos-container"); 
+
+  let taskHolderStyles = document.getElementsByClassName("task-holder-for-todo-styles")[0];
+
   let projectID = currentProject.id; 
   
   let value = currentProject; 
@@ -244,10 +248,19 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 
   arrayStorageSetItem(projectArray); 
 
+  // currentProject.todoItems.replaceChildren(); 
+
+  // it is deleting from storage, it is just not 
+
+  // deleting the todo from the DOM, 
+  // projectsWithinTodoContainer.remove() 
+
+  projectsWithinTodoContainer.style.display = "none";
+  
   modalForTodoDeleteBtn.style.display = "none"; 
-
+  
   overlayForTodoDeleteBtn.style.display = "none";  
-
+  
 
 })  
 
@@ -326,6 +339,7 @@ function todoObjectFactory(title, description, priority, dueDate) {
 
 // 
 
+let getProjectId
 
 function displayCurrentProjectTodo() { 
 
@@ -335,7 +349,10 @@ function displayCurrentProjectTodo() {
 
   projectTodoContainerDisplay.style.flexDirection = "row"; 
 
-  projectTodoContainerDisplay.style.gap = "2em";
+  projectTodoContainerDisplay.style.gap = "2em"; 
+
+  projectTodoContainerDisplay.style.flexWrap = "wrap";
+
 
   // projectTodoContainerDisplay.style.display = "block";
 
@@ -344,15 +361,61 @@ function displayCurrentProjectTodo() {
   for (let i = 0; i < currentProject.todoItems.length; i++) { 
     // let selectedProject = currentProject.todoItems[i]; 
     let taskHolder = document.createElement("div"); 
+    
+    taskHolder.classList.add("task-holder-for-todo-styles");
   
+    
     
     let selectedProject = currentProject.todoItems[i]; 
 
-    // let x = JSON.stringify(selectedProject);
+    getProjectId = currentProject.id
+
+    let projectUniqueId = currentProject.id; 
 
     let checkboxElement = document.createElement("input"); 
 
+    let editElement = document.createElement("img"); 
+
+    editElement.src = "../edit-svgrepo-com.svg"; 
+
+    editElement.style.height = "30px"; 
+
+    editElement.style.width = "30px"; 
+
+    editElement.style.backgroundColor = "white"; 
+
+    editElement.style.marginLeft = "0.20em";
+
     checkboxElement.type = "checkbox"; 
+
+    checkboxElement.style.width = "30px"; 
+
+    checkboxElement.style.height = "30px";
+
+    let deleteIcon = document.createElement("img"); 
+
+    deleteIcon.id = "delete-btn-inside-todo"; 
+
+    deleteIcon.addEventListener("click", (e) => { 
+      if (getProjectId === projectUniqueId) { 
+        taskHolder.remove();
+      } else { 
+        return; 
+      }
+    }) 
+
+    deleteIcon.src = "../trashcan-svgrepo-com (1).svg"; 
+
+    deleteIcon.style.width = "30px";
+
+    deleteIcon.style.backgroundColor = "white"; 
+
+    // let currentProjectId = currentProject.id; 
+
+    // deleteIcon.addEventListener("click", () => { 
+    //   // console.log("the delete button within todo has been pressed!");
+     
+    // })
 
     let todoTitle = document.createElement("p"); 
 
@@ -386,7 +449,11 @@ function displayCurrentProjectTodo() {
 
     taskHolder.append(todoDueDate); 
 
-    taskHolder.append(checkboxElement);
+    taskHolder.append(checkboxElement); 
+
+    taskHolder.append(deleteIcon); 
+
+    taskHolder.append(editElement);
 
     taskHolder.style.backgroundColor = "darkblue";
 
@@ -398,12 +465,665 @@ function displayCurrentProjectTodo() {
 
     taskHolder.style.width = "275px"; 
 
+    taskHolder.style.border = "5px solid black";
+
     projectTodoContainerDisplay.append(taskHolder);
     
     // projectTodoContainerDisplay.append(checkboxElement);
-  } 
+  }  
+
+   // let currentProjectId = currentProject.id; 
+
+  let deleteBtnWithinTodoItem = document.getElementById("delete-btn-inside-todo"); 
+
+  // console.log(deleteBtnWithinTodoItem); 
+
+  let taskHolderClass = document.getElementsByClassName("task-holder-for-todo-styles")[0]; 
+
+  // console.log(taskHolderClass);
+
+  deleteBtnWithinTodoItem.addEventListener("click", () => { 
+       // console.log("the delete button within todo has been pressed!");
+       let currentProjectId = currentProject.id; 
+
+      //  console.log(currentProjectId); 
+
+      //  for (let i = 0; i < currentProject.id.length; i++) { 
+      //   let id = currentProject.id; 
+
+      //   if (currentProjectId === id) { 
+      //     // if id's match remove the selected project, 
+      //   } else { 
+      //     return;
+      //   }
+
+      //  } 
+
+      projectArray = projectArray.filter(function(oneProjectId) { 
+        
+
+        
+      })
+    })
   
  } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import "./storage";
+
+// import arrayStorageSetItem from "./storage.js" 
+
+// import getItemStorage from "./storage.js"; 
+
+// import  projectNameLoop from "./index.js";
+
+// import projectDisplayConditionalLogic from "./conditionalLogic.js";
+
+// import arrayStorageTodoItems from "./storage";
+
+
+
+// const modal = document.querySelector(".modal");
+
+// const overlay = document.querySelector(".overlay"); 
+
+// const addProjectButton = document.getElementById("add-project-btn");
+
+// const closeModalBtn = document.getElementsByClassName("close-btn")[0]; 
+
+// let modalInputField = document.getElementById("input-field-within-modal"); 
+
+// let addProjectBtnWithinModal = document.getElementById("add-project-btn-within-modal"); 
+
+// let formTagForModule = document.getElementById("form-tag-for-modal"); 
+
+// let modalContainerForTodo = document.getElementsByClassName("modal-todo")[0]; 
+
+// let overlayForTodoModal = document.getElementsByClassName("overlay-for-todo-modal")[0]; 
+
+// let modalForTodoDeleteBtn = document.getElementsByClassName("modal-for-delete-btn-todo")[0];
+
+// let overlayForTodoDeleteBtn = document.getElementsByClassName("overlay-for-todo-delete-btn")[0]; 
+
+// let currentProject 
+
+// function preventDoYouWantToDeleteModal() { 
+  
+//   modalForTodoDeleteBtn.style.display = "none"; 
+
+//   overlayForTodoDeleteBtn.style.display = "none";
+// } 
+
+// preventDoYouWantToDeleteModal();
+
+
+// function preventTodoModalPopUp() { 
+
+// modalContainerForTodo.style.display = "none"; 
+
+// overlayForTodoModal.style.display = "none";
+// } 
+
+// preventTodoModalPopUp();
+
+// export let projectArray = []; 
+
+// function preventFormPopUp() { 
+//   modal.style.display = "none"; 
+  
+//   overlay.style.display = "none";
+
+// }
+
+// preventFormPopUp();
+
+
+//  closeModalBtn.addEventListener("click", (e) => { 
+//   // e.preventDefault();
+//   modal.style.display = "none"; 
+//   overlay.style.display = "none";
+//   // modalInputField.reset();
+//   // when you close it, should clear the input field,
+//   formTagForModule.reset();
+// }) 
+
+//  addProjectButton.addEventListener("click", () => { 
+//   modal.style.display = "flex"; 
+//   overlay.style.display = "flex";
+// }) 
+
+
+// function projectNameFactory(name) { 
+//   return { 
+//     project: name,
+//     id: crypto.randomUUID(),
+//     todoItems: [],
+//   }
+// } 
+
+// addProjectBtnWithinModal.addEventListener("click", (e) => { 
+//   // e.preventDefault();
+//   let modalInputFieldValue = modalInputField.value; 
+
+//   let projectNameObject = projectNameFactory(modalInputFieldValue); 
+  
+//   projectArray.push(projectNameObject); 
+
+//   arrayStorageSetItem(projectArray); 
+
+//   printValuesToDOM(projectArray); 
+  
+//   formTagForModule.reset(); 
+
+// }) 
+
+
+// export function printValuesToDOM(array) { 
+
+//   let theProjectsArray = array; 
+
+//   let navbarProjectNameContainer = document.getElementById("navbar-project-names-go-here"); 
+
+//   navbarProjectNameContainer.replaceChildren();
+  
+//   for (let i = 0; i < theProjectsArray.length; i++) { 
+
+//     let projectIndex = theProjectsArray[i]; 
+
+//     let projectIndexProjectNameValue = projectIndex.project; 
+
+//     let projectNameContainer = document.createElement("div"); 
+
+//     projectNameContainer.append(projectIndexProjectNameValue);
+
+//     navbarProjectNameContainer.append(projectNameContainer); 
+
+//     let mainContentContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+    
+//     projectNameContainer.addEventListener("click", (e) => { 
+
+//       currentProject = projectIndex; 
+      
+//       let mainContentContainerProjectNames = document.getElementsByClassName("main-content-section-container")[0]; 
+
+//       mainContentContainerProjectNames.replaceChildren(); 
+
+//       let projectNameValueContainerForStyles = document.createElement("div"); 
+
+//       projectNameValueContainerForStyles.classList.add("project-name-click-event-container-for-styles"); 
+
+//       let btnContainerAddandDelete = document.createElement("div");
+
+//       let addBtnToCreateModal = document.createElement("img"); 
+
+//       addBtnToCreateModal.addEventListener("click", (e) => { 
+
+//         modalContainerForTodo.style.display = "flex"; 
+
+//         overlayForTodoModal.style.display = "flex";
+//       })
+
+//       let deleteBtnToDeleteTodo = document.createElement("img"); 
+
+//       deleteBtnToDeleteTodo.addEventListener("click", (e) => { 
+
+//         modalForTodoDeleteBtn.style.display = "flex"; 
+
+//         overlayForTodoDeleteBtn.style.display = "flex";
+
+//       })
+
+
+
+//       addBtnToCreateModal.src = "../plus-sign-svgrepo-com (1).svg";
+
+//       addBtnToCreateModal.classList.add("add-btn-svg-project-name-styles");
+
+//       deleteBtnToDeleteTodo.src = "../trashcan-svgrepo-com (1).svg";
+
+//       deleteBtnToDeleteTodo.classList.add("delete-btn-trash-can-svg-icon-styles");
+
+//       btnContainerAddandDelete.classList.add("add-delete-btn-for-todo-container-styles"); 
+
+//       btnContainerAddandDelete.append(addBtnToCreateModal); 
+
+//       btnContainerAddandDelete.append(deleteBtnToDeleteTodo); 
+
+//       let projectNameValueClicked = e.target.textContent; 
+
+//       projectNameValueContainerForStyles.append(projectNameValueClicked);
+      
+//       mainContentContainerProjectNames.append(projectNameValueContainerForStyles);
+
+//       mainContentContainerProjectNames.append(btnContainerAddandDelete); 
+     
+//       displayCurrentProjectTodo(); 
+//     })
+//   }
+// } 
+
+ 
+
+// formTagForModule.addEventListener("submit", (e) => { 
+//   e.preventDefault();
+//   modal.style.display = "none"; 
+//   overlay.style.display = "none";
+// })  
+
+// let cancelBtnAddTodoModal = document.getElementsByClassName("close-the-todo-modal")[0];
+
+// cancelBtnAddTodoModal.addEventListener("click", (e) => { 
+
+//   modalContainerForTodo.style.display = "none"; 
+
+//   overlayForTodoModal.style.display = "none";
+
+// }) 
+
+
+// let cancelBtnForDeleteProjectModalX = document.getElementById("close-mark-x"); 
+
+// cancelBtnForDeleteProjectModalX.addEventListener("click", (e) => { 
+
+//   modalForTodoDeleteBtn.style.display = "none"; 
+
+//   overlayForTodoDeleteBtn.style.display = "none";
+  
+// }) 
+
+
+// let checkMarkWithinDeleteTodoModal = document.getElementById("check-mark"); 
+
+// checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {  
+
+//   let mainContentProjectNamesStyleContainer = document.getElementsByClassName("project-name-click-event-container-for-styles")[0]; 
+
+//   let addAndDeleteBtnTodoModal = document.getElementsByClassName("add-delete-btn-for-todo-container-styles")[0]; 
+  
+//   let projectsWithinTodoContainer = document.getElementById("project-todos-container");
+
+//   let projectID = currentProject.id; 
+  
+//   let value = currentProject; 
+  
+//   projectArray = projectArray.filter(project => project.id !== currentProject.id);
+  
+//   mainContentProjectNamesStyleContainer.replaceChildren(); 
+
+//   addAndDeleteBtnTodoModal.replaceChildren();
+
+//   printValuesToDOM(projectArray); 
+
+//   arrayStorageSetItem(projectArray); 
+
+//   projectsWithinTodoContainer.style.display = "none";
+
+//   modalForTodoDeleteBtn.style.display = "none"; 
+
+//   overlayForTodoDeleteBtn.style.display = "none";  
+
+
+// })  
+
+
+// let addBtnToDoModal = document.getElementById("add-task-todo-modal"); 
+
+
+
+// let formInput = document.getElementById("input-form-for-creating-todo-task");
+
+// formInput.addEventListener("submit", (e) => { 
+//   e.preventDefault();
+// })
+
+
+
+// addBtnToDoModal.addEventListener("click", (e) => { 
+  
+//   e.preventDefault(); 
+
+
+//   let titleInputForTodo = document.getElementById("title-of-todo-input-form"); 
+
+//   let titleInputValue = titleInputForTodo.value; 
+
+//   // currentProject.todoItems.push(titleInputValue); 
+
+//   let descriptionForTodo = document.getElementById("description-for-todo"); 
+
+//   let descriptionForTodoValue = descriptionForTodo.value; 
+  
+//   // currentProject.todoItems.push(descriptionForTodoValue); 
+
+//   let dueDateForTodo = document.getElementById("due-date-for-todo-task"); 
+
+//   let dueDateForTodoValue = dueDateForTodo.value; 
+
+//   // currentProject.todoItems.push(dueDateForTodoValue);
+
+//   let priorityForTodo = document.getElementById("priority-for-todo-task"); 
+
+//   let priorityForTodoValue = priorityForTodo.value;  
+
+//   // currentProject.todoItems.push(priorityForTodoValue);
+
+//   // let currentProjectsTodos = currentProject.todoItems; 
+
+//   // let mainSectionContainer = document.getElementsByClassName("main-content-section-container")[0]; 
+
+  
+//   let todosForProject = todoObjectFactory(titleInputValue, descriptionForTodoValue, priorityForTodoValue, dueDateForTodoValue);
+  
+//   currentProject.todoItems.push(todosForProject); 
+  
+//   arrayStorageSetItem(projectArray);
+// // console.log(currentProject.todoItems);
+
+// displayCurrentProjectTodo(); 
+
+// })   
+
+// function todoObjectFactory(title, description, priority, dueDate) { 
+//   return { 
+//     title: title, 
+//     description: description, 
+//     priority: priority, 
+//     dueDate: dueDate 
+//   }
+// }     
+
+// // problem is appending and displaying todo values 
+
+// // for each project, 
+
+// // issue is saving every single input as a new array entry, 
+
+// // 
+
+// let getProjectId
+
+// function displayCurrentProjectTodo() { 
+
+//   let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
+  
+//   projectTodoContainerDisplay.style.display = "flex"; 
+
+//   projectTodoContainerDisplay.style.flexDirection = "row"; 
+
+//   projectTodoContainerDisplay.style.gap = "2em";
+
+//   projectTodoContainerDisplay.style.flexWrap = "wrap";
+
+//   // projectTodoContainerDisplay.style.display = "block";
+
+//   projectTodoContainerDisplay.replaceChildren(); 
+  
+//   for (let i = 0; i < currentProject.todoItems.length; i++) { 
+//     // let selectedProject = currentProject.todoItems[i]; 
+//     let taskHolder = document.createElement("div"); 
+  
+    
+//     let selectedProject = currentProject.todoItems[i]; 
+
+//     getProjectId = currentProject.id
+    
+//     let projectUniqueId = currentProject.id; 
+    
+//     let checkboxElement = document.createElement("input"); 
+    
+//     checkboxElement.type = "checkbox"; 
+
+//     let editElement = document.createElement("img"); 
+
+//     editElement.src = "../edit-svgrepo-com.svg"; 
+
+//     editElement.style.height = "30px"; 
+
+//     editElement.style.width = "30px"; 
+
+//     editElement.style.backgroundColor = "white"; 
+
+//     editElement.style.marginLeft = "0.20em";
+
+
+
+//     let todoTitle = document.createElement("p"); 
+
+//     todoTitle.textContent = "Title: "; 
+
+//     todoTitle.append(selectedProject.title);
+
+//     let todoDescription = document.createElement("p"); 
+
+//     todoDescription.textContent = "Description: "
+
+//     todoDescription.append(selectedProject.description);
+
+//     let todoPriority = document.createElement("p"); 
+
+//     let todoDueDate = document.createElement("p"); 
+
+//     todoDueDate.textContent = "Due Date: "
+
+//     todoPriority.textContent = "Priority: ";
+    
+//     todoPriority.append(selectedProject.priority);
+    
+//     todoDueDate.append(selectedProject.dueDate);
+
+//     taskHolder.append(todoTitle);  
+
+//     taskHolder.append(todoDescription);
+
+//     taskHolder.append(todoPriority); 
+
+//     taskHolder.append(todoDueDate); 
+
+//     taskHolder.append(checkboxElement);
+
+//     taskHolder.style.backgroundColor = "darkblue";
+
+//     taskHolder.style.color = "white";
+
+//     taskHolder.style.lineHeight = "1em"; 
+
+//     taskHolder.style.textAlign = "center"; 
+
+//     taskHolder.style.width = "275px"; 
+
+//     projectTodoContainerDisplay.append(taskHolder);
+    
+//     // projectTodoContainerDisplay.append(checkboxElement);
+//   } 
+  
+//  } 
 
 
 // practice with objects 
