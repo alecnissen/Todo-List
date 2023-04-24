@@ -396,12 +396,18 @@ function displayCurrentProjectTodo() {
 
     deleteIcon.id = "delete-btn-inside-todo"; 
 
+  //   projectArray = projectArray.filter(project => project.id !== currentProject.id);
+
     deleteIcon.addEventListener("click", (e) => { 
-      if (getProjectId === projectUniqueId) { 
-        taskHolder.remove();
-      } else { 
-        return; 
-      }
+        // taskHolder.remove();
+      console.log(e.target);
+        // console.log(e.target);
+        // console.log(projectArray);
+         projectArray = projectArray.filter(project => project.id === currentProject.id); 
+         console.log(projectArray);
+        // // project.remove();
+        // arrayStorageSetItem(projectArray);
+        // printValuesToDOM(projectArray);
     }) 
 
     deleteIcon.src = "../trashcan-svgrepo-com (1).svg"; 

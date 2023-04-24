@@ -483,6 +483,28 @@ shrinking it's size */
   }
 
 } 
+
+@media (max-width: 600px) { 
+  body { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  } 
+
+  nav { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  } 
+
+  main { 
+    overflow: auto;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
  
 /* 
 @media (max-width: 400px) { 

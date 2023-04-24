@@ -30,6 +30,37 @@ projectNameLoop();
 printValuesToDOM(projectArray);  
 
 
+// I am getting very confused on how I can delete a single todo 
+
+// using the 
+
+// confused on how I can delete a single todo, and reflect in the DOM, 
+
+// but also in storage, I can remove from DOM, 
+
+// but I am getting a little lost on how to remove it from storage, 
+
+// I want to say using filter would be a good option 
+
+// today the focus is deleting a single todo and reflecting that 
+
+// within the storage and within the DOM, 
+
+// also if I get stuck on that, 
+
+// editing a todo, that if user presses edit btn, 
+
+// generate the modal again, and allow the user to edit that todo 
+
+// and then reflect that change in the DOM and in storage, 
+
+// I will ask the question right away because I am stuck, 
+
+// but spend a little time looking over the code, 
+
+
+
+
 // I made a new folder in my repos called todo list-B 
 
 // then I cloned within there, then copied all my code from my module 
