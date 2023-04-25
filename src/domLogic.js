@@ -372,6 +372,8 @@ function displayCurrentProjectTodo() {
 
     let projectUniqueId = currentProject.id; 
 
+    // console.log(selectedProject);
+
     let checkboxElement = document.createElement("input"); 
 
     let editElement = document.createElement("img"); 
@@ -397,14 +399,25 @@ function displayCurrentProjectTodo() {
     deleteIcon.id = "delete-btn-inside-todo"; 
 
   //   projectArray = projectArray.filter(project => project.id !== currentProject.id);
+  deleteIcon.dataset.index = i; 
 
     deleteIcon.addEventListener("click", (e) => { 
         // taskHolder.remove();
-      console.log(e.target);
+
+      console.log(selectedProject);
+
+      currentProject.todoItems.splice(deleteIcon.dataset.index, 1);
+
+      // console.log(e.dataset.index);
+
+      displayCurrentProjectTodo();
+
+      // I want to see that the data attrib 
+      // at that index matches the selected Project 
+
         // console.log(e.target);
         // console.log(projectArray);
-         projectArray = projectArray.filter(project => project.id === currentProject.id); 
-         console.log(projectArray);
+        //  projectArray = projectArray.filter(project => project.id === currentProject.id); 
         // // project.remove();
         // arrayStorageSetItem(projectArray);
         // printValuesToDOM(projectArray);
