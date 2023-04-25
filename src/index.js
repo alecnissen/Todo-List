@@ -30,6 +30,40 @@ projectNameLoop();
 printValuesToDOM(projectArray);  
 
 
+
+
+
+
+
+// pass the updated array to storage, 
+
+// how can I update the array, 
+
+// can I push things to it, add things to it, 
+
+// can I use filter, 
+
+// ok so now I can delete individual projects as well as the project as a whole 
+
+// how can I reflect this change in storage? 
+
+// updateStorage function, 
+
+// plan on how I can make an update storage function, 
+
+// right now It only deletes from the DOM, 
+
+// how can I update my array to reflect the changes in the DOM? 
+
+// can I look back my delete button functionality for inspiration? 
+
+// that deletes from both the array and in storage, 
+
+// first check that out, 
+
+
+
+
 // I am getting very confused on how I can delete a single todo 
 
 // using the 

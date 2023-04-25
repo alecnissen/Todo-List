@@ -1,9 +1,9 @@
 
 import "./domLogic";
 
-import { projectArray } from "./domLogic";
+// import { projectArray } from "./domLogic";
 
- 
+ import { projectArray, printProjectNameToNavbarProjectSection, printValuesToDOM } from "./domLogic";
 
 
 export default function arrayStorageSetItem(name) { 
@@ -13,7 +13,56 @@ export default function arrayStorageSetItem(name) {
     
     
     
-} 
+}  
+
+// export function updateArrayStorage(item) { 
+//     let thisProject = item; 
+
+//     console.log(thisProject);
+// }
+
+
+// what properties would the updateStorage function have? 
+
+// what would it take in? 
+
+// I think you might have to update the array, 
+
+// or filter out the items that were deleted, 
+
+// then pass that to update storage, 
+
+
+// so now next, I need to figure out how to 
+
+// update my storage and array based on when user deletes 
+
+// a single todo item, 
+
+// something will need to be passed to local storage, 
+
+// how can storage reflect changes in the DOM, 
+
+// project is deleting from the DOM, but it still shows in array 
+
+// and still shows in local storage, 
+
+// after the project is deleted from the DOM, 
+
+// the printValueToDOM function will need to be called again 
+
+// so that can reflect the local storage to the DOM, 
+
+// so I think the project array is going to be passed to local storage, 
+
+// then the printvalue to dom function needs to called, so shwo to the DOM 
+
+// what is inside local storage 
+
+// continue to brainstorm how to reflect the change in deleting 
+
+// projects from the DOM and how to update that in local storage. 
+
 
 
 //  export function arrayStorageTodoItems(project) { 

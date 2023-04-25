@@ -11,6 +11,7 @@ import projectDisplayConditionalLogic from "./conditionalLogic.js";
 
 import arrayStorageTodoItems from "./storage";
 
+// import updateArrayStorage from "./storage";
 
 
 const modal = document.querySelector(".modal");
@@ -119,7 +120,7 @@ export function printValuesToDOM(array) {
   for (let i = 0; i < theProjectsArray.length; i++) { 
 
     let projectIndex = theProjectsArray[i]; 
-
+    // project name
     let projectIndexProjectNameValue = projectIndex.project; 
 
     let projectNameContainer = document.createElement("div"); 
@@ -378,6 +379,10 @@ function displayCurrentProjectTodo() {
 
     let editElement = document.createElement("img"); 
 
+    editElement.addEventListener("click", (e) => { 
+      console.log("you clicked the edit button, HOLD STRONG!")
+    })
+
     editElement.src = "../edit-svgrepo-com.svg"; 
 
     editElement.style.height = "30px"; 
@@ -404,23 +409,29 @@ function displayCurrentProjectTodo() {
     deleteIcon.addEventListener("click", (e) => { 
         // taskHolder.remove();
 
-      console.log(selectedProject);
+      // console.log(selectedProject);
 
       currentProject.todoItems.splice(deleteIcon.dataset.index, 1);
+      
+      displayCurrentProjectTodo(); 
+
+      arrayStorageSetItem(projectArray); 
+
+  
 
       // console.log(e.dataset.index);
 
-      displayCurrentProjectTodo();
+      // filter out the projects that have been deleted, 
 
-      // I want to see that the data attrib 
-      // at that index matches the selected Project 
+      // someway to update projectArray, and then pass to a storage function 
 
-        // console.log(e.target);
-        // console.log(projectArray);
-        //  projectArray = projectArray.filter(project => project.id === currentProject.id); 
-        // // project.remove();
-        // arrayStorageSetItem(projectArray);
-        // printValuesToDOM(projectArray);
+      // projectArray.push(currentProject); 
+      
+      // projectArray = projectArray.filter(project => project.id === currentProject.id);
+      // arrayStorageSetItem(projectArray);
+      
+
+      // arrayStorageSetItem(projectArray);
     }) 
 
     deleteIcon.src = "../trashcan-svgrepo-com (1).svg"; 
@@ -493,37 +504,37 @@ function displayCurrentProjectTodo() {
 
    // let currentProjectId = currentProject.id; 
 
-  let deleteBtnWithinTodoItem = document.getElementById("delete-btn-inside-todo"); 
+  // let deleteBtnWithinTodoItem = document.getElementById("delete-btn-inside-todo"); 
 
-  // console.log(deleteBtnWithinTodoItem); 
+  // // console.log(deleteBtnWithinTodoItem); 
 
-  let taskHolderClass = document.getElementsByClassName("task-holder-for-todo-styles")[0]; 
+  // let taskHolderClass = document.getElementsByClassName("task-holder-for-todo-styles")[0]; 
 
-  // console.log(taskHolderClass);
+  // // console.log(taskHolderClass);
 
-  deleteBtnWithinTodoItem.addEventListener("click", () => { 
-       // console.log("the delete button within todo has been pressed!");
-       let currentProjectId = currentProject.id; 
+  // deleteBtnWithinTodoItem.addEventListener("click", () => { 
+  //      // console.log("the delete button within todo has been pressed!");
+  //      let currentProjectId = currentProject.id; 
 
-      //  console.log(currentProjectId); 
+  //     //  console.log(currentProjectId); 
 
-      //  for (let i = 0; i < currentProject.id.length; i++) { 
-      //   let id = currentProject.id; 
+  //     //  for (let i = 0; i < currentProject.id.length; i++) { 
+  //     //   let id = currentProject.id; 
 
-      //   if (currentProjectId === id) { 
-      //     // if id's match remove the selected project, 
-      //   } else { 
-      //     return;
-      //   }
+  //     //   if (currentProjectId === id) { 
+  //     //     // if id's match remove the selected project, 
+  //     //   } else { 
+  //     //     return;
+  //     //   }
 
-      //  } 
+  //     //  } 
 
-      projectArray = projectArray.filter(function(oneProjectId) { 
+  //     projectArray = projectArray.filter(function(oneProjectId) { 
         
 
         
-      })
-    })
+  //     })
+  //   })
   
  } 
 
