@@ -32,6 +32,48 @@ printValuesToDOM(projectArray);
 
 
 
+// here we are back with avengance 
+
+// I am recovering, I'm going to do a little work today 
+
+// so right now I want to edit todo's 
+
+// button is clicked and that should generate a form 
+
+// the form is identical to making a todo, 
+
+// you will just need to associate that particular todo 
+
+// with a dataset, similar to deleting a todo, 
+
+// once the edit btn is clicked, give that todo a dataset 
+
+// generate form, whatever user enters, will update/overwrite the info 
+
+// it won't create a new one, it will just update/modifiy 
+
+// your previous approach I don't believe will work 
+
+// because you are trying to use the same event listener, 
+
+// that seems like it will only cause issues, 
+
+// lets seperate them, meaning copy the set-up and code for creating a todo modal 
+
+// style exactly the same, 
+
+// add todo, and edit todo are two seperate listeners, 
+
+// one is for creating, the other is for modifying, 
+
+// lets begin, the approach seems valid, start with the HTML 
+
+// basically copy the code, slighly change class names, 
+
+// same styles, html, css, then grab the element and add the event listener logic, 
+
+// within the listener, we are not adding, 
+
 
 
 

@@ -379,7 +379,84 @@ main {
 
 .modal-todo h1 { 
   font-size: 2.5rem; 
+} 
+
+
+/* begin edit todo modal styles here */ 
+
+
+
+.modal-edit-todo { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 450px;
+  padding: 1.3rem;
+  min-height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  background-color: darkblue;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+} 
+
+
+.modal-edit-todo .flex-for-edit-todo-modal { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+} 
+
+.modal-edit-todo input { 
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9em;
+} 
+
+.modal-edit-todo > label { 
+  color: white;
+} 
+
+.overlay-for-todo-modal-edit { 
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+} 
+
+
+.modal-edit-todo { 
+  z-index: 2;
+} 
+
+.close-the-todo-modal-edit { 
+  position: relative; 
+  font-size: 1.5rem; 
+  width: 35px; 
+  left: -295px; 
+  bottom: 55px;  
+} 
+
+.modal-edit-todo label { 
+  text-align: center;
+} 
+
+.modal-edit-todo h1 { 
+  font-size: 2.5rem;
 }
+
+
+
 
 
 /* styles for delete btn for todo modal */ 
@@ -443,7 +520,7 @@ shrinking it's size */
   body { 
     display: flex;
     flex-direction: column;
-  }
+  } 
 
   .header-title-text-to-do-list { 
     font-size: 1.5rem; 
@@ -459,8 +536,8 @@ shrinking it's size */
     width: auto; 
     height: auto; 
     font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
   } 
   #form-tag-for-modal { 
     position: fixed;
@@ -484,7 +561,31 @@ shrinking it's size */
 
 } 
 
-@media (max-width: 600px) { 
+
+@media (max-width: 740px) { 
+  body { 
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */ 
+    flex-direction: column;
+  } 
+
+  main { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */ 
+  }
+
+  #project-todos-container { 
+    display: flex;
+    justify-content: center;
+    
+  }
+}
+
+/* @media (max-width: 600px) { 
   body { 
     display: flex;
     flex-direction: column;
@@ -504,7 +605,7 @@ shrinking it's size */
     white-space: pre-wrap;
     word-break: break-word;
   }
-}
+} */
  
 /* 
 @media (max-width: 400px) { 

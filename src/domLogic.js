@@ -36,6 +36,12 @@ let modalForTodoDeleteBtn = document.getElementsByClassName("modal-for-delete-bt
 
 let overlayForTodoDeleteBtn = document.getElementsByClassName("overlay-for-todo-delete-btn")[0]; 
 
+let modalForEditTodoTasks = document.getElementsByClassName("modal-edit-todo")[0]; 
+
+let overlayForEditTodoTasks = document.getElementsByClassName("overlay-for-todo-modal-edit")[0]; 
+
+let editTodoTasksFormInput = document.getElementById("input-form-for-editing-todo-tasks");
+
 let currentProject 
 
 function preventDoYouWantToDeleteModal() { 
@@ -55,7 +61,21 @@ modalContainerForTodo.style.display = "none";
 overlayForTodoModal.style.display = "none";
 } 
 
-preventTodoModalPopUp();
+
+
+preventTodoModalPopUp(); 
+
+
+function preventEditTodoModalPopUp() { 
+  
+  modalForEditTodoTasks.style.display = "none"; 
+
+  overlayForEditTodoTasks.style.display = "none";
+
+}
+
+preventEditTodoModalPopUp(); 
+
 
 export let projectArray = []; 
 
@@ -81,7 +101,10 @@ preventFormPopUp();
  addProjectButton.addEventListener("click", () => { 
   modal.style.display = "flex"; 
   overlay.style.display = "flex";
-}) 
+})  
+
+
+
 
 
 function projectNameFactory(name) { 
@@ -201,6 +224,26 @@ formTagForModule.addEventListener("submit", (e) => {
   overlay.style.display = "none";
 })  
 
+editTodoTasksFormInput.addEventListener("submit", (e) => { 
+  e.preventDefault(); 
+
+  modalForEditTodoTasks.style.display = "none"; 
+
+  overlayForEditTodoTasks.style.display = "none";
+})
+
+
+let closeBtnEditTodoModal = document.getElementById("close-edit-todo-modal-btn"); 
+
+closeBtnEditTodoModal.addEventListener("click", (e) => { 
+
+  modalForEditTodoTasks.style.display = "none"; 
+
+  overlayForEditTodoTasks.style.display = "none";
+
+})
+
+
 let cancelBtnAddTodoModal = document.getElementsByClassName("close-the-todo-modal")[0];
 
 cancelBtnAddTodoModal.addEventListener("click", (e) => { 
@@ -266,7 +309,6 @@ checkMarkWithinDeleteTodoModal.addEventListener("click", (e) => {
 })  
 
 
-let addBtnToDoModal = document.getElementById("add-task-todo-modal"); 
 
 
 
@@ -276,9 +318,10 @@ formInput.addEventListener("submit", (e) => {
   e.preventDefault();
 })
 
+let addBtnToDoModal = document.getElementById("add-task-todo-modal"); 
 
 
-addBtnToDoModal.addEventListener("click", (e) => { 
+addBtnToDoModal.addEventListener("click", (e) =>  { 
   
   e.preventDefault(); 
 
@@ -379,8 +422,34 @@ function displayCurrentProjectTodo() {
 
     let editElement = document.createElement("img"); 
 
+    editElement.dataset.index = i;
+
     editElement.addEventListener("click", (e) => { 
-      console.log("you clicked the edit button, HOLD STRONG!")
+
+      // e.preventDefault();
+
+      console.log("you clicked the edit button, HOLD STRONG!"); 
+
+      modalForEditTodoTasks.style.display = "flex"; 
+
+      overlayForEditTodoTasks.style.display = "flex";
+     
+     let addBtnWithinTodoModal = document.getElementById("add-task-todo-modal-edit"); 
+
+      
+     addBtnWithinTodoModal.addEventListener("click", (e) => { 
+
+        e.preventDefault(); 
+
+        modalForEditTodoTasks.style.display = "none";
+
+        overlayForEditTodoTasks.style.display = "none";
+
+        console.log("YOU CLICKED THE ADD BTN WITHIN THE EDIT TODO MODAL! HOLD STRONG!"); 
+        
+      })
+      
+    
     })
 
     editElement.src = "../edit-svgrepo-com.svg"; 
