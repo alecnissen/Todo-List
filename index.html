@@ -91,7 +91,42 @@
     <!-- </div> -->
     </section> 
 
-    <div class="overlay-for-todo-delete-btn hidden-property-for-todo-delete-btn"></div>
+    <div class="overlay-for-todo-delete-btn hidden-property-for-todo-delete-btn"></div> 
+
+
+
+    <form id="input-form-for-editing-todo-tasks">
+      <section class="modal-edit-todo hidden-edit-modal-todo">
+        <div class="flex-for-edit-todo-modal">
+          <div id="container-for-edit-todo-text"> 
+          <h1 id="edit-todo-title-text">Edit Task</h1>
+        </div>
+          <button class="close-the-todo-modal-edit" id="close-edit-todo-modal-btn">⨉</button>
+        </div>
+        <label>Title:</label>
+        <input type="text" id="title-of-todo-edit-input-form" placeholder="Title of Task" />
+        <label>Description:</label>
+        <textarea id="description-for-todo-edit"></textarea>
+        <label>Due Date:</label>
+        <input type="date" id="due-date-for-todo-task-edit">
+        <label>Priority</label>
+        <select id="priority-for-todo-task-edit">
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select> 
+        <button class="Add-task-todo-modal-edit" id="add-task-todo-modal-edit">Add Task</button>
+  
+      </section>
+    </form>
+      <div class="overlay-for-todo-modal-edit hidden-property-for-todo-edit-modal"></div> 
+
+
+
+
+
+
+
 
 
     <script src="main.js"></script>
