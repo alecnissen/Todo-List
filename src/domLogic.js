@@ -388,7 +388,9 @@ function todoObjectFactory(title, description, priority, dueDate) {
 // create a function within the todo factory 
 // that takes the index, 
 
-let getProjectId
+let getProjectId 
+
+let clickedTodoEditItem
 
 function displayCurrentProjectTodo() { 
 
@@ -433,51 +435,40 @@ function displayCurrentProjectTodo() {
 
     editElement.addEventListener("click", (e) => { 
 
-      // e.preventDefault();
+      // e.preventDefault(); 
 
-      console.log("you clicked the edit button, HOLD STRONG!"); 
+      clickedTodoEditItem = currentProject.todoItems[editElement.dataset.index]; 
 
       modalForEditTodoTasks.style.display = "flex"; 
 
-      overlayForEditTodoTasks.style.display = "flex";
+      overlayForEditTodoTasks.style.display = "flex"; 
      
      let addBtnWithinTodoModal = document.getElementById("add-task-todo-modal-edit"); 
-
-      // may be better to make a submit event 
+      
      addBtnWithinTodoModal.addEventListener("click", (e) => { 
-
-        // e.preventDefault(); 
 
         let titleInputValueEditTodo = document.getElementById("title-of-todo-edit-input-form").value; 
 
-        // console.log(titleInputValueEditTodo);
-
         let descriptionInputValueEditTodo = document.getElementById("description-for-todo-edit").value; 
-
-        // console.log(descriptionInputValueEditTodo); 
 
         let dueDateInputValueEditTodo = document.getElementById("due-date-for-todo-task-edit").value; 
 
-        // console.log(dueDateInputValueEditTodo);
-
         let priorityInputValueEditTodo = document.getElementById("priority-for-todo-task-edit").value; 
-
-        // console.log(priorityInputValueEditTodo);
 
         let editTodoObject = todoObjectFactory(titleInputValueEditTodo, descriptionInputValueEditTodo, dueDateInputValueEditTodo, priorityInputValueEditTodo); 
 
-        console.log(editTodoObject); 
+        // console.log(editTodoObject); 
 
         //  currentProject.todoItems.push(editTodoObject);
 
-         let clickedTodoEditItem = currentProject.todoItems[editElement.dataset.index]; 
-
+         // clickedTodoEditItem = currentProject.todoItems[editElement.dataset.index]; 
+        
         console.log(clickedTodoEditItem);
-
+        
         clickedTodoEditItem.title = titleInputValueEditTodo; 
-
+        
         clickedTodoEditItem.description = descriptionInputValueEditTodo; 
-
+        
         clickedTodoEditItem.dueDate = dueDateInputValueEditTodo; 
 
         clickedTodoEditItem.priority = priorityInputValueEditTodo; 
@@ -491,7 +482,7 @@ function displayCurrentProjectTodo() {
       })
       
     
-    })
+    }) 
 
     editElement.src = "../edit-svgrepo-com.svg"; 
 
