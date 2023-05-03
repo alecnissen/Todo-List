@@ -1,6 +1,8 @@
 // add the event listener module
 
-// import "src/eventListenerModule.js";
+// import "src/eventListenerModule.js"; 
+
+import "./styles.css";
 
 import "./domLogic";
 
