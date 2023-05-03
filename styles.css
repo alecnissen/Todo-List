@@ -515,6 +515,9 @@ lets spend a little time, just playing around with the layout
 
 shrinking it's size */ 
 
+
+/* shrink the size of the main content todo items when page resizes so no content can overflow */ 
+
 @media (max-width: 400px) { 
 
   body { 

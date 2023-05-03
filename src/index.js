@@ -32,6 +32,35 @@ printValuesToDOM(projectArray);
 
 
 
+
+// today, editing todo's 
+
+// using getters and setters, 
+
+// look back at example, and see how you can work that into current code 
+
+// the getters and setters, should probably be inside your factory function 
+
+// what will we be passing to the factory? 
+
+// Why a getter and setter? I just need to overwrite the data at that particular index with the data, 
+
+// can't I pass the values to the same factory? make the same object and then use that object to splice or overwrite properites? 
+
+// you can probably do the same process, make an object, but you need to overwrite that todo and that index with the new info. 
+
+// 
+
+
+
+// ok so a seperate modal is created, with unique elements,  
+
+// now we must get the values for each input field and append them to the current projects todos ? 
+
+// somehow I also need to include the dataset 
+
+
+
 // here we are back with avengance 
 
 // I am recovering, I'm going to do a little work today 

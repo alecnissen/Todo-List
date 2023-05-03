@@ -326,6 +326,7 @@ addBtnToDoModal.addEventListener("click", (e) =>  {
   e.preventDefault(); 
 
 
+
   let titleInputForTodo = document.getElementById("title-of-todo-input-form"); 
 
   let titleInputValue = titleInputForTodo.value; 
@@ -364,24 +365,28 @@ addBtnToDoModal.addEventListener("click", (e) =>  {
 
 displayCurrentProjectTodo(); 
 
+formInput.reset();
+
+modalContainerForTodo.style.display = "none"; 
+
+overlayForTodoModal.style.display = "none"; 
+
 })   
 
 function todoObjectFactory(title, description, priority, dueDate) { 
+  
   return { 
     title: title, 
     description: description, 
     priority: priority, 
     dueDate: dueDate 
-  }
-}     
+  } 
+  
+}    
 
-// problem is appending and displaying todo values 
 
-// for each project, 
-
-// issue is saving every single input as a new array entry, 
-
-// 
+// create a function within the todo factory 
+// that takes the index, 
 
 let getProjectId
 
@@ -422,7 +427,9 @@ function displayCurrentProjectTodo() {
 
     let editElement = document.createElement("img"); 
 
-    editElement.dataset.index = i;
+    editElement.dataset.index = i; 
+
+    console.log(editElement.dataset.index);
 
     editElement.addEventListener("click", (e) => { 
 
@@ -436,17 +443,51 @@ function displayCurrentProjectTodo() {
      
      let addBtnWithinTodoModal = document.getElementById("add-task-todo-modal-edit"); 
 
-      
+      // may be better to make a submit event 
      addBtnWithinTodoModal.addEventListener("click", (e) => { 
 
-        e.preventDefault(); 
+        // e.preventDefault(); 
 
-        modalForEditTodoTasks.style.display = "none";
+        let titleInputValueEditTodo = document.getElementById("title-of-todo-edit-input-form").value; 
 
-        overlayForEditTodoTasks.style.display = "none";
+        // console.log(titleInputValueEditTodo);
 
-        console.log("YOU CLICKED THE ADD BTN WITHIN THE EDIT TODO MODAL! HOLD STRONG!"); 
-        
+        let descriptionInputValueEditTodo = document.getElementById("description-for-todo-edit").value; 
+
+        // console.log(descriptionInputValueEditTodo); 
+
+        let dueDateInputValueEditTodo = document.getElementById("due-date-for-todo-task-edit").value; 
+
+        // console.log(dueDateInputValueEditTodo);
+
+        let priorityInputValueEditTodo = document.getElementById("priority-for-todo-task-edit").value; 
+
+        // console.log(priorityInputValueEditTodo);
+
+        let editTodoObject = todoObjectFactory(titleInputValueEditTodo, descriptionInputValueEditTodo, dueDateInputValueEditTodo, priorityInputValueEditTodo); 
+
+        console.log(editTodoObject); 
+
+        //  currentProject.todoItems.push(editTodoObject);
+
+         let clickedTodoEditItem = currentProject.todoItems[editElement.dataset.index]; 
+
+        console.log(clickedTodoEditItem);
+
+        clickedTodoEditItem.title = titleInputValueEditTodo; 
+
+        clickedTodoEditItem.description = descriptionInputValueEditTodo; 
+
+        clickedTodoEditItem.dueDate = dueDateInputValueEditTodo; 
+
+        clickedTodoEditItem.priority = priorityInputValueEditTodo; 
+
+        arrayStorageSetItem(projectArray); 
+
+        displayCurrentProjectTodo();
+
+        // console.log(currentProject.todoItems[editElement.dataset.index].push(x));
+
       })
       
     
