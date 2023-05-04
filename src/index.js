@@ -10,8 +10,9 @@ import "./storage";
 
 import { projectArray, printProjectNameToNavbarProjectSection, printValuesToDOM } from "./domLogic"; 
 
+import crossMarkForDeleteProject from "./cross-mark-svgrepo-com.svg"; 
 
-
+import checkMarkForDeleteProject from "./check-mark-svgrepo-com.svg"; 
 
 let getStorage = localStorage.getItem("Project-Names"); 
 

@@ -15,9 +15,9 @@ import plusSign from "./plus-sign-for-todo-modal.svg";
 
 import trashIcon from "./trash-can-icon-to-delete-project.svg";
 
-import crossMarkForDeleteProject from "./cross-mark-svgrepo-com.svg"; 
+// import crossMarkForDeleteProject from "./cross-mark-svgrepo-com.svg"; 
 
-import checkMarkForDeleteProject from "./check-mark-svgrepo-com.svg"; 
+// import checkMarkForDeleteProject from "./check-mark-svgrepo-com.svg"; 
 
 import editBtnForTodo from "./edit-svgrepo-com.svg";
 
