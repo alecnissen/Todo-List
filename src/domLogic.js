@@ -9,7 +9,11 @@ import  projectNameLoop from "./index.js";
 
 import projectDisplayConditionalLogic from "./conditionalLogic.js";
 
-import arrayStorageTodoItems from "./storage";
+import arrayStorageTodoItems from "./storage"; 
+
+import plusSign from "./plus-sign-svgrepo-com (1).svg"; 
+
+import trashIcon from "./trashcan-svgrepo-com (1).svg";
 
 // import updateArrayStorage from "./storage";
 
@@ -189,11 +193,11 @@ export function printValuesToDOM(array) {
 
 
 
-      addBtnToCreateModal.src = "../plus-sign-svgrepo-com (1).svg";
+      addBtnToCreateModal.src = plusSign; 
 
       addBtnToCreateModal.classList.add("add-btn-svg-project-name-styles");
 
-      deleteBtnToDeleteTodo.src = "../trashcan-svgrepo-com (1).svg";
+      deleteBtnToDeleteTodo.src = trashIcon;
 
       deleteBtnToDeleteTodo.classList.add("delete-btn-trash-can-svg-icon-styles");
 
