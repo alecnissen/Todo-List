@@ -8,7 +8,10 @@ import "./domLogic";
 
 import "./storage"; 
 
-import { projectArray, printProjectNameToNavbarProjectSection, printValuesToDOM } from "./domLogic";
+import { projectArray, printProjectNameToNavbarProjectSection, printValuesToDOM } from "./domLogic"; 
+
+
+
 
 let getStorage = localStorage.getItem("Project-Names"); 
 

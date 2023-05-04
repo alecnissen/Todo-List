@@ -11,9 +11,15 @@ import projectDisplayConditionalLogic from "./conditionalLogic.js";
 
 import arrayStorageTodoItems from "./storage"; 
 
-import plusSign from "./plus-sign-svgrepo-com (1).svg"; 
+import plusSign from "./plus-sign-for-todo-modal.svg"; 
 
-import trashIcon from "./trashcan-svgrepo-com (1).svg";
+import trashIcon from "./trash-can-icon-to-delete-project.svg";
+
+import crossMarkForDeleteProject from "./cross-mark-svgrepo-com.svg"; 
+
+import checkMarkForDeleteProject from "./check-mark-svgrepo-com.svg"; 
+
+import editBtnForTodo from "./edit-svgrepo-com.svg";
 
 // import updateArrayStorage from "./storage";
 
@@ -435,7 +441,7 @@ function displayCurrentProjectTodo() {
 
     editElement.dataset.index = i; 
 
-    console.log(editElement.dataset.index);
+    // console.log(editElement.dataset.index);
 
     editElement.addEventListener("click", (e) => { 
 
@@ -488,7 +494,7 @@ function displayCurrentProjectTodo() {
     
     }) 
 
-    editElement.src = "../edit-svgrepo-com.svg"; 
+    editElement.src = editBtnForTodo; 
 
     editElement.style.height = "30px"; 
 
@@ -539,7 +545,7 @@ function displayCurrentProjectTodo() {
       // arrayStorageSetItem(projectArray);
     }) 
 
-    deleteIcon.src = "../trashcan-svgrepo-com (1).svg"; 
+    deleteIcon.src = trashIcon; 
 
     deleteIcon.style.width = "30px";
 
