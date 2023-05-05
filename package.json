@@ -4,6 +4,9 @@
   "description": "To-do list as part of the Odin Project's course",
   "main": "app.js",
   "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "start": "webpack serve --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
