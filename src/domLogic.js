@@ -405,24 +405,11 @@ let clickedTodoEditItem
 function displayCurrentProjectTodo() { 
 
   let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
-  
-  // projectTodoContainerDisplay.style.display = "flex"; 
-
-  // projectTodoContainerDisplay.style.flexDirection = "row"; 
-
-  // projectTodoContainerDisplay.style.gap = "2em"; 
-
-  // projectTodoContainerDisplay.style.flexWrap = "wrap";
-
-
-  // 4 
-
-  // projectTodoContainerDisplay.style.display = "block";
 
   projectTodoContainerDisplay.replaceChildren(); 
   
   for (let i = 0; i < currentProject.todoItems.length; i++) { 
-    // let selectedProject = currentProject.todoItems[i]; 
+     
     let taskHolder = document.createElement("div"); 
     
     taskHolder.classList.add("task-holder-for-todo-styles");
@@ -435,8 +422,6 @@ function displayCurrentProjectTodo() {
 
     let projectUniqueId = currentProject.id; 
 
-    // console.log(selectedProject);
-
     let checkboxElement = document.createElement("input"); 
 
     checkboxElement.classList.add("check-box-element-todo-styles");
@@ -447,11 +432,7 @@ function displayCurrentProjectTodo() {
 
     editElement.dataset.index = i; 
 
-    // console.log(editElement.dataset.index);
-
     editElement.addEventListener("click", (e) => { 
-
-      // e.preventDefault(); 
 
       clickedTodoEditItem = currentProject.todoItems[editElement.dataset.index]; 
 
@@ -472,12 +453,6 @@ function displayCurrentProjectTodo() {
         let priorityInputValueEditTodo = document.getElementById("priority-for-todo-task-edit").value; 
 
         let editTodoObject = todoObjectFactory(titleInputValueEditTodo, descriptionInputValueEditTodo, dueDateInputValueEditTodo, priorityInputValueEditTodo); 
-
-        // console.log(editTodoObject); 
-
-        //  currentProject.todoItems.push(editTodoObject);
-
-         // clickedTodoEditItem = currentProject.todoItems[editElement.dataset.index]; 
         
         console.log(clickedTodoEditItem);
         
@@ -493,8 +468,6 @@ function displayCurrentProjectTodo() {
 
         displayCurrentProjectTodo();
 
-        // console.log(currentProject.todoItems[editElement.dataset.index].push(x));
-
       })
       
     
@@ -502,19 +475,7 @@ function displayCurrentProjectTodo() {
 
     editElement.src = editBtnForTodo; 
 
-    // editElement.style.height = "30px"; 
-
-    // editElement.style.width = "30px"; 
-
-    // editElement.style.backgroundColor = "white"; 
-
-    // editElement.style.marginLeft = "0.20em";
-
     checkboxElement.type = "checkbox"; 
-
-    // checkboxElement.style.width = "30px"; 
-
-    // checkboxElement.style.height = "30px";
 
     let deleteIcon = document.createElement("img"); 
 
@@ -522,13 +483,9 @@ function displayCurrentProjectTodo() {
 
     deleteIcon.id = "delete-btn-inside-todo"; 
 
-  //   projectArray = projectArray.filter(project => project.id !== currentProject.id);
   deleteIcon.dataset.index = i; 
 
     deleteIcon.addEventListener("click", (e) => { 
-        // taskHolder.remove();
-
-      // console.log(selectedProject);
 
       currentProject.todoItems.splice(deleteIcon.dataset.index, 1);
       
@@ -536,35 +493,9 @@ function displayCurrentProjectTodo() {
 
       arrayStorageSetItem(projectArray); 
 
-  
-
-      // console.log(e.dataset.index);
-
-      // filter out the projects that have been deleted, 
-
-      // someway to update projectArray, and then pass to a storage function 
-
-      // projectArray.push(currentProject); 
-      
-      // projectArray = projectArray.filter(project => project.id === currentProject.id);
-      // arrayStorageSetItem(projectArray);
-      
-
-      // arrayStorageSetItem(projectArray);
     }) 
 
     deleteIcon.src = trashIcon; 
-
-    // deleteIcon.style.width = "30px";
-
-    // deleteIcon.style.backgroundColor = "white"; 
-
-    // let currentProjectId = currentProject.id; 
-
-    // deleteIcon.addEventListener("click", () => { 
-    //   // console.log("the delete button within todo has been pressed!");
-     
-    // })
 
     let todoTitle = document.createElement("p"); 
 
@@ -604,21 +535,8 @@ function displayCurrentProjectTodo() {
 
     taskHolder.append(editElement);
 
-    // taskHolder.style.backgroundColor = "darkblue";
-
-    // taskHolder.style.color = "white";
-
-    // taskHolder.style.lineHeight = "1em"; 
-
-    // taskHolder.style.textAlign = "center"; 
-
-    // taskHolder.style.width = "275px"; 
-
-    // taskHolder.style.border = "5px solid black";
-
     projectTodoContainerDisplay.append(taskHolder);
     
-    // projectTodoContainerDisplay.append(checkboxElement);
   }  
 
    // let currentProjectId = currentProject.id; 

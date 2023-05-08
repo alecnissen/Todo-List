@@ -37,8 +37,6 @@ printValuesToDOM(projectArray);
 
 
 
-
-
 // today, editing todo's 
 
 // using getters and setters, 
