@@ -406,14 +406,16 @@ function displayCurrentProjectTodo() {
 
   let projectTodoContainerDisplay = document.getElementById("project-todos-container"); 
   
-  projectTodoContainerDisplay.style.display = "flex"; 
+  // projectTodoContainerDisplay.style.display = "flex"; 
 
-  projectTodoContainerDisplay.style.flexDirection = "row"; 
+  // projectTodoContainerDisplay.style.flexDirection = "row"; 
 
-  projectTodoContainerDisplay.style.gap = "2em"; 
+  // projectTodoContainerDisplay.style.gap = "2em"; 
 
-  projectTodoContainerDisplay.style.flexWrap = "wrap";
+  // projectTodoContainerDisplay.style.flexWrap = "wrap";
 
+
+  // 4 
 
   // projectTodoContainerDisplay.style.display = "block";
 
@@ -437,7 +439,11 @@ function displayCurrentProjectTodo() {
 
     let checkboxElement = document.createElement("input"); 
 
+    checkboxElement.classList.add("check-box-element-todo-styles");
+
     let editElement = document.createElement("img"); 
+
+    editElement.classList.add("edit-element-todo-item-styles");
 
     editElement.dataset.index = i; 
 
@@ -496,21 +502,23 @@ function displayCurrentProjectTodo() {
 
     editElement.src = editBtnForTodo; 
 
-    editElement.style.height = "30px"; 
+    // editElement.style.height = "30px"; 
 
-    editElement.style.width = "30px"; 
+    // editElement.style.width = "30px"; 
 
-    editElement.style.backgroundColor = "white"; 
+    // editElement.style.backgroundColor = "white"; 
 
-    editElement.style.marginLeft = "0.20em";
+    // editElement.style.marginLeft = "0.20em";
 
     checkboxElement.type = "checkbox"; 
 
-    checkboxElement.style.width = "30px"; 
+    // checkboxElement.style.width = "30px"; 
 
-    checkboxElement.style.height = "30px";
+    // checkboxElement.style.height = "30px";
 
     let deleteIcon = document.createElement("img"); 
+
+    deleteIcon.classList.add("delete-icon-todo-item-styles");
 
     deleteIcon.id = "delete-btn-inside-todo"; 
 
@@ -547,9 +555,9 @@ function displayCurrentProjectTodo() {
 
     deleteIcon.src = trashIcon; 
 
-    deleteIcon.style.width = "30px";
+    // deleteIcon.style.width = "30px";
 
-    deleteIcon.style.backgroundColor = "white"; 
+    // deleteIcon.style.backgroundColor = "white"; 
 
     // let currentProjectId = currentProject.id; 
 
@@ -596,17 +604,17 @@ function displayCurrentProjectTodo() {
 
     taskHolder.append(editElement);
 
-    taskHolder.style.backgroundColor = "darkblue";
+    // taskHolder.style.backgroundColor = "darkblue";
 
-    taskHolder.style.color = "white";
+    // taskHolder.style.color = "white";
 
-    taskHolder.style.lineHeight = "1em"; 
+    // taskHolder.style.lineHeight = "1em"; 
 
-    taskHolder.style.textAlign = "center"; 
+    // taskHolder.style.textAlign = "center"; 
 
-    taskHolder.style.width = "275px"; 
+    // taskHolder.style.width = "275px"; 
 
-    taskHolder.style.border = "5px solid black";
+    // taskHolder.style.border = "5px solid black";
 
     projectTodoContainerDisplay.append(taskHolder);
     

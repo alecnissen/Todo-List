@@ -235,6 +235,13 @@ main {
 
 } 
 
+#project-todos-container { 
+ display: flex;
+ flex-direction: row;
+ gap: 0.5em;
+ flex-wrap: wrap;
+}
+
 .submit-task-btn-container-styles { 
   display: flex;
   justify-content: center;
@@ -300,8 +307,33 @@ main {
   display: flex;
   justify-content: center;
   gap: 1em; 
+} 
+
+.edit-element-todo-item-styles { 
+  height: 30px; 
+  width: 30px; 
+  background-color: white;
+  margin-left: 0.20em;
 }
 
+.check-box-element-todo-styles { 
+  width: 30px; 
+  height: 30px; 
+} 
+
+.delete-icon-todo-item-styles { 
+  width: 30px;
+  background-color: white;
+} 
+
+.task-holder-for-todo-styles { 
+  background-color: darkblue;
+  color: white; 
+  line-height: 0.5em;
+  text-align: center;
+  width: 275px; 
+  border: 5px solid black; 
+}
 
 /* styles for add todo pop-up modal */ 
 
@@ -555,7 +587,7 @@ shrinking it's size */
   } 
 
   .modal {
-    width: 150px; 
+    width: 275px; 
   } 
 
   .modal > input { 
@@ -586,6 +618,19 @@ shrinking it's size */
     justify-content: center;
     
   }
+} 
+
+
+@media (max-width: 1120px) { 
+   #project-todos-container { 
+    display: flex;
+    font-size: 0.8rem;
+  } 
+
+  /* .task-holder-for-todo-styles { 
+    line-height: 0; 
+  } */
+
 }
 
 /* @media (max-width: 600px) { 
