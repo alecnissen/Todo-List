@@ -2,7 +2,10 @@
 
 // import "src/eventListenerModule.js"; 
 
+
 import "./styles.css";
+
+import "./style.scss"; 
 
 import "./domLogic";
 

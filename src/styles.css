@@ -587,13 +587,88 @@ shrinking it's size */
   } 
 
   .modal {
-    width: 275px; 
+    width: 255px; 
   } 
 
   .modal > input { 
-    width: 50px; 
+    width: 230px; 
+    font-size: 1rem;
+  } 
+
+  .modal > button { 
+    font-size: 1rem;
+  } 
+
+  .close-btn { 
+    position: relative;
+    left: -7em;
+  } 
+
+  nav { 
+    height: 500px; 
+  } 
+
+  .modal-todo { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 250px;
+    padding: 1.3rem;
+    min-height: 250px;
+    position: absolute;
+    top: 10%;
+    left: 10%; 
+    background-color: darkblue;
+    border: 1px solid #ddd;
+    border-radius: 15px;
   }
 
+  .modal-todo h1 { 
+    font-size: 1.4rem;
+  } 
+
+  .modal-todo label { 
+    font-size: 1rem;
+  }
+
+  .modal-todo input { 
+    width: auto; 
+    /* height: 150px  */
+  } 
+
+  .close-the-todo-modal { 
+    position: relative;
+    left: -155px;
+    top: 2px;
+  } 
+
+  /* left off here 5/8/23 */ 
+
+  .modal-for-delete-btn-todo { 
+    width: 250px;
+    position: absolute;
+    left: 15%; 
+    top: 15%;
+  } 
+
+  .modal-for-delete-btn-todo h1 { 
+    font-size: 1rem;
+  } 
+
+  .modal-edit-todo { 
+    width: 250px; 
+    position: absolute;
+    left: 15%; 
+    top: 15%;
+  } 
+
+  .close-the-todo-modal-edit { 
+    /* width: 250px;  */
+    position: absolute;
+    left: 5%; 
+    bottom: 90%;
+  }
 } 
 
 
