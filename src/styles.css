@@ -550,6 +550,147 @@ shrinking it's size */
 
 /* shrink the size of the main content todo items when page resizes so no content can overflow */ 
 
+/* left off here, fix the modals for ipad */ 
+
+
+@media (max-width: 1800px) { 
+  body { 
+    display: flex;
+    flex-direction: column;
+  } 
+
+  #project-todos-container { 
+    display: flex;
+    justify-content: center;
+    
+  }
+}
+
+
+
+@media (max-width: 430px) { 
+  body { 
+    display: flex;
+    flex-direction: column;
+  } 
+
+  .header-title-text-to-do-list { 
+    font-size: 2.2rem; 
+  }  
+
+  main { 
+    width: auto;
+    height: auto; 
+    padding: 25px;
+  } 
+
+  nav { 
+    width: auto; 
+    height: auto; 
+    font-size: 1.2rem;
+    /* display: flex;
+    flex-direction: column; */
+  } 
+  #form-tag-for-modal { 
+    position: fixed;
+    left: 0%; 
+    bottom: 50%; 
+    width: 2em;
+  } 
+  
+  .modal-header-text { 
+    font-size: 1.5rem; 
+
+  } 
+
+  .modal {
+    width: 255px; 
+  } 
+
+  .modal > input { 
+    width: 230px; 
+    font-size: 1rem;
+  } 
+
+  .modal > button { 
+    font-size: 1rem;
+  } 
+
+  .close-btn { 
+    position: relative;
+    left: -7em;
+  } 
+
+  nav { 
+    height: 500px; 
+  } 
+
+  .modal-todo { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 250px;
+    padding: 1.3rem;
+    min-height: 250px;
+    position: absolute;
+    top: 10%;
+    left: 10%; 
+    background-color: darkblue;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+  }
+
+  .modal-todo h1 { 
+    font-size: 1.4rem;
+  } 
+
+  .modal-todo label { 
+    font-size: 1rem;
+  }
+
+  .modal-todo input { 
+    width: auto; 
+    /* height: 150px  */
+  } 
+
+  .close-the-todo-modal { 
+    position: relative;
+    left: -155px;
+    top: 2px;
+  } 
+
+  /* left off here 5/8/23 */ 
+
+  .modal-for-delete-btn-todo { 
+    width: 250px;
+    position: absolute;
+    left: 15%; 
+    top: 15%;
+  } 
+
+  .modal-for-delete-btn-todo h1 { 
+    font-size: 1rem;
+  } 
+
+  .modal-edit-todo { 
+    width: 250px; 
+    position: absolute;
+    left: 20%; 
+    top: 80%;
+  } 
+
+  .close-the-todo-modal-edit { 
+    /* width: 250px;  */
+    position: absolute;
+    left: 5%; 
+    bottom: 90%;
+  }
+}
+
+
+
+
 @media (max-width: 400px) { 
 
   body { 
@@ -558,7 +699,7 @@ shrinking it's size */
   } 
 
   .header-title-text-to-do-list { 
-    font-size: 1.5rem; 
+    font-size: 2.2rem; 
   }  
 
   main { 
