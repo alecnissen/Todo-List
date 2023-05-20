@@ -1,6 +1,23 @@
-#navbar-project-names-go-here {
-  font-size: 3rem;
+/* sass variables,  
+
+.header-title-text-to-do-list { 
+ font-size: 5rem;
+  text-align: center; 
   text-decoration: underline;
-  list-style-type: circle;
-  list-style-position: inside;
+  color: white;
+}
+
+  nesting 
+
+  mixins */
+#navbar-project-names-go-here {
+  font-size: 2.3rem;
+  text-decoration: underline;
+}
+
+.header-title-text-to-do-list {
+  font-size: 5rem;
+  text-align: center;
+  text-decoration: underline;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

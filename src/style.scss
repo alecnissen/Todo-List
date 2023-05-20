@@ -31,9 +31,47 @@
   
 // } 
 
-#navbar-project-names-go-here { 
-  font-size: 3rem; 
+/* sass variables,  
+
+.header-title-text-to-do-list { 
+ font-size: 5rem;
+  text-align: center; 
   text-decoration: underline;
-  list-style-type: circle;
-  list-style-position: inside;
+  color: white;
 }
+
+  nesting 
+
+  mixins */ 
+
+  $mainHeaderColor: white; 
+
+  $mainHeaderFontSize: 5rem; 
+
+  $mainHeaderTextAlign: center; 
+
+  $mainHeaderTextDecoration: underline; 
+
+#navbar-project-names-go-here { 
+  font-size: 2.3rem; 
+  text-decoration: underline;
+} 
+
+.header-title-text-to-do-list { 
+  font-size: $mainHeaderFontSize;
+  text-align: $mainHeaderTextAlign; 
+  text-decoration: $mainHeaderTextDecoration;
+  color: $mainHeaderColor;
+} 
+
+// #navbar-your-projects-title-text { 
+//   @include stylesForYourProjectsText;
+// }
+
+
+//  @mixin stylesForYourProjectsText { 
+//   color: white;
+//   text-align: center;
+//   font-size: 2rem;
+//   text-decoration: underline;
+//  }

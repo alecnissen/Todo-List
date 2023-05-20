@@ -116,12 +116,12 @@ main {
   border: 5px solid black;
 } 
 
-.header-title-text-to-do-list { 
+/* .header-title-text-to-do-list { 
  font-size: 5rem;
   text-align: center; 
   text-decoration: underline;
   color: white;
-}
+} */
 
 #add-project-btn { 
   font-size: 1.5rem;
@@ -367,6 +367,15 @@ main {
   font-size: 0.9em;
 } 
 
+/* experimenting with normal width btn size */ 
+
+#add-task-todo-modal { 
+ font-size: 1.5rem; 
+ background-color: darkblue;
+ color: white; 
+ font-weight: bold;
+}
+
 .modal-todo > label { 
   color: white;
 } 
@@ -563,8 +572,73 @@ shrinking it's size */
     display: flex;
     justify-content: center;
     
+  } 
+
+  .modal-todo { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 250px;
+    padding: 1.3rem;
+    min-height: 250px;
+    position: absolute;
+    /* top: 10%; */
+    left: 40%; 
+    background-color: darkblue;
+    border: 1px solid #ddd;
+    border-radius: 15px;
   }
-}
+
+  .modal-todo h1 { 
+    font-size: 1.4rem;
+  } 
+
+  .modal-todo label { 
+    font-size: 1rem;
+  }
+
+  .modal-todo input { 
+    width: auto; 
+    /* height: 150px  */
+  } 
+
+  .close-the-todo-modal { 
+    position: relative;
+    left: -175px;
+    top: 2px;
+  } 
+
+  .modal-for-delete-btn-todo { 
+    width: 250px;
+    position: absolute;
+    left: 40%; 
+    /* top: 15%; */
+  } 
+
+  .modal-for-delete-btn-todo h1 { 
+    font-size: 1rem;
+  } 
+  .modal-edit-todo { 
+    width: 250px; 
+    position: absolute;
+    left: 40%; 
+    /* top: 50%; */
+  } 
+
+  .close-the-todo-modal-edit { 
+    /* width: 250px;  */
+    position: absolute;
+    left: 10%; 
+    bottom: 90%;
+  } 
+
+  .modal { 
+    position: absolute;
+    left: 28%; 
+  }
+
+} 
 
 
 
