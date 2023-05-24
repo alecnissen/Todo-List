@@ -583,7 +583,7 @@ shrinking it's size */
     padding: 1.3rem;
     min-height: 250px;
     position: absolute;
-    /* top: 10%; */
+    top: 10%;
     left: 40%; 
     background-color: darkblue;
     border: 1px solid #ddd;
@@ -605,7 +605,7 @@ shrinking it's size */
 
   .close-the-todo-modal { 
     position: relative;
-    left: -175px;
+    left: -155px;
     top: 2px;
   } 
 
@@ -613,7 +613,7 @@ shrinking it's size */
     width: 250px;
     position: absolute;
     left: 40%; 
-    /* top: 15%; */
+    top: 15%;
   } 
 
   .modal-for-delete-btn-todo h1 { 
@@ -623,7 +623,7 @@ shrinking it's size */
     width: 250px; 
     position: absolute;
     left: 40%; 
-    /* top: 50%; */
+    top: 15%;
   } 
 
   .close-the-todo-modal-edit { 
@@ -635,7 +635,8 @@ shrinking it's size */
 
   .modal { 
     position: absolute;
-    left: 28%; 
+    /* left: 28%;  */
+    left: 30%; 
   }
 
 } 
