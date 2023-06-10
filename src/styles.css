@@ -94,7 +94,7 @@ nav {
   color: white;
   text-align: center;
   font-size: 2rem;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 } 
 
 header {
@@ -591,7 +591,8 @@ shrinking it's size */
   }
 
   .modal-todo h1 { 
-    font-size: 1.4rem;
+    font-size: 2rem;
+    text-align: center;
   } 
 
   .modal-todo label { 
@@ -605,8 +606,8 @@ shrinking it's size */
 
   .close-the-todo-modal { 
     position: relative;
-    left: -155px;
-    top: 2px;
+    left: -75%;
+    top: -35px;
   } 
 
   .modal-for-delete-btn-todo { 
@@ -629,7 +630,7 @@ shrinking it's size */
   .close-the-todo-modal-edit { 
     /* width: 250px;  */
     position: absolute;
-    left: 10%; 
+    left: 1%; 
     bottom: 90%;
   } 
 
