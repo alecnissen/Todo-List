@@ -6,7 +6,7 @@ CRUD application that empowers users to effectively organize projects and tasks.
 <h1>What I learned</h1>
     <ul>
    <li>Utilized local storage for persistent todo task management across page loads</li>
-<li>Learned JavaScript techniques for adding, deleting, and editing tasks dynamically</li>
+<li>Users can create new projects and add todo list items within the project. Users can delete projects and task items. They can also mark tasks complete and edit them.</li>
 <li>Implemented modules for improved code organization and maintainability</li>
 <li>Expanded DOM manipulation skills and element querying methods</li>
 <li>Utilized factory functions for streamlined object creation</li>
