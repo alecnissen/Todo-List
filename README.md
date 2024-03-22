@@ -1,5 +1,5 @@
 <h1>About This Project</h1> 
-This CRUD (Create, Read, Update, Delete) application empowers users to effectively organize projects and tasks. With seamless functionality, users can create new projects, manage tasks within each project, and make updates effortlessly. The application boasts mobile responsiveness, ensuring smooth operation across diverse screen sizes. Developing this project was a rewarding challenge, deepening my proficiency in JavaScript
+This CRUD (Create, Read, Update, Delete) application empowers users to effectively organize projects and tasks. With seamless functionality, users can create new projects, manage tasks within each project, and make updates effortlessly. The application boasts mobile responsiveness, ensuring smooth operation across diverse screen sizes. Developing this project was a rewarding challenge, deepening my proficiency in JavaScript.
 
 <br> 
 
